@@ -6,20 +6,16 @@
             'active' => request()->routeIs('welcome.index'),
         ],
         [
-            'name' => 'Nosotros',
+            'name' => 'Mi currículum',
             'route' => route('about_us.index'),
             'active' => request()->routeIs('about_us.index'),
         ],
         [
-            'name' => 'Servicios',
+            'name' => 'Capacitaciones',
             'route' => route('our_services.index'),
             'active' => request()->routeIs('our_services.*'),
         ],
-        [
-            'name' => 'Profesionales',
-            'route' => route('our_professionals.index'),
-            'active' => request()->routeIs('our_professionals.index'),
-        ],
+
         [
             'name' => 'Contacto',
             'route' => route('contact_us.index'),
@@ -28,10 +24,10 @@
     ];
 @endphp
 
-<header class="bg-white border-b-2 border-[#C5C5C5] sticky top-0 z-50">
+<header class="bg-primary-color border-b-2 border-[#C5C5C5] sticky top-0 z-50">
     <x-container class="py-2 px-4">
 
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between gap-x-8 items-center">
 
             <button class="text-2xl lg:hidden" x-on:click="open = true">
                 <i class="fas fa-bars"></i>
@@ -42,22 +38,24 @@
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
                     <img class="size-[52px] object-cover border-[3px] rounded-full"
                         src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" alt="">
-                    <h1 class="ml-2 text-xl font-black">Clínica Dental</h1>
+                    <h1 class="ml-2 text-xl text-primary-contrast-color-1 font-black">Presentación Personal</h1>
                 </a>
             </div>
             {{-- Enlaces --}}
             <div class="flex-1 hidden lg:block">
-                <div class="flex justify-center space-x-8 h-full">
+                <div class="flex justify-end space-x-8 h-full">
                     @foreach ($links as $link)
                         <a href="{{ $link['route'] }}"
-                            class="text-base font-semibold hover:text-[#0069F4] {{ $link['active'] ? 'text-[#0069F4] underline underline-offset-[6px]' : '' }}">
+                            class="text-base text-primary-contrast-color-2 font-semibold hover:text-primary-contrast-color-3 {{ $link['active'] ? 'text-primary-contrast-color-3 underline underline-offset-[6px]' : '' }}">
                             {{ $link['name'] }}
                         </a>
                     @endforeach
                 </div>
             </div>
+
+            {{-- Boton Intranet --}}
             <div class="hidden lg:block">
-                <a href="{{ route('admin.dashboard') }}" class="text-base text-white px-7 py-2.5 bg-blue-600 rounded-lg">
+                <a href="{{ route('admin.dashboard') }}" class="bg-secondary-color text-base font-medium text-secondary-contrast-color-1 px-7 py-2.5 rounded-lg">
                     Intranet
                 </a>
             </div>

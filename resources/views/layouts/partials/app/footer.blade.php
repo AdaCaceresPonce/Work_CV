@@ -1,11 +1,10 @@
-<footer class="bg-[#1376F8]">
+<footer class="bg-primary-color">
     <div class="mx-auto w-full max-w-screen-xl px-4 py-6 lg:px-8 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
                     <img src="{{ Storage::url($clinicInformation['footer_clinic_logo']) }}" class="size-8 border border-white rounded-full me-3" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Clínica
-                        Dental</span>
+                    <span class="text-primary-contrast-color-1 self-center text-2xl font-semibold whitespace-nowrap">Presentación Personal</span>
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">

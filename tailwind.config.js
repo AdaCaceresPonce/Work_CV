@@ -17,6 +17,16 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 cabin: ['Cabin', 'sans-serif'],
             },
+
+            colors: {
+                'primary-color': '#116C36',
+                'primary-contrast-color-1': '#FFFFFF',
+                'primary-contrast-color-2': '#dafee7',
+                'primary-contrast-color-3': '#7ff6ad',
+
+                'secondary-color': '#b7fbd1',
+                'secondary-contrast-color-1': '#023117',
+            }
         },
     },
 
