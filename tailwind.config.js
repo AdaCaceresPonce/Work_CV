@@ -19,13 +19,19 @@ export default {
             },
 
             colors: {
-                'primary-color': '#116C36',
-                'primary-contrast-color-1': '#FFFFFF',
-                'primary-contrast-color-2': '#dafee7',
-                'primary-contrast-color-3': '#7ff6ad',
 
-                'secondary-color': '#b7fbd1',
-                'secondary-contrast-color-1': '#023117',
+                primary: {
+                    DEFAULT: '#116C36',            // Primary color
+                    'contrast-1': '#FFFFFF',       // First contrast
+                    'contrast-2': '#dafee7',       // Second contrast
+                    'contrast-3': '#7ff6ad',       // Third contrast
+                    border: '#40e882',             // Primary border color
+                },
+
+                secondary: {
+                    DEFAULT: '#b7fbd1',            // Secondary color
+                    'contrast-1': '#023117',       // First contrast for secondary color
+                },
             }
         },
     },

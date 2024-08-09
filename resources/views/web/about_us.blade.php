@@ -42,39 +42,39 @@
                     <div class="">
                         <div class="flex items-center 
                             size-[300px] bg-white sm:size-[400px]  md:size-[450px] lg:size-[500px] 
-                            justify-center rounded-full border-[3.5px] border-[#23B0FF] relative">
+                            justify-center rounded-full border-[3.5px] border-primary relative">
 
                             <img class="rounded-full 
                                 size-[250px] sm:size-[340px] md:size-[390px] lg:size-[440px] 
-                                border-[3.5px] border-[#23B0FF] object-cover object-center " src="{{ Storage::url($contents['about_us_img']) }}" alt="">
+                                border-[3.5px] border-primary object-cover object-center " src="{{ Storage::url($contents['about_us_img']) }}" alt="">
 
                             {{-- Bolitas del lado superior izquierdo --}}
-                            <div class="bg-[#23B0FF] size-[14px] top-[18.6%] left-[6.2%] rounded-full 
+                            <div class="bg-primary size-[14px] top-[18.6%] left-[6.2%] rounded-full 
                                 sm:size-[18px] sm:top-[18.8%] 
                                 md:size-[20px] md:top-[19.5%] md:left-[6.1%]
                                 lg:size-[22px] lg:top-[19.5%] 
                                 absolute inset-0">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[18px] top-[26%] left-[1%] rounded-full 
+                            <div class="bg-primary size-[18px] top-[26%] left-[1%] rounded-full 
                                 sm:size-[24px] sm:top-[27%] sm:left-[0.5%]
                                 md:size-[28px] md:top-[27.6%] md:left-[0.2%]
                                 lg:size-[30px] lg:top-[27.4%] absolute inset-0">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[24px] top-[36.33%] left-[-3.6%] rounded-full 
+                            <div class="bg-primary size-[24px] top-[36.33%] left-[-3.6%] rounded-full 
                                 sm:size-[32px] sm:top-[38%]
                                 md:size-[38px] md:top-[38%] md:left-[-4.2%]
                                 lg:size-[42px] lg:top-[38.2%] lg:left-[-4%] absolute inset-0">
                             </div>
 
                             {{-- Bolitas del lado superior derecho --}}
-                            <div class="bg-[#23B0FF] size-[14px] top-[-1%] left-[60%] rounded-full 
+                            <div class="bg-primary size-[14px] top-[-1%] left-[60%] rounded-full 
                                 sm:size-[20px] sm:top-[-1%]
                                 absolute inset-0">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[44px] flex items-center justify-center top-[-3%] left-[67%] rounded-full 
+                            <div class="bg-primary size-[44px] flex items-center justify-center top-[-3%] left-[67%] rounded-full 
                                 sm:size-[60px] sm:top-[-3%]
                                 absolute inset-0">
 
@@ -85,31 +85,31 @@
                             </div>
 
                             {{-- Bolitas del lado derecho al medio --}}
-                            <div class="bg-[#23B0FF] size-[28px] top-[32%] left-[93.7%] rounded-full 
+                            <div class="bg-primary size-[28px] top-[32%] left-[93.7%] rounded-full 
                                 sm:size-[35px] sm:top-[31%]
                                 md:size-[40px] md:top-[31%]
                                 absolute inset-0">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[20px] top-[45%] left-[97%] rounded-full 
+                            <div class="bg-primary size-[20px] top-[45%] left-[97%] rounded-full 
                                 sm:size-[26px] sm:top-[44%]
                                 md:size-[27px] md:top-[44.4%]
                                 absolute inset-0">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[14px] top-[55.8%] left-[97.5%] rounded-full 
+                            <div class="bg-primary size-[14px] top-[55.8%] left-[97.5%] rounded-full 
                                 sm:size-[19px] sm:top-[55%]
                                 md:size-[20px] md:top-[55%]
                                 absolute inset-0">
                             </div>
 
                             {{-- Bolitas de la esquina inferior derecha --}}
-                            <div class="bg-[#23B0FF] size-[16px] top-[80%] left-[85.8%] rounded-full absolute inset-0
+                            <div class="bg-primary size-[16px] top-[80%] left-[85.8%] rounded-full absolute inset-0
                                 sm:size-[18px] sm:top-[82%] sm:left-[84.7%]
                                 md:size-[20px] md:top-[82%] md:left-[84.7%]">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[44px] flex items-center justify-center top-[85%] left-[71%] rounded-full absolute inset-0
+                            <div class="bg-primary size-[44px] flex items-center justify-center top-[85%] left-[71%] rounded-full absolute inset-0
                                 sm:size-[55px] sm:top-[86%] sm:left-[71%]
                                 md:size-[59px] md:top-[87%] md:left-[71%]">
                                 <i class="fa-solid fa-stethoscope text-white text-[25px] rotate-[-20deg]
@@ -117,12 +117,12 @@
                             </div>
 
                             {{-- Bolitas de la esquina inferior izquierda --}}
-                            <div class="bg-[#23B0FF] size-[14px] top-[93%] left-[25%] rounded-full absolute inset-0
+                            <div class="bg-primary size-[14px] top-[93%] left-[25%] rounded-full absolute inset-0
                                 sm:size-[18px] sm:top-[91.5%] sm:left-[23%]
                                 md:size-[20px] md:top-[91.7%] md:left-[23%]">
                             </div>
 
-                            <div class="bg-[#23B0FF] size-[44px] flex items-center justify-center top-[82%] left-[9%] rounded-full absolute inset-0
+                            <div class="bg-primary size-[44px] flex items-center justify-center top-[82%] left-[9%] rounded-full absolute inset-0
                                 sm:size-[52px] sm:top-[81.1%] sm:left-[9%]
                                 md:size-[57px] md:top-[81.1%] md:left-[9%]">
                                 <i class="fa-solid fa-tooth text-white text-[25px] rotate-[-25deg]
