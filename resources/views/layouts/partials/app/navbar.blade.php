@@ -55,7 +55,7 @@
 
             {{-- Boton Intranet --}}
             <div class="hidden lg:block">
-                <a href="{{ route('admin.dashboard') }}" class="bg-secondary border-2 border-primary-border text-base font-medium text-secondary-contrast-1 px-7 py-2.5 rounded-lg">
+                <a href="{{ route('admin.dashboard') }}" class="bg-secondary border-2 border-secondary-border text-base font-medium text-secondary-contrast-1 px-7 py-2.5 rounded-lg">
                     Intranet
                 </a>
             </div>
