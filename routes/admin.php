@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\OurServicesPageContentController;
 use App\Http\Controllers\Admin\ProfessionalController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SpecialtyController;
+use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\WelcomePageContentController;
 use App\Models\ClinicInformation;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,14 @@ Route::get('/', function () {
     return view('admin.dashboard', compact('clinicInformation'));
 })->name('dashboard');
 
-Route::resource('services', ServiceController::class);
+Route::resource('servicios', ServiceController::class)->names('services')->parameters([
+    'servicios' => 'service'
+]);
+
+Route::resource('capacitaciones', TrainingController::class)->names('trainings')->parameters([
+    'capacitaciones' => 'training'
+]);
+
 Route::resource('specialties', SpecialtyController::class);
 Route::resource('professionals', ProfessionalController::class);
 Route::resource('clinic_information', ClinicInformationController::class);
