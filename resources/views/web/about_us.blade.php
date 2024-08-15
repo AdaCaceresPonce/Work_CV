@@ -2,7 +2,7 @@
 <x-app-layout>
 
     <x-slot name="title">
-        Sobre Nosotros
+        Mi Curriculum
     </x-slot>
 
     <style>
@@ -20,11 +20,11 @@
 
 
     {{-- Quienes somos --}}
-    <section id="clinic_about" class="bg-[#E3FFFE]">
+    {{-- <section id="clinic_about" class="bg-[#E3FFFE]">
         <x-container class="px-4 section__spacing">
             <div class="flex items-center flex-wrap">
                 {{-- Texto --}}
-                <div class="w-full lg:w-1/2 p-4 lg:pr-12">
+                {{-- <div class="w-full lg:w-1/2 p-4 lg:pr-12">
                     <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
                         {!! $contents['about_us_title'] ?? 'Título por Defecto' !!}
 
@@ -36,9 +36,9 @@
                         </span>
                     </div>
                     
-                </div>
+                </div> --}}
                 {{-- Imagen --}}
-                <div class="w-full mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
+                {{-- <div class="w-full mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
                     <div class="">
                         <div class="flex items-center 
                             size-[300px] bg-white sm:size-[400px]  md:size-[450px] lg:size-[500px] 
@@ -131,10 +131,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                {{-- </div> --}}
+            {{-- </div>
         </x-container>
-    </section>
+    {{-- </section> --}} 
 
     {{-- Info adicional de la clinica --}}
     <section id="free_content_1">
