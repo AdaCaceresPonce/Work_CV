@@ -148,8 +148,9 @@
         </x-container>
     </section>
 
+    {{-- Banner 1 --}}
     <section class="bg-primary">
-        <x-container class="px-4 section__spacing">
+        <x-container class="px-4 py-20 md:py-16">
 
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-4">
 

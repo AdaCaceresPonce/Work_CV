@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\WelcomePageContent;
+use App\Models\PagesContents\WelcomePageContent;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,12 +19,12 @@ class WelcomePageContentSeeder extends Seeder
 
         $content = [
             
-            'cover_title' => '<p><strong>Prep&aacute;rate para una <span style="color: rgb(0, 117, 255);">grandiosa experiencia dental.</span></strong></p>',
-            'cover_description' => '<p>En Cl&iacute;nica Dental utilizamos las mejores herramientas y materiales para brindarte un servicio y atenci&oacute;n de calidad velando siempre por tu comodidad.</p>',
+            'cover_title' => '<p><strong><span class="text-primary">Mgtr. Patricia Cárdenas</span></strong></p>',
+            'cover_description' => '<p>Educadora con una basta experiencia, conocedora de los actuales lineamientos educativos, compartirá sus conocimientos, habilidades y experiencias con la comunidad educativa a través de capacitaciones retadoras, innovadoras e inspiradoras.</p>',
             'cover_img' => 'web_pages_images/welcome_page/' . $faker->image('public/storage/web_pages_images/welcome_page', 2923, 1948, null, false),
 
             'about_title' => '<p><strong>Una Cl&iacute;nica Dental en la que puedes <span style="color: rgb(0, 117, 255);">confiar.</span></strong></p>',
-            'about_description'=>'<p>En nuestra cl&iacute;nica dental, nos enorgullecemos de ofrecer cuidado dental excepcional con un enfoque centrado en nuestros pacientes. Nuestro equipo de profesionales altamente capacitados est&aacute; comprometido con brindarle una experiencia c&oacute;moda y efectiva en cada visita. Desde limpiezas regulares hasta procedimientos m&aacute;s complejos, estamos aqu&iacute; para cuidar de su salud bucal de manera integral y personalizada.</p>',
+            'about_description'=>'<p>En mi página personal, se ofrece capacitaciones de alta calidad en el campo educativo. Mi misión es promover el logro de los aprendizajes en las y los estudiantes de las IE peruanas, motivando a los docentes a desarrollar estrategias innovadoras de enseñanza aprendizaje. Aquí encontrarás información sobre las capacitaciones.</p>',
             'about_we_offer_you' => 'Equipamiento moderno, Monitoreo continuo, Equipo de Profesionales capacitado',
             'about_image' => 'web_pages_images/welcome_page/' . $faker->image('public/storage/web_pages_images/welcome_page', 1200, 800, null, false),
 
