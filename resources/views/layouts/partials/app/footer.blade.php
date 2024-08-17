@@ -16,13 +16,10 @@
                             <a href="{{ route('welcome.index') }}" class="hover:underline">Inicio</a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('about_us.index') }}" class="hover:underline">Nosotros</a>
+                            <a href="{{ route('about_us.index') }}" class="hover:underline">Mi currículum</a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('our_services.index') }}" class="hover:underline">Servicios</a>
-                        </li>
-                        <li class="mb-3">
-                            <a href="{{ route('our_professionals.index') }}" class="hover:underline">Profesionales</a>
+                            <a href="{{ route('our_trainings.index') }}" class="hover:underline">Capacitaciones</a>
                         </li>
                         <li>
                             <a href="{{ route('contact_us.index') }}" class="hover:underline">Contacto</a>
@@ -39,19 +36,19 @@
                             @isset($clinicInformation['facebook_link'])
                                 <li>
                                     <a href="{{ $clinicInformation['facebook_link'] }}" target="_blank"
-                                        class="hover:underline "><i class="fa-brands fa-facebook me-2"></i>Facebook</a>
+                                        class="hover:underline after:content-['_↗']"><i class="fa-brands fa-facebook me-2 "></i>Facebook</a>
                                 </li>
                             @endisset
 
                             @isset($clinicInformation['twitter_link'])
                                 <li>
-                                    <a href="{{ $clinicInformation['twitter_link'] }}" target="_blank" class="hover:underline "><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
+                                    <a href="{{ $clinicInformation['twitter_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
                                 </li>
                             @endisset
 
                             @isset($clinicInformation['instagram_link'])
                                 <li>
-                                    <a href="{{ $clinicInformation['instagram_link'] }}" target="_blank" class="hover:underline "><i class="fa-brands fa-instagram me-2"></i>Instagram</a>
+                                    <a href="{{ $clinicInformation['instagram_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-instagram me-2"></i>Instagram</a>
                                 </li>
                             @endisset
 

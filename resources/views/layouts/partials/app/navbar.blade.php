@@ -12,8 +12,8 @@
         ],
         [
             'name' => 'Capacitaciones',
-            'route' => route('our_services.index'),
-            'active' => request()->routeIs('our_services.*'),
+            'route' => route('our_trainings.index'),
+            'active' => request()->routeIs('our_trainings.*'),
         ],
 
         [
@@ -34,11 +34,11 @@
             </button>
 
             {{-- Logo empresa --}}
-            <div class="flex">
+            <div class="flex h-[52px]">
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
-                    <img class="size-[52px] object-cover border-[3px] rounded-full"
-                        src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" alt="">
-                    <h1 class="ml-2 text-xl text-primary-contrast-1 font-black">Presentación Personal</h1>
+                    {{-- <img class="size-[52px] object-cover border-[3px] rounded-full"
+                        src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" alt=""> --}}
+                    <h1 class="ml-2 text-2xl text-primary-contrast-1 font-semibold">Presentación Personal</h1>
                 </a>
             </div>
             {{-- Enlaces --}}
@@ -46,7 +46,7 @@
                 <div class="flex justify-end space-x-8 h-full">
                     @foreach ($links as $link)
                         <a href="{{ $link['route'] }}"
-                            class="text-base text-primary-contrast-2 font-semibold hover:text-primary-contrast-3 {{ $link['active'] ? 'text-primary-contrast-3 underline underline-offset-[6px]' : '' }}">
+                            class="text-lg text-primary-contrast-2 font-semibold hover:text-primary-contrast-3 {{ $link['active'] ? 'text-primary-contrast-3 underline underline-offset-[6px]' : '' }}">
                             {{ $link['name'] }}
                         </a>
                     @endforeach

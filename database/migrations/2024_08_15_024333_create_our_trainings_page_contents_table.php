@@ -11,24 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('welcome_page_contents', function (Blueprint $table) {
+        Schema::create('our_trainings_page_contents', function (Blueprint $table) {
             $table->id();
 
             $table->text('cover_title');
-            $table->text('cover_description');
             $table->string('cover_img');
-
-            $table->text('about_description');
 
             $table->text('our_trainings_title');
             $table->text('our_trainings_description');
+            $table->string('our_trainings_img');
 
-            $table->text('why_choose_our_trainings_title');
-            $table->text('why_choose_our_trainings_description');
-            $table->text('why_choose_our_trainings_img');      
-
-            $table->text('testimonials_title');
-            $table->text('testimonials_description');
+            $table->text('trainings_we_offer_title');
+            $table->text('trainings_we_offer_description');
 
             $table->timestamps();
         });
@@ -39,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('welcome_page_contents');
+        Schema::dropIfExists('our_trainings_page_contents');
     }
 };
