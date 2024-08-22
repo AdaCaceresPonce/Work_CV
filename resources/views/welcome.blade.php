@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     @endpush
 
-    {{-- Quienes somos --}}
+    {{-- Cover --}}
     <section id="clinic_about" class="">
         <x-container class="px-4 section__spacing">
             <div class="flex items-center flex-wrap">
@@ -182,8 +182,7 @@
     </section>
 
 
-
-    {{-- Servicios --}}
+    {{-- Capacitaciones --}}
     <section id="services">
         <x-container class="px-4 section__spacing flex-col">
             {{-- Titulo --}}

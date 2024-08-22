@@ -34,24 +34,22 @@
     <div class="card__content px-3 pb-8 rounded-xl">
         <div class="swiper-wrapper ">
             @foreach ($services as $service)
-                <article class="card__article swiper-slide border-[3px] rounded-xl border-[#1376F8] shadow-lg shadow-cyan-400/50">
+                <article class="card__article swiper-slide border-[3px] rounded-xl">
 
-                    <div class="card__image w-full flex justify-center items-center relative">
-                        <h3 class="service__name text-white text-2xl font-bold text-center px-4 w-full absolute z-10">
-                            {{ $service->name ?? 'Nombre del servicio' }}
-                        </h3>
+                    <div class="card__image w-full flex justify-center items-center rounded-lg overflow-hidden">
+                        
                         <img src="{{ Storage::url($service->card_img_path) }}" alt="image"
                             class="card__img aspect-[4/3] object-cover object-center w-full brightness-75">
                     </div>
 
-                    <div class="card__data">
-                        <p class="card__description mb-6 min-h-[120px] line-clamp-5">
-                            {{ $service->small_description ?? 'Descripción del servicio' }}
-                        </p>
-                        <div class="flex justify-center">
+                    <div class="card__data space-y-6 mt-3">
+                        <h3 class="service__name text-lg font-medium w-full">
+                            {{ $service->name ?? 'Nombre del servicio' }}
+                        </h3>
+                        <div class="flex justify-start">
                             <a href="{{ route('our_services.show_service', $service) }}"
-                                class="text-white items-center bg-blue-700 py-2 px-6 rounded-lg">
-                                Conoce más
+                                class="items-center font-medium text-secondary-contrast-1 bg-secondary border-2 border-secondary-border py-2 px-8 rounded-lg">
+                                Ver más
                             </a>
                         </div>
 
@@ -81,11 +79,12 @@
         .card__article {
             width: 250px;
             overflow: hidden;
+            padding: 0.5rem 0.5rem;
         }
 
 
         .card__data {
-            padding: 1.2rem 1.2rem;
+            /* padding: 1.2rem 1.2rem; */
         }
 
         /* Swiper class */
