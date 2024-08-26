@@ -26,44 +26,38 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //Eliminar carpetas
-        Storage::deleteDirectory('services/card_images');
-        Storage::deleteDirectory('services/cover_images');
-        Storage::deleteDirectory('professionals');
+        Storage::deleteDirectory('trainings/card_images');
+        Storage::deleteDirectory('trainings/cover_images');
 
         Storage::deleteDirectory('clinic_information_images/navbar');
         Storage::deleteDirectory('clinic_information_images/footer');
 
         Storage::deleteDirectory('web_pages_images/welcome_page');
-        Storage::deleteDirectory('web_pages_images/about_us_page');
         Storage::deleteDirectory('web_pages_images/our_services_page');
-        Storage::deleteDirectory('web_pages_images/our_professionals_page');
         Storage::deleteDirectory('web_pages_images/contact_us_page');
 
-        Storage::makeDirectory('services/card_images');
-        Storage::makeDirectory('services/cover_images');
-        Storage::makeDirectory('professionals');
-
         //Crear carpetas
+        Storage::makeDirectory('trainings/card_images');
+        Storage::makeDirectory('trainings/cover_images');
+
         Storage::makeDirectory('clinic_information_images/navbar');
         Storage::makeDirectory('clinic_information_images/footer');
 
         Storage::makeDirectory('web_pages_images/welcome_page');
-        Storage::makeDirectory('web_pages_images/about_us_page');
         Storage::makeDirectory('web_pages_images/our_services_page');
-        Storage::makeDirectory('web_pages_images/our_professionals_page');
         Storage::makeDirectory('web_pages_images/contact_us_page');
 
+        $this->call(TrainingSeeder::class);
+        //Historial Laboral
+        $this->call(EmploymentHistorySeeder::class);
+        //Formación académica
+        $this->call(AcademicBackgroundSeeder::class);
 
         $this->call(WelcomePageContentSeeder::class);
-        $this->call(AboutUsPageContentSeeder::class);
-        $this->call(OurProfessionalsPageContentSeeder::class);
         $this->call(OurServicesPageContentSeeder::class);
         $this->call(ContactUsPageContentSeeder::class);
 
-        Service::factory(1)->create();
         $this->call(ClinicInformationSeeder::class);
-        $this->call(SpecialtySeeder::class);
-        $this->call(ProfessionalSeeder::class);
 
         Inquiry::factory(30)->create();
         Opinion::factory(30)->create();

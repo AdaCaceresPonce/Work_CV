@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('training_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('order')->default(0); // Campo para almacenar el orden
+            $table->integer('position')->default(0); // Campo para almacenar el orden
             $table->timestamps();
         });
     }

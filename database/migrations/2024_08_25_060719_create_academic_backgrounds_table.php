@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trainings', function (Blueprint $table) {
+        Schema::create('academic_backgrounds', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->text('description')->nullable();
-            $table->string('card_img_path');
-            $table->string('cover_img_path');
-            $table->text('additional_info')->nullable();
+            $table->text('degree_name');
+            $table->text('institution');
+            $table->integer('position')->default(0); // Campo para almacenar el orden
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trainings');
+        Schema::dropIfExists('academic_backgrounds');
     }
 };
