@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('clinic_information_images/footer');
 
         Storage::deleteDirectory('web_pages_images/welcome_page');
-        Storage::deleteDirectory('web_pages_images/our_services_page');
+        Storage::deleteDirectory('web_pages_images/our_trainings_page');
         Storage::deleteDirectory('web_pages_images/contact_us_page');
 
         //Crear carpetas
@@ -44,9 +44,10 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('clinic_information_images/footer');
 
         Storage::makeDirectory('web_pages_images/welcome_page');
-        Storage::makeDirectory('web_pages_images/our_services_page');
+        Storage::makeDirectory('web_pages_images/our_trainings_page');
         Storage::makeDirectory('web_pages_images/contact_us_page');
 
+        //Capacitaciones
         $this->call(TrainingSeeder::class);
         //Historial Laboral
         $this->call(EmploymentHistorySeeder::class);
@@ -54,7 +55,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AcademicBackgroundSeeder::class);
 
         $this->call(WelcomePageContentSeeder::class);
-        $this->call(OurServicesPageContentSeeder::class);
+        $this->call(OurTrainingsPageContentSeeder::class);
         $this->call(ContactUsPageContentSeeder::class);
 
         $this->call(ClinicInformationSeeder::class);

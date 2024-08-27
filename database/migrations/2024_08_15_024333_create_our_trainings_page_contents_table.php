@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('our_trainings_img');
 
             $table->text('trainings_we_offer_title');
-            $table->text('trainings_we_offer_description');
 
             $table->timestamps();
         });
