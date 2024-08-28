@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('academic_backgrounds', function (Blueprint $table) {
             $table->id();
             $table->text('degree_name');
-            $table->text('institution');
+            $table->text('institution_name');
             $table->integer('position')->default(0); // Campo para almacenar el orden
             $table->timestamps();
         });

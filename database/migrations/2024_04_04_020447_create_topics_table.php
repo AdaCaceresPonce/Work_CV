@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('training_id')->constrained()->onDelete('cascade');
+            $table->foreignId('training_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+                
             $table->string('name');
             $table->text('description')->nullable();
             $table->integer('position')->default(0); // Campo para almacenar el orden

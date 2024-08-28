@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\OpinionController;
 use App\Http\Controllers\Admin\OurProfessionalsPageContentController;
 use App\Http\Controllers\Admin\OurServicesPageContentController;
+use App\Http\Controllers\Admin\OurTrainingsPageContentController;
 use App\Http\Controllers\Admin\ProfessionalController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SpecialtyController;
@@ -39,6 +40,8 @@ Route::resource('opinions', OpinionController::class);
 Route::resource('welcome_page_content', WelcomePageContentController::class);
 Route::resource('about_us_page_content', AboutUsPageContentController::class);
 Route::resource('our_services_page_content', OurServicesPageContentController::class);
+Route::resource('our_trainings_page_content', OurTrainingsPageContentController::class)->names('our_trainings_page_content');
+
 Route::resource('our_professionals_page_content', OurProfessionalsPageContentController::class);
 Route::resource('contact_us_page_content', ContactUsPageContentController::class);
 

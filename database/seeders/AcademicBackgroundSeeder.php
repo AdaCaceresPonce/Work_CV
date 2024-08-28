@@ -17,19 +17,19 @@ class AcademicBackgroundSeeder extends Seeder
         $academic_backgrounds = [
 
             'Magíster en Psicología Educativa' => [
-                'institution' => 'Universidad César Vallejo / Trujillo',
+                'institution_name' => 'Universidad César Vallejo / Trujillo',
             ],
 
             'Segunda Especialidad: Gestión Escolar con Liderazgo Pedagógico' => [
-                'institution' => 'Universidad San Ignacio de Loyola / Lima',
+                'institution_name' => 'Universidad San Ignacio de Loyola / Lima',
             ],
 
             'Bachiller en Educación' => [
-                'institution' => 'Universidad Mayor de San Marcos / Lima',
+                'institution_name' => 'Universidad Mayor de San Marcos / Lima',
             ],
 
             'Profesora de Educación Secundaria de Matemática' => [
-                'institution' => 'Instituto Superior Pedagógico de Chincha',
+                'institution_name' => 'Instituto Superior Pedagógico de Chincha',
             ],
 
         ];
@@ -40,7 +40,7 @@ class AcademicBackgroundSeeder extends Seeder
 
             AcademicBackground::create([
                 'degree_name' => $degree_name,
-                'institution' => $data['institution'],
+                'institution_name' => $data['institution_name'],
                 'position' => $position,
             ]);
 

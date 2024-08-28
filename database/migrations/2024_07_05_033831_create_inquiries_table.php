@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-
-            $table->foreignId('service_id')->nullable()->constrained()
+            $table->string('institution_name');
+            $table->string('location');
+            
+            $table->foreignId('training_id')->nullable()->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('set null');
 

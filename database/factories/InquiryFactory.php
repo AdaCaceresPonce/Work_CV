@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Service;
+use App\Models\Training;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +17,9 @@ class InquiryFactory extends Factory
      */
     public function definition(): array
     {
-        // Probabilidad de tener información en service_id
-        $hasService = $this->faker->boolean(70); // 70% de probabilidad de tener categoría
-        $service = $hasService ? Service::inRandomOrder()->first() : null;
+        // Probabilidad de tener información en training_id
+        $hasTraining = $this->faker->boolean(70); // 70% de probabilidad de tener categoría
+        $training = $hasTraining ? Training::inRandomOrder()->first() : null;
 
         // Generar fecha aleatoria entre hace 1 semana y ahora
         $createdAt = $this->faker->dateTimeBetween('-1 week', 'now');
@@ -27,7 +27,9 @@ class InquiryFactory extends Factory
         return [
             'name' => $this->faker->firstName,
             'lastname' => $this->faker->lastName,
-            'service_id' => $service ? $service->id : null,
+            'institution_name' => $this->faker->randomElement(['Universidad', 'Instituto', 'Colegio', 'Academia']) . ' ' . $this->faker->company,
+            'location' => $this->faker->city . ', ' . $this->faker->state,
+            'training_id' => $training ? $training->id : null,
             'contact_number' => $this->faker->phoneNumber,
             'message' => $this->faker->text(400),
             'state' => $this->faker->randomElement(['Nuevo', 'Pendiente', 'Atendido']),

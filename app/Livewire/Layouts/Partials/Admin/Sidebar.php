@@ -37,25 +37,11 @@ class Sidebar extends Component
         //Registros
         $this->links = [
             [
-                //Servicios
-                'icon' => 'fa-solid fa-tooth',
-                'name' => 'Servicios',
-                'route' => route('admin.services.index'),
-                'active' => request()->routeIs('admin.services.*'),
-            ],
-            [
-                //Especialidades
-                'icon' => 'fa-solid fa-briefcase-medical',
-                'name' => 'Especialidades',
-                'route' => route('admin.specialties.index'),
-                'active' => request()->routeIs('admin.specialties.*'),
-            ],
-            [
-                //Profesionales
-                'icon' => 'fa-solid fa-user-doctor',
-                'name' => 'Profesionales',
-                'route' => route('admin.professionals.index'),
-                'active' => request()->routeIs('admin.professionals.*'),
+                //Capacitaciones
+                'icon' => 'fa-solid fa-person-chalkboard',
+                'name' => 'Capacitaciones',
+                'route' => route('admin.trainings.index'),
+                'active' => request()->routeIs('admin.trainings.*'),
             ],
 
             [
@@ -94,24 +80,10 @@ class Sidebar extends Component
             ],
 
             [
-                'icon' => 'fa-solid fa-people-group',
-                'name' => 'Página Nosotros',
-                'route' => route('admin.about_us_page_content.index'),
-                'active' => request()->routeIs('admin.about_us_page_content.*'),
-            ],
-
-            [
-                'icon' => 'fa-solid fa-teeth',
-                'name' => 'Página Servicios',
-                'route' => route('admin.our_services_page_content.index'),
-                'active' => request()->routeIs('admin.our_services_page_content.*'),
-            ],
-
-            [
-                'icon' => 'fa-solid fa-stethoscope',
-                'name' => 'Página Profesionales',
-                'route' => route('admin.our_professionals_page_content.index'),
-                'active' => request()->routeIs('admin.our_professionals_page_content.*'),
+                'icon' => 'fa-solid fa-chalkboard-user',
+                'name' => 'Página Capacitaciones',
+                'route' => route('admin.our_trainings_page_content.index'),
+                'active' => request()->routeIs('admin.our_trainings_page_content.*'),
             ],
 
             [

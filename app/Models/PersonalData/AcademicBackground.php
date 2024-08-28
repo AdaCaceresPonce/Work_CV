@@ -11,7 +11,7 @@ class AcademicBackground extends Model
 
     protected $fillable = [
         'degree_name',
-        'institution',
+        'institution_name',
         'position',
     ];
 }
