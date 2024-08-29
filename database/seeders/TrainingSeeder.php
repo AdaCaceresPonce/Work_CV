@@ -90,7 +90,7 @@ class TrainingSeeder extends Seeder
                     '¿Cómo involucrar activamente a los estudiantes en el proceso de aprendizaje?',
                     '¿Cómo promover el razonamiento, la creatividad y/o pensamiento crítico?',
                     '¿Cómo evaluar el progreso de los aprendizajes para retroalimentar a los estudiantes y adecuar su enseñanza?',
-                    '¿Cómo propiciar un ambiente de respecto y proximidad?',
+                    '¿Cómo propiciar un ambiente de respeto y proximidad?',
                     '¿Cómo regular positivamente el comportamiento de los estudiantes?',
                 ]
             ],

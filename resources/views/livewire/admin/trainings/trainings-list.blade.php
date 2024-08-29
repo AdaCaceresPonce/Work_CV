@@ -40,8 +40,12 @@
         </label>
     </div>
 
+    <div class="inline-flex w-full justify-start mb-4">
+        <a href="{{ route('our_trainings.index') }}" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-md">Ver página Capacitaciones</a>
+    </div>
 
-    <div>
+
+    <div class="card">
 
         @if ($trainings->count())
 
