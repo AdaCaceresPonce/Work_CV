@@ -30,7 +30,6 @@ class TrainingsList extends Component
     public function render()
     {
         $trainings = Training::orderBy('id', 'desc')
-            ->with(['topics'])
             ->when($this->search, function ($query, $search) {
                 return $query->where('name', 'like', '%' . $search . '%');
             })

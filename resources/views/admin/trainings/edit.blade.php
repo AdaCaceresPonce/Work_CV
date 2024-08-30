@@ -139,19 +139,10 @@
             <div class="card mt-4 space-y-3">
 
                 <span class="font-medium">
-                    Temas incluidos en esta capacitación:
+                    Temas incluidos en esta capacitación (Arrastralos para cambiar el orden en que se muestran):
                 </span>
 
-                <div class="grid grid-cols-1 gap-4">
-                    @foreach ($training->topics as $topic)
-                        <div class="p-4 bg-gray-100 border-2">
-                            {{ $topic->name }}
-                        </div>
-                    @endforeach
-                    <button class="p-4 btn-blue">
-                        <i class="fa-solid fa-plus mr-1"></i> Agregar nuevo tema
-                    </button>
-                </div>
+                <livewire:admin.trainings.training-topics :training="$training" />
                 
             </div>
         </form>

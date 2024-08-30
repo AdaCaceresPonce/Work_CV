@@ -45,6 +45,7 @@ class TrainingController extends Controller
      */
     public function edit(Training $training)
     {
+
         return view('admin.trainings.edit', compact('training'));
     }
 

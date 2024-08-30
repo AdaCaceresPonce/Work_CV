@@ -62,9 +62,9 @@
                 <h2 class="text-gray-400 font-bold">BUZÓN DE MENSAJES</h2>
             </li>
 
-            {{-- Consultas --}}
+            {{-- Consultas wire:poll.visible="refreshInquiriesCount"--}}
             <li>
-                <a href="{{ $inquiries_mailbox['route'] }}" wire:poll.visible="refreshInquiriesCount"
+                <a href="{{ $inquiries_mailbox['route'] }}" 
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group {{ $inquiries_mailbox['active'] ? ' bg-gray-200 dark:bg-gray-700' : '' }}">
                     <span class="inline-flex w-6 h-6 justify-center items-center">
                         <i class="{{ $inquiries_mailbox['icon'] }}"></i>
@@ -83,9 +83,9 @@
                 </a>
             </li>
 
-            {{-- Opiniones --}}
+            {{-- Opiniones wire:poll.visible="refreshOpinionsCount"--}}
             <li>
-                <a href="{{ $opinions_mailbox['route'] }}" wire:poll.visible="refreshOpinionsCount"
+                <a href="{{ $opinions_mailbox['route'] }}" 
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group {{ $opinions_mailbox['active'] ? ' bg-gray-200 dark:bg-gray-700' : '' }}">
                     <span class="inline-flex w-6 h-6 justify-center items-center">
                         <i class="{{ $opinions_mailbox['icon'] }}"></i>
