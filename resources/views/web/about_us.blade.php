@@ -85,7 +85,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"> <!-- Cuadrados internos -->
                         <!-- Cuadrado 1 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -93,7 +93,7 @@
                         </div>
                         <!-- Cuadrado 2 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -101,7 +101,7 @@
                         </div>
                         <!-- Cuadrado 3 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -109,7 +109,7 @@
                         </div>
                         <!-- Cuadrado 4 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
