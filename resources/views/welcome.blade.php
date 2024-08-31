@@ -252,7 +252,6 @@
                             </li>
                         @endforeach
                     </ul>
-
                     <div class="mt-9 flex justify-start">
                         <a href="{{ route('about_us.index') }}"
                             class="text-white text-lg font-medium bg-blue-700 py-3 px-6 rounded-lg">
