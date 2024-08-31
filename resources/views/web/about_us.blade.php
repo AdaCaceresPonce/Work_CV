@@ -23,33 +23,51 @@
             <div class="flex items-center flex-wrap-reverse">
                 {{-- Imagen --}}
                 <div class="w-full mt-2 lg:mt-0 lg:w-1/2 sm:px-1"> <!-- Reducir el margin-top y padding horizontal -->
-                    <img class="h-auto w-full max-h-[600px] object-cover object-center border-4 border-[#00CAF7] rounded-3xl"
+                    <img class="h-auto w-full max-h-[600px] object-cover object-center rounded-3xl"
                         src="{{ Storage::url($contents['free_img']) }}" alt="">
                 </div>
 
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 px-1 lg:pl-2"> <!-- Reducir el padding horizontal -->
-                    <div>
-                        <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
+                    <span class="text-2xl sm:text-4xl lg:text-4xl leading-tight py-2 relative text-[#8eb76a] inline-block">
+                        Historial Laboral
+                        <span class="absolute inset-x-0 bottom-0 border-b-4 border-[#8eb76a]"></span>
+                    </span>
+                    {{-- <div>
+                        {{-- <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
                             {!! $contents['free_title_1'] ?? 'Título libre' !!}
-                        </span>
-                        <div class="mt-1"> <!-- Reducir el margin-top -->
+                        </span> --}}
+                        {{-- <div class="mt-1"> <!-- Reducir el margin-top -->
                             <span>
                                 {!! $contents['free_description_1'] ?? 'Título por descripción' !!}
                             </span>
                         </div>
-                    </div>
+                    </div> --}} 
 
-                    <div class="mt-2"> <!-- Reducir el margin-top -->
-                        <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
+                <div class="mt-2"> <!-- Reducir el margin-top -->
+                        {{-- <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
                             {!! $contents['free_title_2'] ?? 'Título 2' !!}
-                        </span>
+                        </span>  --}}
                         <div class="mt-1"> <!-- Reducir el margin-top -->
-                            <span>
+                            {{-- <span>
                                 {!! $contents['free_description_2'] ?? 'Título por descripción 2' !!}
-                            </span>
+                            </span> --}}
+                            <ul class="mt-4 space-y-3">
+                                {{-- Dividir la cadena de texto en un array, con las 'comas' como delimitadores --}}
+                                @php
+                                    $items = explode(',', $contents['about_we_offer_you'] ?? '');
+                                @endphp
+                    
+                                @foreach ($items as $item)
+                                    <li class="flex items-center">
+                                        <i class="fa-solid fa-circle-check text-2xl text-[#006400] mr-2"></i>
+                                        <span class="text-base sm:text-lg lg:text-xl font-bold">{{ $item }}{!! $contents['free_description_1'] ?? 'Título por descripción' !!}</span>
+                                    </li>
+
+                                @endforeach
+                            </ul>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </x-container>
@@ -61,13 +79,13 @@
             <div class="mb-6 pb-6 text-center sm:px-4 lg:px-8"> <!-- Reducir margin-bottom y padding-bottom -->
                 <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight py-8 block relative text-[#8eb76a]">
                     Formación Académica
-                    <span class="absolute left-0 right-0 bottom-0 mx-auto border-b-4 border-[#8eb76a] w-1/5 mb-6"></span>
+                <span class="absolute left-0 right-0 bottom-0 mx-auto border-b-4 border-[#8eb76a] w-1/5 mb-6"></span>
                 </span>
                 <div class="border-2 border-[#e4e4e4] rounded-md p-6"> <!-- Borde verde delgado alrededor -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"> <!-- Cuadrados internos -->
                         <!-- Cuadrado 1 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -75,7 +93,7 @@
                         </div>
                         <!-- Cuadrado 2 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -83,7 +101,7 @@
                         </div>
                         <!-- Cuadrado 3 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -91,7 +109,7 @@
                         </div>
                         <!-- Cuadrado 4 -->
                         <div
-                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-4">
+                            class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
                             <h3 class="text-lg sm:text-xl font-bold mb-2">Dynamic Personalization:</h3>
                             <p class="text-xs sm:text-sm">Our platform leverages user data and behavior to provide a
                                 highly personalized experience, with dynamic content and product recommendations that
@@ -119,7 +137,22 @@
                     {{-- <p class="text-xs">Cuadrado pequeño con fondo verde.</p> --}}
                 </div>
             </div>
+            <ul class="mt-4 space-y-3">
+                {{-- Dividir la cadena de texto en un array, con las 'comas' como delimitadores --}}
+                @php
+                    $items = explode(',', $contents['about_we_offer_you'] ?? '');
+                @endphp
+    
+                @foreach ($items as $item)
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-circle-check text-2xl text-[#006400] mr-2"></i>
+                        <span class="text-base sm:text-lg lg:text-xl font-bold">{{ $item }}</span>
+                    </li>
+                @endforeach
+            </ul>
         </x-container>
+        
+
     </section>
 
 </x-app-layout>
