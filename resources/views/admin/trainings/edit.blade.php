@@ -22,11 +22,11 @@
             @method('PUT')
 
             {{-- Información principal de la capacitación --}}
-            <div class="card-gray">
+            <div class="card-gray space-y-6">
 
                 {{-- Campos --}}
-                <div class="mb-4">
-                    <x-label class="mb-1 text-[15px] font-black">
+                <div>
+                    <x-label class="mb-1 font-black">
                         Nombre
                     </x-label>
                     <x-input class="w-full" placeholder="Ingrese el nombre del servicio" name="name"
@@ -35,13 +35,15 @@
                 </div>
                 
                 {{-- Imagenes --}}
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div class="col lg:mb-0">
                         <x-label class="font-black">
                             Imagen de la tarjeta
                         </x-label>
-                        <x-label class="mb-2">
-                            (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
+                        <x-label class="mb-1">
+                            <span class="text-slate-700 font-light">
+                                (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
+                            </span>
                         </x-label>
                         <figure class="relative">
                             <div class="absolute top-4 right-4">
@@ -63,10 +65,10 @@
                     </div>
 
                     <div class="col">
-                        <x-label class="text-[15px] font-black">
+                        <x-label class="font-black">
                             Imagen de portada
                         </x-label>
-                        <x-label class="mb-2">
+                        <x-label class="mb-1">
                             (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
                         </x-label>
                         <figure class="relative">
@@ -91,8 +93,8 @@
 
                 
 
-                <div class="mb-4">
-                    <x-label class="mb-1 text-[15px] font-black">
+                <div>
+                    <x-label class="mb-1 font-black">
                         Descripción para la tarjeta
                     </x-label>
                     <textarea name="small_description"
@@ -102,8 +104,8 @@
 
                 </div>
 
-                <div class="mb-4">
-                    <x-label class="mb-1 text-[15px] font-black">
+                <div>
+                    <x-label class="mb-1 font-black">
                         Descripción del servicio
                     </x-label>
                     <textarea name="long_description"
@@ -113,8 +115,8 @@
 
                 </div>
 
-                <div class="mb-4">
-                    <x-label class="mb-1 text-[15px] font-black">
+                <div>
+                    <x-label class="mb-1 font-black">
                         Información adicional del servicio
                     </x-label>
                     <textarea name="additional_info"
@@ -136,12 +138,16 @@
             </div>
 
             {{-- Temas de la capacitación --}}
-            <div class="card mt-4 space-y-3">
+            <div class="card mt-4 space-y-4">
 
-                <span class="font-medium">
-                    Temas incluidos en esta capacitación (Arrastralos para cambiar el orden en que se muestran):
-                </span>
+                <div>
+                    <span class="font-semibold text-lg">
+                        Temas incluidos en esta capacitación:
+                    </span>
+                    <p>(Arrástralos entre sí para cambiar el orden en el que se muestran)</p>
+                </div>
 
+                {{-- Listado de temas --}}
                 <livewire:admin.trainings.training-topics :training="$training" />
                 
             </div>
