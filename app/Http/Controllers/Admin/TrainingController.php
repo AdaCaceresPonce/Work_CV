@@ -30,6 +30,7 @@ class TrainingController extends Controller
     public function store(Request $request)
     {
         //
+        return('Hola');
     }
 
     /**
@@ -37,7 +38,7 @@ class TrainingController extends Controller
      */
     public function show(Training $training)
     {
-        //
+        
     }
 
     /**
@@ -54,7 +55,7 @@ class TrainingController extends Controller
      */
     public function update(Request $request, Training $training)
     {
-        //
+        return('Hola');
     }
 
     /**

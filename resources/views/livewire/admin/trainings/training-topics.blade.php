@@ -1,55 +1,91 @@
-<div class="grid grid-cols-1 gap-4">
+<div>
+    <div class="space-y-4">
 
-    <div class="grid grid-cols-1 gap-4" id="topics_list">
+        {{-- Listado de capacitaciones --}}
+        <div class="grid grid-cols-1 gap-4" id="topics_list">
 
-        @foreach ($topics as $topic)
-            <div class="bg-gray-100 border-2 flex" data-id="{{ $topic->id }}" wire:key="topic-{{ $topic->id }}">
+            @foreach ($topics as $topic)
+                <div class="bg-gray-100 border-2 flex" data-id="{{ $topic->id }}" wire:key="topic-{{ $topic->id }}">
 
-                <div class="handle bg-gray-300 cursor-grab">
-                    <span><i class="fa-solid fa-hand px-6 p-4"></i></span>
+                    <div class="handle bg-gray-300 text-xl cursor-grab">
+                        <span>
+                            <i class="fa-solid fa-arrows-up-down px-6 p-4"></i>
+                        </span>
+                    </div>
+
+                    <div class="flex-1 p-4 items-center">
+                        {{ $topic->position }}. {{ $topic->name }}
+                    </div>
+
+                    <div class="justify-end bg-gray-200 p-4 flex flex-col md:flex-row gap-2">
+                        <button class="bg-yellow-500 text-white px-3 py-2 rounded-md">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="bg-red-500 text-white px-3 py-2 rounded-md">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+
                 </div>
+            @endforeach
 
-                <div class="flex-1 p-4 items-center">
-                    {{ $topic->position }}. {{ $topic->name }}
-                </div>
+        </div>
 
-                <div class="justify-end bg-gray-200 p-4 flex flex-col md:flex-row gap-2">
-                    <button class="bg-yellow-500 text-white px-3 py-2 rounded-md">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                    <button class="bg-red-500 text-white px-3 py-2 rounded-md">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
+        {{-- Agregar nuevo tema --}}
+        <div>
 
+            <div class="mb-2">
+                <span class="font-bold text-lg">
+                    Agregar nuevo tema
+                </span>
             </div>
-        @endforeach
 
+            <form wire:submit.prevent="save" id="form">
+                <div class="space-y-4 card-gray">
+
+                    <div>
+                        <x-label class="mb-1">
+                            Nombre
+                        </x-label>
+                        <x-input class="w-full" placeholder="Escribe el nombre del tema" wire:model.live="topic.name" />
+                    </div>
+
+                    <div class="flex justify-end">
+                        <x-button>
+                            Guardar tema
+                        </x-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        {{-- <button class="p-4 btn-blue font-bold">
+            <i class="fa-solid fa-plus mr-1"></i> Agregar nuevo tema
+        </button> --}}
     </div>
 
-    <button class="p-4 btn-blue font-bold">
-        <i class="fa-solid fa-plus mr-1"></i> Agregar nuevo tema
-    </button>
-</div>
+    @push('js')
+        <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
-@push('js')
-    <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        <script>
+            new Sortable(topics_list, {
+                handle: '.handle',
+                animation: 150,
+                ghostClass: 'bg-blue-200',
 
-    <script>
-        new Sortable(topics_list, {
-            handle: '.handle',
-            animation: 150,
-            ghostClass: 'bg-blue-200',
+                store: {
+                    set: function(sortable) {
+                        const sorts = sortable.toArray();
+                        console.log(sorts);
 
-            store: {
-                set: function (sortable){
-                    const sorts = sortable.toArray();
-                    console.log(sorts);
-
-                    Livewire.dispatch('sortTopics', { sorts: sorts });
+                        Livewire.dispatch('sortTopics', {
+                            sorts: sorts
+                        });
+                    }
                 }
-            }
-        });
-    </script>
-@endpush
+            });
+        </script>
+    @endpush
+
+</div>

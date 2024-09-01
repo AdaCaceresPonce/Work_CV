@@ -137,21 +137,23 @@
 
             </div>
 
-            {{-- Temas de la capacitación --}}
-            <div class="card mt-4 space-y-4">
-
-                <div>
-                    <span class="font-semibold text-lg">
-                        Temas incluidos en esta capacitación:
-                    </span>
-                    <p>(Arrástralos entre sí para cambiar el orden en el que se muestran)</p>
-                </div>
-
-                {{-- Listado de temas --}}
-                <livewire:admin.trainings.training-topics :training="$training" />
-                
-            </div>
         </form>
+
+        {{-- Temas de la capacitación --}}
+        <div class="card mt-4 space-y-4">
+
+            <div>
+                <span class="font-semibold text-lg">
+                    Temas incluidos en esta capacitación:
+                </span>
+                <p>(Arrástralos entre sí para cambiar el orden en el que se van a mostrar)</p>
+            </div>
+
+            {{-- Listado de temas --}}
+            <livewire:admin.trainings.training-topics :training="$training" />
+            
+        </div>
+        
     </div>
 
 
