@@ -5,32 +5,75 @@
         <div class="grid grid-cols-1 gap-4" id="topics_list">
 
             @foreach ($topics as $topic)
-                <div class="bg-gray-100 border-2 flex" data-id="{{ $topic->id }}" wire:key="topic-{{ $topic->id }}">
 
-                    <div class="handle bg-gray-300 text-xl cursor-grab">
+                <div class="bg-gray-100 border-2 rounded-md flex items-center" data-id="{{ $topic->id }}" wire:key="topic-{{ $topic->id }}">
+
+                    {{-- Cuadrito para mover entre la lista --}}
+                    <div class="handle bg-gray-300 h-full flex items-center text-xl cursor-grab">
                         <span>
-                            <i class="fa-solid fa-arrows-up-down px-6 p-4"></i>
+                            <i class="fa-solid fa-arrows-up-down px-6"></i>
                         </span>
                     </div>
 
-                    <div class="flex-1 p-4 items-center">
-                        {{ $topic->position }}. {{ $topic->name }}
+                    {{-- Nombre del tema --}}
+                    <div class="flex-1 p-4 hyphens-auto">
+                        <span class="font-bold">{{ $topic->position }}.</span> {{ $topic->name }}
                     </div>
 
-                    <div class="justify-end bg-gray-200 p-4 flex flex-col md:flex-row gap-2">
-                        <button class="bg-yellow-500 text-white px-3 py-2 rounded-md">
+                    {{-- Botones de acción --}}
+                    <div class="bg-gray-200 p-4 flex flex-col md:flex-row gap-2 items-center justify-center h-full">
+                        
+                        {{-- Botón editar --}}
+                        <button wire:click="show({{ $topic->id }})" class="bg-yellow-500 text-white px-3 py-2 rounded-md">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
+
+                        {{-- Botón eliminar --}}
                         <button type="button" class="bg-red-500 text-white px-3 py-2 rounded-md"
                             onclick="confirmDeleteTopic({{ $topic->id }})">
                             <i class="fa-solid fa-trash"></i>
                         </button>
+
                     </div>
 
                 </div>
+
             @endforeach
 
         </div>
+
+        {{-- Ventana modal --}}
+        <form wire:submit="update">
+
+            <x-dialog-modal wire:model="open">
+
+                <x-slot name="title">
+                    Modifica los datos del tema
+                </x-slot>
+
+                <x-slot name="content">
+                    <div>
+                        <x-label class="mb-1">
+                            Nombre
+                        </x-label>
+                        <x-input class="w-full" placeholder="Escribe el nombre del tema" wire:model.live="topicEdit.name" />
+                    </div>
+
+                </x-slot>
+
+                <x-slot name="footer">
+                    <div class="flex justify-end">
+                        <x-danger-button class="mr-2" wire:click="$set('open', false)">
+                            Regresar
+                        </x-danger-button>
+
+                        <x-button>
+                            Actualizar
+                        </x-button>
+                    </div>
+                </x-slot>
+            </x-dialog-modal>
+        </form>
 
         {{-- Agregar nuevo tema --}}
         <div>
@@ -78,25 +121,24 @@
             new Sortable(topics_list, {
                 handle: '.handle',
                 animation: 150,
-                ghostClass: 'bg-blue-200',
-
+    
                 store: {
-                    set: function(sortable) {
+                    set: function (sortable){
                         const sorts = sortable.toArray();
                         console.log(sorts);
-
-                        Livewire.dispatch('sortTopics', {
-                            sorts: sorts
-                        });
+    
+                        Livewire.dispatch('sortTopics', { sorts: sorts });
                     }
                 }
             });
+        </script>
+        <script>
 
             //Alerta de confirmar eliminar
             function confirmDeleteTopic(topicId) {
 
                 Swal.fire({
-                    title: "¿Estás seguro?",
+                    title: "¿Estás seguro de querer eliminar el tema?",
                     text: "¡No podrás revertir esto!",
                     icon: "warning",
                     showCancelButton: true,

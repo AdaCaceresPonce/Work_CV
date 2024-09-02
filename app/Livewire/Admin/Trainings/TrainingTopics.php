@@ -15,6 +15,17 @@ class TrainingTopics extends Component
     //Variable para el tema nuevo a crear (topic)
     public $topic;
 
+    //Variable con el id del topic a editar, necesario para mostrar la info en la ventana modal
+    public $topicEditId = '';
+
+    public $topicEdit = [
+        'name' => '',
+        'description' => null,
+    ];
+
+    //Variable para mostrar u ocultar la ventana modal
+    public $open = false;
+
     //Funcion para alerta de error en el formulario
     public function boot()
     {
@@ -38,6 +49,22 @@ class TrainingTopics extends Component
             'description' => null,
             'position' => '',
         ];
+
+    }
+
+    public function show($topicId)
+    {
+        $this->open = true;
+
+        //Variable que guarda el ID para la funcion update
+        $this->topicEditId = $topicId;
+
+        //Buscamos la consulta con el ID recibido, pero cargando tambien las relaciones definidas en el modelo
+        $topic = Topic::find($topicId);
+
+        $this->topicEdit['name'] = $topic->name;
+        $this->topicEdit['description'] = $topic->description;
+
     }
 
     public function save()
@@ -63,6 +90,14 @@ class TrainingTopics extends Component
         // Crear y guardar el topic con los datos correctos
         Topic::create($this->topic);
 
+        //Resetear los campos de la variable topic
+        $this->topic = [
+            'name' => '',
+            'training_id' => $this->training->id,
+            'description' => null,
+            'position' => '',
+        ];
+
         // Mostrar mensaje de éxito
         $this->dispatch('swal', [
             'icon' => 'success',
@@ -72,7 +107,7 @@ class TrainingTopics extends Component
     }
 
     //Función que va a actualizar el orden de los topics cada vez que se agregue uno nuevo
-    #[On('sortTopics')]
+    #[On('sortTopics')] 
     public function sortTopics($sorts)
     {
         // Inicializa el contador de posición
@@ -81,12 +116,39 @@ class TrainingTopics extends Component
         // Recorre el array de IDs ordenados
         foreach ($sorts as $id) {
             // Encuentra el topic y actualiza su posición
-            $updateTopic = Topic::find($id);
-            $updateTopic->update(['position' => $position]);
+            $topic = Topic::find($id);
+            $topic->update(['position' => $position]);
 
             // Incrementa el contador de posición
             $position++;
         }
+
+    }
+
+    public function update()
+    {
+
+        $this->validate([
+            'topicEdit.name' => 'required',
+            'topic.description' => 'nullable',
+        ], [], [
+            'topic.name' => 'nombre del tema',
+            'topic.description' => 'descripción del tema',
+        ]);
+
+        $topic = Topic::find($this->topicEditId);
+
+        $topic->update([
+            'name' => $this->topicEdit['name'],
+        ]);
+
+        // $this->reset(['inquiryEditId', 'inquiryInfo', 'open']);
+
+        $this->dispatch('swal', [
+            'icon' => 'success',
+            'title' => '¡Bien hecho!',
+            'text' => 'Datos del tema actualizados correctamente.'
+        ]);
     }
 
     #[On('destroy')]
