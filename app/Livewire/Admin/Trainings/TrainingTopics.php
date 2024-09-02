@@ -69,12 +69,12 @@ class TrainingTopics extends Component
             'title' => '¡Bien hecho!',
             'text' => 'Tema agregado correctamente',
         ]);
-
     }
 
-    //Función que va a actualizar el orden de los topics
-    #[On('sortTopics')] 
-    public function sortTopics($sorts){
+    //Función que va a actualizar el orden de los topics cada vez que se agregue uno nuevo
+    #[On('sortTopics')]
+    public function sortTopics($sorts)
+    {
         // Inicializa el contador de posición
         $position = 1;
 
@@ -87,10 +87,47 @@ class TrainingTopics extends Component
             // Incrementa el contador de posición
             $position++;
         }
+    }
+
+    #[On('destroy')]
+    public function destroy($topicId)
+    {
+        // Encontrar el topic que se desea eliminar
+        $topicToDelete = Topic::findOrFail($topicId);
+
+        // Almacenar la posición del topic eliminado
+        $deletedPosition = $topicToDelete->position;
+
+        // Eliminar el topic
+        $topicToDelete->delete();
+
+        // Verificar si quedan otros topics
+        if (Topic::where('training_id', $this->training->id)->count() > 0) {
+
+            // Reordenar solo los topics que tenían una posición mayor al eliminado
+
+            // Obtener todos los topics con una posición mayor a la del eliminado
+            $topics = Topic::where('training_id', $this->training->id)
+                ->where('position', '>', $deletedPosition)
+                ->orderBy('position')
+                ->get();
+
+            // Recorrer y reasignar las posiciones desde el hueco dejado por el eliminado
+            foreach ($topics as $topic) {
+                $topic->update(['position' => $topic->position - 1]);
+            }
+        }
+
+        $this->dispatch('swal', [
+            'icon' => 'success',
+            'title' => '¡Tema eliminado!',
+            'text' => 'El tema ha sido eliminado y los temas restantes han sido reordenados.',
+        ]);
 
     }
 
-    public function render(){
+    public function render()
+    {
 
         //Cargar los temas de la capacitación
         $topics = Topic::where('training_id', $this->training->id)

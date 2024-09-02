@@ -177,7 +177,7 @@
             //Alerta de confirmar eliminar
             function confirmDelete() {
                 Swal.fire({
-                    title: "¿Estás seguro?",
+                    title: "¿Estás seguro de eliminar la capacitación?",
                     text: "¡No podrás revertir esto!",
                     icon: "warning",
                     showCancelButton: true,

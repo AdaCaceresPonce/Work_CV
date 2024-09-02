@@ -21,7 +21,8 @@
                         <button class="bg-yellow-500 text-white px-3 py-2 rounded-md">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <button class="bg-red-500 text-white px-3 py-2 rounded-md">
+                        <button type="button" class="bg-red-500 text-white px-3 py-2 rounded-md"
+                            onclick="confirmDeleteTopic({{ $topic->id }})">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
@@ -33,7 +34,7 @@
 
         {{-- Agregar nuevo tema --}}
         <div>
-
+            {{-- Titulo --}}
             <div class="mb-2">
                 <span class="font-bold text-lg">
                     Agregar nuevo tema
@@ -64,6 +65,11 @@
         </button> --}}
     </div>
 
+    {{-- Formulario que será enviado al presionar "Eliminar" --}}
+    <form id="delete-form" wire:submit.prevent="destroy">
+
+    </form>
+
     @push('js')
         <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
         <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
@@ -85,6 +91,28 @@
                     }
                 }
             });
+
+            //Alerta de confirmar eliminar
+            function confirmDeleteTopic(topicId) {
+
+                Swal.fire({
+                    title: "¿Estás seguro?",
+                    text: "¡No podrás revertir esto!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "¡Sí, bórralo!",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Ejecutar función destroy con el ID del topic
+                        Livewire.dispatch('destroy', {
+                            topicId: topicId
+                        });
+                    }
+                });
+            }
         </script>
     @endpush
 
