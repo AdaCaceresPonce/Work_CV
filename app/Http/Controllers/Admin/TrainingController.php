@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Training;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TrainingController extends Controller
 {
@@ -55,7 +56,23 @@ class TrainingController extends Controller
      */
     public function update(Request $request, Training $training)
     {
-        return('Hola');
+        $request['slug'] = Str::slug($request->input('name'));
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'unique:trainings,slug,'. $training->id,
+            'small_description' => 'required',
+            'long_description' => 'required',
+            'card_img_path' => 'image|max:2048',
+            'cover_img_path' => 'image|max:1024',
+        ],[],[
+            'name' => 'nombre',
+            'slug' => 'slug',
+            'small_description' => 'descripción para la carta',
+            'long_description' => 'descripción general del servicio',
+            'card_img_path' => 'imagen para la carta',
+            'cover_img_path' => 'imagen de portada',
+        ]);
     }
 
     /**

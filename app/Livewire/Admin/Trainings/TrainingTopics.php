@@ -52,8 +52,11 @@ class TrainingTopics extends Component
 
     }
 
+    //Abrir la ventana modal con los datos del topic
     public function show($topicId)
     {
+        // $this->resetErrorBag();
+
         $this->open = true;
 
         //Variable que guarda el ID para la funcion update
@@ -123,6 +126,11 @@ class TrainingTopics extends Component
             $position++;
         }
 
+        $this->dispatch('toast', [
+            'icon' => 'success',
+            'title' => 'Orden cambiado correctamente',
+        ]);
+
     }
 
     public function update()
@@ -130,10 +138,10 @@ class TrainingTopics extends Component
 
         $this->validate([
             'topicEdit.name' => 'required',
-            'topic.description' => 'nullable',
+            'topicEdit.description' => 'nullable',
         ], [], [
-            'topic.name' => 'nombre del tema',
-            'topic.description' => 'descripción del tema',
+            'topicEdit.name' => 'nombre del tema',
+            'topicEdit.description' => 'descripción del tema',
         ]);
 
         $topic = Topic::find($this->topicEditId);
