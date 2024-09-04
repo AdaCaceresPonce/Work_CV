@@ -24,19 +24,37 @@
             {{-- Información principal de la capacitación --}}
             <div class="card-gray space-y-6">
 
-                {{-- Campos --}}
+                <div>
+                    <span class="font-semibold text-xl">
+                        Datos de la capacitación
+                    </span>
+                </div>
+
+                {{-- Nombre --}}
                 <div>
                     <x-label class="mb-1 font-black">
                         Nombre
                     </x-label>
-                    <x-input class="w-full" placeholder="Ingrese el nombre del servicio" name="name"
+                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" name="name"
                         value="{{ old('name', $training->name) }}" />
                     <x-input-error for="name" />
+                </div>
+
+                {{-- Descripción --}}
+                <div>
+                    <x-label class="mb-1 font-black">
+                        Descripción de la capacitación
+                    </x-label>
+                    <textarea name="description"
+                        class="w-full min-h-[100px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                        placeholder="Ingrese una descripción de la capacitación (Opcional)" name="">{{ old('description', $training->description) }}</textarea>
+                    <x-input-error for="description" />
+
                 </div>
                 
                 {{-- Imagenes --}}
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="col lg:mb-0">
+                    <div class="col">
                         <x-label class="font-black">
                             Imagen de la tarjeta
                         </x-label>
@@ -91,38 +109,14 @@
                     </div>
                 </div>
 
-                
-
-                <div>
+                {{-- <div>
                     <x-label class="mb-1 font-black">
-                        Descripción para la tarjeta
-                    </x-label>
-                    <textarea name="small_description"
-                        class="w-full min-h-[100px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                        placeholder="Ingrese una descripción muy breve del servicio" name="">{{ old('small_description', $training->small_description) }}</textarea>
-                    <x-input-error for="small_description" />
-
-                </div>
-
-                <div>
-                    <x-label class="mb-1 font-black">
-                        Descripción del servicio
-                    </x-label>
-                    <textarea name="long_description"
-                        class="w-full min-h-[350px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                        placeholder="Ingrese la descripción completa del servicio" name="">{{ old('long_description',$training->long_description) }}</textarea>
-                    <x-input-error for="long_description" />
-
-                </div>
-
-                <div>
-                    <x-label class="mb-1 font-black">
-                        Información adicional del servicio
+                        Información adicional de la capacitación
                     </x-label>
                     <textarea name="additional_info"
                         class="w-full min-h-[350px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                         placeholder="Puedes agregar información adicional del servicio (Opcional)" name="">{{ old('additional_info', $training->additional_info) }}</textarea>
-                </div>
+                </div> --}}
 
                 <div class="flex justify-end">
                     {{-- Eliminar --}}
@@ -140,10 +134,10 @@
         </form>
 
         {{-- Temas de la capacitación --}}
-        <div class="card mt-4 space-y-4">
+        <div class="card mt-6 space-y-4">
 
             <div>
-                <span class="font-semibold text-lg">
+                <span class="font-semibold text-xl">
                     Temas incluidos en esta capacitación:
                 </span>
                 <p>(Arrástralos entre sí para cambiar el orden en el que se van a mostrar)</p>

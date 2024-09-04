@@ -48,7 +48,7 @@
                 <div class="w-full px-2 py-4 md:px-4 md:py-8">
                     <div class="flex flex-col items-center text-center">
 
-                        <span class="text-lg text-amber-700 font-bold">
+                        <span class="text-xl md:text-2xl text-amber-700 font-bold">
                             ¡Ups! Parece que esta capacitación no tiene temas registrados.
                         </span>
 
@@ -56,7 +56,7 @@
 
                         </div>
 
-                        <div class="flex flex-col gap-1">
+                        <div class="flex flex-col gap-1 text-lg font-bold">
                             <span>
                                 Registra un nuevo tema
                             </span>
@@ -110,7 +110,7 @@
             {{-- Titulo --}}
             <div class="mb-2">
                 <span class="font-bold text-lg">
-                    Agregar nuevo tema
+                    Registrar nuevo tema
                 </span>
             </div>
 
