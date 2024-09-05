@@ -19,7 +19,7 @@ class OurTrainingsPageContentSeeder extends Seeder
         
         $content = [
             
-            'cover_title' => 'Nuestros Servicios',
+            'cover_title' => 'Nuestras Capacitaciones',
             'cover_img' => 'web_pages_images/our_trainings_page/' . $faker->image('public/storage/web_pages_images/our_trainings_page', 1200, 800, null, false),
     
             'our_trainings_title' => '<p><strong><span class="text-primary">Capacitaciones Profesionales</span></strong></p>',

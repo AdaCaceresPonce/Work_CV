@@ -22,7 +22,7 @@
             @method('PUT')
 
             {{-- Información principal de la capacitación --}}
-            <div class="card-gray space-y-6">
+            <div class="card-gray space-y-4">
 
                 <div>
                     <span class="font-semibold text-xl">
@@ -32,20 +32,21 @@
 
                 {{-- Nombre --}}
                 <div>
-                    <x-label class="mb-1 font-black">
+                    <x-label for="name" class="mb-1 font-black">
                         Nombre
                     </x-label>
-                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" name="name"
+                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name" name="name"
                         value="{{ old('name', $training->name) }}" />
                     <x-input-error for="name" />
+                    <x-input-error for="slug" />
                 </div>
 
                 {{-- Descripción --}}
                 <div>
-                    <x-label class="mb-1 font-black">
+                    <x-label for="description" class="mb-1 font-black">
                         Descripción de la capacitación
                     </x-label>
-                    <textarea name="description"
+                    <textarea name="description" id="description"
                         class="w-full min-h-[100px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                         placeholder="Ingrese una descripción de la capacitación (Opcional)" name="">{{ old('description', $training->description) }}</textarea>
                     <x-input-error for="description" />

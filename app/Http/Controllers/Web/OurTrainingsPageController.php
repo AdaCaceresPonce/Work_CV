@@ -12,10 +12,10 @@ class OurTrainingsPageController extends Controller
     public function index(){
 
         // $services = Training::orderBy('id', 'desc')->paginate(6);
-        // $contents = OurTrainingsPageContent::first();
+        $contents = OurTrainingsPageContent::first();
         // return view('web.our_trainings.our_trainings',compact('services', 'contents'));
 
-        return view('web.our_trainings.our_trainings');
+        return view('web.our_trainings.our_trainings', compact('contents'));
         
     }
 

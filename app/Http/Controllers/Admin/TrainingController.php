@@ -23,7 +23,7 @@ class TrainingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.trainings.create');
     }
 
     /**
@@ -32,13 +32,45 @@ class TrainingController extends Controller
     public function store(Request $request)
     {
         //
-        return ('Hola');
+        $request['slug'] = Str::slug($request->input('name'));
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'unique:trainings',
+            'description' => 'nullable',
+            'card_img_path' => 'required|image|max:2048',
+            'cover_img_path' => 'required|image|max:1024',
+        ], [
+            'slug.unique' => 'Ya existe una capacitación con ese nombre. Por favor prueba con otro.',
+        ], [
+            'name' => 'nombre',
+            'slug' => 'slug',
+            'description' => 'descripción',
+            'card_img_path' => 'imagen de la tarjeta',
+            'cover_img_path' => 'imagen de portada',
+        ]);
+
+        $training = $request->all();
+        $training['card_img_path'] = $request->file('card_img_path')->store('trainings/card_images');
+        $training['cover_img_path'] = $request->file('cover_img_path')->store('trainings/cover_images');
+
+        Training::create($training);
+
+        session()->flash('swal', [
+            'icon' => 'success',
+            'title' => '¡Bien hecho!',
+            'text' => 'Capacitación creada correctamente'
+        ]);
+
+        return redirect()->route('admin.trainings.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Training $training) {}
+    public function show(Training $training) {
+
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -62,11 +94,15 @@ class TrainingController extends Controller
             'description' => 'nullable',
             'card_img_path' => 'image|max:2048',
             'cover_img_path' => 'image|max:1024',
-        ], [], [
+        ], [
+
+            'slug.unique' => 'Ya existe una capacitación con ese nombre. Por favor prueba con otro.'
+
+        ], [
             'name' => 'nombre',
             'slug' => 'slug',
             'description' => 'descripción',
-            'card_img_path' => 'imagen para la carta',
+            'card_img_path' => 'imagen de la tarjeta',
             'cover_img_path' => 'imagen de portada',
         ]);
 
