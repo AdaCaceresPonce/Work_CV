@@ -1,74 +1,109 @@
-<x-app-layout>
-    {{-- <x-slot name="title">
-       Mis Capacitaciones 
-    </x-slot>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-
-    @push('css')
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    @endpush
+<x-app-layout :title="$training->name">
 
     {{-- Portada --}}
-    {{-- <x-page-cover :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" :id="'cover'" /> --}}
+    <section class="w-full brightness-90 contrast-150 bg-cover bg-no-repeat bg-center relative"
+        style="background-image: url('{{ Storage::url($training->cover_img_path) }}');">
+        <div class="bg-blue-900 bg-opacity-50 inset-0 absolute z-10">
+        </div>
+        <x-container class="px-4 py-44 lg:py-48 h-full flex align-middle items-center relative z-20">
+            <p class="text-white flex-1 text-center text-4xl font-bold tracking-normal">
+                {{ $training->name }}
+            </p>
+        </x-container>
+    </section>
 
-    {{-- Info adicional de la clínica --}}
-{{-- <section id="free_content_1" class="py-2 mt-0"> <!-- Reducir el padding vertical -->
-    <x-container class="px-1 section__spacing"> <!-- Reducir el padding horizontal -->
-        <div class="flex items-center flex-wrap-reverse"> --}}
-            {{-- Imagen --}}
-            {{-- <div class="w-full mt-2 lg:mt-0 lg:w-1/2 sm:px-1"> <!-- Reducir el margin-top y padding horizontal -->
-                <img class="h-auto w-full max-h-[600px] object-cover object-center rounded-3xl"
-                    src="{{ Storage::url($contents['free_img']) }}" alt="">
-            </div> --}}
+    {{-- Titulo --}}
+    <section class="bg-center">
 
-            {{-- Texto --}}
-            {{-- <div class="w-full lg:w-1/2 px-1 lg:pl-2"> <!-- Reducir el padding horizontal -->
-                <span class="text-2xl sm:text-4xl lg:text-4xl leading-tight py-2 relative text-[#8eb76a] inline-block">
-                    Historial Laboral
-                    <span class="absolute inset-x-0 bottom-0 border-b-4 border-[#8eb76a]"></span>
-                </span> --}}
-                {{-- <div>
-                    {{-- <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
-                        {!! $contents['free_title_1'] ?? 'Título libre' !!}
-                    </span> --}}
-                    {{-- <div class="mt-1"> <!-- Reducir el margin-top -->
+        <x-container class="px-4 pt-20">
+
+            <p class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold text-center">
+                <span class="block">Sobre esta capacitación</span>
+            <div class="flex justify-center mt-6">
+                <div class="w-10 h-1 bg-primary"></div>
+            </div>
+            </p>
+
+        </x-container>
+
+    </section>
+
+    <section id="training_detail">
+        <x-container class="px-4 section__spacing">
+            <div class="flex items-center flex-wrap">
+
+                {{-- Texto --}}
+                <div class="w-full lg:w-1/2 px-4">
+                    <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                        {!! $training->name !!}
+
+                    </span>
+                    <div class="mt-4">
+
+                        <p class="font-bold text-lg">Temas:</p>
+                        <ul class="list-disc list-inside text-base md:text-lg">
+                            @foreach ($training->topics as $topic)
+                                <li>{{ $topic->name }}</li>
+                            @endforeach
+                        </ul>
+
+                        {{-- <span>
+                            {!! $training->long_description !!}
+                        </span> --}}
+                    </div>
+
+                </div>
+
+                {{-- Imagen --}}
+                <div
+                    class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center p-0 sm:px-32 md:px-40 lg:pl-8 lg:pr-0 xl:pl-10">
+                    <img class="size-full aspect-[4/4] lg:h-[450px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-2xl"
+                        src="{{ Storage::url($training->card_img_path) }}" alt="">
+                </div>
+            </div>
+        </x-container>
+    </section>
+
+    {{-- @isset($training->additional_info)
+
+        <section id="training_additional_info">
+            <x-container class="px-4 section__spacing">
+                <div class="px-4">
+
+                    <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight font-bold">
+                        Más detalles:
+                    </span>
+                    <div class="mt-4">
                         <span>
-                            {!! $contents['free_description_1'] ?? 'Título por descripción' !!}
+                            {!! $training->additional_info !!}
                         </span>
                     </div>
-                </div> --}} 
 
-            {{-- <div class="mt-2"> <!-- Reducir el margin-top --> --}}
-                    {{-- <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
-                        {!! $contents['free_title_2'] ?? 'Título 2' !!}
-                    </span>  --}}
-                    {{-- <div class="mt-1"> <!-- Reducir el margin-top --> --}}
-                        {{-- <span>
-                            {!! $contents['free_description_2'] ?? 'Título por descripción 2' !!}
-                        </span> --}}
-                        {{-- <ul class="mt-4 space-y-3"> --}}
-                            {{-- Dividir la cadena de texto en un array, con las 'comas' como delimitadores --}}
-                            {{-- @php
-                                $items = explode(',', $contents['about_we_offer_you'] ?? '');
-                            @endphp --}}
-{{--                 
-                            @foreach ($items as $item)
-                                <li class="flex items-center">
-                                    <i class="fa-solid fa-circle-check text-2xl text-[#006400] mr-2"></i>
-                                    <span class="text-base sm:text-lg lg:text-xl font-bold">{{ $item }}{!! $contents['free_description_1'] ?? 'Título por descripción' !!}</span>
-                                </li>
+                </div>
+            </x-container>
+        </section>
+        
+    @endisset --}}
 
-                            @endforeach --}}
-                        {{-- </ul>
+    {{-- Sección destacada --}}
+    <section class="bg-secondary py-8">
+        <x-container>
+            <div class="mx-auto p-6">
+                <div>
+                    <div class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold text-center text-primary">
+                        <span class="">¿Tienes alguna duda de esta capacitación?</span>
                     </div>
-                </div> 
+                    <div class="flex justify-center mt-8">
+                        <a href="{{ route('contact_us.index', $training) }}#form"
+                            class="text-lg font-bold text-white py-3 px-6 rounded-lg border-[3px] border-primary bg-primary
+                        transition duration-150 hover:bg-primary-contrast-1 hover:text-primary">
+                            Envía una consulta aquí
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </x-container>
-</section> --}} 
+        </x-container>
+
+    </section>
+
 </x-app-layout>

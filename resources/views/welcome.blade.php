@@ -182,7 +182,7 @@
 
 
     {{-- Capacitaciones --}}
-    <section id="services">
+    <section id="trainings">
         <x-container class="px-4 section__spacing flex-col">
             {{-- Titulo --}}
             <div class="mb-6 pb-4 text-center sm:px-15 lg:px-40">
@@ -199,13 +199,13 @@
             </div>
 
             {{-- Slider --}}
-            {{-- <livewire:web.sliders.slider-services lazy /> --}}
+            <livewire:web.sliders.slider-trainings lazy />
 
             {{-- Ver todos los servicios --}}
             <div class="flex w-full justify-center">
                 <a href="{{ route('our_services.index') }}"
-                    class="text-white text-lg font-medium bg-blue-700 py-3 px-6 rounded-lg">
-                    Ver todos los servicios
+                    class="text-primary-contrast-1 text-lg font-medium bg-primary py-3 px-6 rounded-lg">
+                    Ver todas las capacitaciones
                 </a>
             </div>
 
@@ -282,18 +282,6 @@
     {{-- Contacto --}}
     <x-contact-section />
 
-    <style>
-        /* Slider profesionales */
-        .professional__card {
-            height: calc((100% - 30px) / 2) !important;
-        }
-
-        .professional__photo {
-            height: 310px;
-            margin: 0 auto;
-        }
-    </style>
-
     @push('js')
         {{-- SweetAlert --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -306,13 +294,6 @@
             });
         </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-            //Swiper Opiniones
-
-
-            //Swiper Profesionales
-        </script>
     @endpush
 
 </x-app-layout>
