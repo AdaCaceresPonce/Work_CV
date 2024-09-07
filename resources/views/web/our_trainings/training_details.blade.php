@@ -41,11 +41,12 @@
                     <div class="mt-4">
 
                         <p class="font-bold text-lg">Temas:</p>
-                        <ul class="list-disc list-inside text-base md:text-lg">
+
+                        <div class="grid grid-cols-1 text-base md:text-lg">
                             @foreach ($training->topics as $topic)
-                                <li>{{ $topic->name }}</li>
+                                <div><span class="font-bold">{{ $topic->position }}.</span> {{ $topic->name }}</div>
                             @endforeach
-                        </ul>
+                        </div>
 
                         {{-- <span>
                             {!! $training->long_description !!}

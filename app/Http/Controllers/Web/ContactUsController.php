@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
-    public function index($service = null)
+    public function index($training = null)
     {
         $contents = ContactUsPageContent::first();
 
-        return view('web.contact_us', compact('contents', 'service'));
+        return view('web.contact_us', compact('contents', 'training'));
     }
 }

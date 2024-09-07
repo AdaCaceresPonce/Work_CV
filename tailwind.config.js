@@ -36,6 +36,7 @@ export default {
 
                 tertiary: {
                     DEFAULT: '#E1E1B7',
+                    'contrast-1': '#468189',
                     border: '#CFB53B',
                 }
             }

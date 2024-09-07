@@ -21,6 +21,10 @@ class OurTrainingsPageController extends Controller
 
     public function show_training(Training $training){
 
+        $training->load(['topics' => function ($query) {
+            $query->orderBy('position', 'asc'); // Ordenar por posición ascendente
+        }]);
+
         return view('web.our_trainings.training_details', compact('training'));
     }
 }

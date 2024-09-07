@@ -45,9 +45,9 @@ class Sidebar extends Component
             ],
 
             [
-                //Información de la Clínica
+                //Información de Contacto
                 'icon' => 'fa-solid fa-house-chimney-medical',
-                'name' => 'Información de la Clínica',
+                'name' => 'Información de Contacto',
                 'route' => route('admin.clinic_information.index'),
                 'active' => request()->routeIs('admin.clinic_information.*'),
             ],

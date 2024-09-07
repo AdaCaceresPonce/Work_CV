@@ -27,7 +27,7 @@
                 <div class="w-full lg:w-1/2 px-4">
 
                     <div class="space-y-4">
-                        <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight font-bold">
+                        <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
                             {!! $contents['our_trainings_title'] !!}
 
                         </span>

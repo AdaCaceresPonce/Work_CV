@@ -1,55 +1,95 @@
 <form wire:submit="save" id="form">
-    <div class="bg-[#F1FDFF] h-full rounded-xl px-6 py-6 sm:px-8 sm:py-8 size-full border-[3px] border-[#00CAF7] space-y-5">
+    
+    <div class="bg-tertiary h-full rounded-xl px-6 py-6 sm:px-8 sm:py-8 size-full border-[3px] border-tertiary-border space-y-4">
 
         {{-- Nombres y Apellidos --}}
-        <div class="flex flex-col space-y-5 md:flex-row md:space-y-0 md:space-x-4 lg:flex-col lg:space-y-5 lg:space-x-0">
+        <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 lg:flex-col lg:space-y-4 lg:space-x-0">
+            
+            {{-- Apellidos --}}
+            <div class="flex-1">
+                <x-label class="mb-1">
+                    <span class="text-primary text-base md:text-lg font-bold">
+                        Apellidos
+                    </span>
+                    
+                    <span class="text-red-500 text-base md:text-lg font-bold">*</span>
+                </x-label>
+                <x-input class="w-full" placeholder="Ingrese sus apellidos" wire:model.live="inquiry.lastname" />
+                <x-input-error for="inquiry.lastname" />
+            </div>
             
             {{-- Nombres --}}
             <div class="flex-1">
-                <x-label class="mb-1 text-[15px] font-black">
-                    Nombres:
-                    <span class="text-red-500">*</span>
+                <x-label class="mb-1">
+                    <span class="text-primary text-base md:text-lg font-bold">
+                        Nombres
+                    </span>
+                    
+                    <span class="text-red-500 text-base md:text-lg font-bold">*</span>
                 </x-label>
                 <x-input class="w-full" placeholder="Ingrese sus nombres" wire:model.live="inquiry.name"/>
                 <x-input-error for="inquiry.name" />
             </div>
 
-            {{-- Apellidos --}}
-            <div class="flex-1">
-                <x-label class="mb-1 text-[15px] font-black">
-                    Apellidos:
-                    <span class="text-red-500">*</span>
-                </x-label>
-                <x-input class="w-full" placeholder="Ingrese sus apellidos" wire:model.live="inquiry.lastname" />
-                <x-input-error for="inquiry.lastname" />
-            </div>
-
         </div>
 
-        {{-- Servicio --}}
+        {{-- Institución Educativa --}}
         <div>
-            <x-label class="mb-1 text-[15px] font-black">
-                Servicio:
+            <x-label class="mb-1">
+                <span class="text-primary text-base md:text-lg font-bold">
+                    Institución Educativa / Corporación Educativa
+                </span>
+                <span class="text-red-500 text-base md:text-lg font-bold">*</span>
+            </x-label>
+            <x-input class="w-full" placeholder="El nombre de tu institución" wire:model.live="inquiry.institution_name" />
+            <x-input-error for="inquiry.institution_name" />
+        </div>
+
+        {{-- Ciudad / Región --}}
+        <div>
+            <x-label class="mb-1">
+                <span class="text-primary text-base md:text-lg font-bold">
+                    Ciudad / Región
+                </span>
+                <span class="text-red-500 text-base md:text-lg font-bold">*</span>
+            </x-label>
+            <x-input class="w-full" placeholder="Desde dónde nos escribes" wire:model.live="inquiry.location" />
+            <x-input-error for="inquiry.location" />
+        </div>
+
+        {{-- Capacitación --}}
+        <div>
+            <x-label class="mb-1">
+                <x-label class="mb-1">
+                    <span class="text-primary text-base md:text-lg font-bold">
+                        Capacitación
+                    </span>
+                </x-label>
             </x-label>
 
-            <x-select id="" class="w-full" wire:model.live="inquiry.service_id">
+            <x-select id="" class="w-full" wire:model.live="inquiry.training_id">
                 <option value="">
-                    Seleccione un servicio (Opcional)
+                    Seleccione una capacitación (Opcional)
                 </option>
-                @foreach ($services as $service)
-                    <option value="{{ $service->id }}">
-                        {{ $service->name }}
+                @foreach ($trainings as $training)
+                    <option value="{{ $training->id }}">
+                        {{ $training->name }}
                     </option>
                 @endforeach
             </x-select>
-            <x-input-error for="inquiry.service_id" />
+            <x-input-error for="inquiry.training_id" />
         </div>
 
         {{-- Número de contacto --}}
         <div>
-            <x-label class="mb-1 text-[15px] font-black">
-                Teléfono o celular:
-                <span class="text-red-500">*</span>
+            <x-label class="mb-1">
+                <x-label class="mb-1">
+                    <span class="text-primary text-base md:text-lg font-bold">
+                        Teléfono o celular
+                    </span>
+                    
+                    <span class="text-red-500 text-base md:text-lg font-bold">*</span>
+                </x-label>
             </x-label>
             <x-input class="w-full" placeholder="Ingrese su número de contacto" wire:model.live="inquiry.contact_number" />
             <x-input-error for="inquiry.contact_number" />
@@ -57,9 +97,14 @@
 
         {{-- Mensaje de Consulta --}}
         <div>
-            <x-label class="mb-1 text-[15px] font-black">
-                Mensaje:
-                <span class="text-red-500">*</span>
+            <x-label class="mb-1">
+                <x-label class="mb-1">
+                    <span class="text-primary text-base md:text-lg font-bold">
+                        Mensaje
+                    </span>
+                    
+                    <span class="text-red-500 text-base md:text-lg font-bold">*</span>
+                </x-label>
             </x-label>
             <textarea name="message"
                 class="w-full h-60 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
@@ -72,7 +117,7 @@
         <div class="flex w-full justify-center">
 
             <button type="submit" wire:loading.attr="disabled" wire:target="save"
-                class="text-white text-lg font-medium bg-blue-700 py-2 px-6 rounded-lg">
+                class="text-white text-lg font-medium bg-tertiary-contrast-1 py-2 px-6 rounded-lg">
 
                 <div wire:loading.remove wire:target="save">
                     Enviar <i class="fa-solid fa-paper-plane ml-1"></i>

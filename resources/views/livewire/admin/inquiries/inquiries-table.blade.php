@@ -55,13 +55,13 @@
                                 Recibido
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Nombres
-                            </th>
-                            <th scope="col" class="px-6 py-3">
                                 Apellidos
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Servicio
+                                Nombres
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Capacitación
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Estado
@@ -92,14 +92,14 @@
 
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $inquiry->name }}
-                                </td>
-                                <td class="px-6 py-4">
                                     {{ $inquiry->lastname }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    @if ($inquiry->service)
-                                        {{ $inquiry->service->name }}
+                                    {{ $inquiry->name }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    @if ($inquiry->training)
+                                        {{ $inquiry->training->name }}
                                     @else
                                         Ninguno
                                     @endif
@@ -140,7 +140,7 @@
                     <x-slot name="title">
                         <div class="flex justify-between items-center">
                             <div>
-                                Consulta de: {{ $inquiryInfo['name'] }}, {{ $inquiryInfo['lastname'] }}
+                                Detalles de la consulta
                             </div>
                             <div>
                                 <x-danger-button onclick="confirmDelete()">
@@ -175,8 +175,12 @@
                         <div class="text-left mt-4">
                             <div class="text-base">
                                 <div class="space-y-2">
+                                    <p><strong>Apellidos:</strong> {{ $inquiryInfo['lastname'] }}</p>
+                                    <p><strong>Nombres:</strong> {{ $inquiryInfo['name'] }}</p>
+                                    <p><strong>Institución:</strong> {{ $inquiryInfo['institution_name'] }}</p>
+                                    <p><strong>Ciudad / Región:</strong> {{ $inquiryInfo['location'] }}</p>
                                     <p><strong>Teléfono de contacto:</strong> {{ $inquiryInfo['contact_number'] }}</p>
-                                    <p><strong>Servicio:</strong> {{ $inquiryInfo['service'] }}</p>
+                                    <p><strong>Capacitación:</strong> {{ $inquiryInfo['training'] }}</p>
                                     <p><strong>Mensaje:</strong> {{ $inquiryInfo['message'] }}</p>
                                 </div>
 

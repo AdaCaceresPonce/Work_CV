@@ -36,7 +36,7 @@ class WelcomePageContentSeeder extends Seeder
             </ul>',
             'why_choose_our_trainings_img' => 'web_pages_images/welcome_page/' . $faker->image('public/storage/web_pages_images/welcome_page', 1200, 800, null, false),
             
-            'testimonials_title'=>'<p><span style="color: rgb(0, 117, 255);"><strong>Lo que nuestros instruidos opinan</strong></span></p>',
+            'testimonials_title'=>'<p><span class="text-primary"><strong>Lo que nuestros instruidos opinan</strong></span></p>',
             'testimonials_description'=>'<p>Escucha lo que nuestros alumnos dicen sobre sus experiencias en nuestras capacitaciones.</p>',
             
         ];

@@ -2,16 +2,16 @@
     //Informacion que necesita el sidebar
     $links = [
         [
-            //Servicios
-            'icon' => 'fa-solid fa-tooth',
+            //Capacitaciones
+            'icon' => 'fa-solid fa-person-chalkboard',
             'name' => 'Capacitaciones',
             'route' => route('admin.trainings.index'),
         ],
 
         [
-            //Información de la Clínica
+            //Información de contacto
             'icon' => 'fa-solid fa-house-chimney-medical',
-            'name' => 'Información de la Clínica',
+            'name' => 'Información de Contacto',
             'route' => route('admin.clinic_information.index'),
         ],
     ];
@@ -40,7 +40,7 @@
             ],
     
             [
-                'icon' => 'fa-solid fa-teeth',
+                'icon' => 'fa-solid fa-chalkboard-user',
                 'name' => 'Página Capacitaciones',
                 'route' => route('admin.our_trainings_page_content.index'),
             ],

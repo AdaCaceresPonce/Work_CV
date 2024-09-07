@@ -23,8 +23,8 @@ class TrainingSeeder extends Seeder
 
             'Planificación curricular nivel secundaria' => [
                 'description' => null,
-                'card_img_path' => 'images/trainings/planificacion-curricular-card.jpg',
-                'cover_img_path' => 'images/trainings/planificacion-curricular-cover.jpg',
+                'card_img_path' => 'planificacion-curricular-card.jpg',
+                'cover_img_path' => 'planificacion-curricular-cover.jpg',
                 'additional_info' => null,
                 'topics' => [
                     'Perfil de Egreso de la Educación',

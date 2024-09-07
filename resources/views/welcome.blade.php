@@ -203,7 +203,7 @@
 
             {{-- Ver todos los servicios --}}
             <div class="flex w-full justify-center">
-                <a href="{{ route('our_services.index') }}"
+                <a href="{{ route('our_trainings.index') }}"
                     class="text-primary-contrast-1 text-lg font-medium bg-primary py-3 px-6 rounded-lg">
                     Ver todas las capacitaciones
                 </a>
@@ -244,38 +244,6 @@
 
                 </div>
             </div>
-        </x-container>
-    </section>
-
-    {{-- Opiniones --}}
-    <section id="testimonials">
-        <x-container class="px-4 section__spacing">
-            {{-- Titulo --}}
-            <div class="mb-3 px-4 text-center sm:px-15 lg:px-40">
-                <div>
-                    <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight lg:leading-tight">
-                        {!! $contents['testimonials_title'] !!}
-                    </span>
-                </div>
-                <div class="mt-3">
-                    <span class="text-base sm:text-lg lg:text-xl">
-                        {!! $contents['testimonials_description'] !!}
-                    </span>
-                </div>
-            </div>
-            {{-- Slider Opiniones --}}
-
-            <livewire:web.sliders.slider-opinions lazy />
-
-
-            {{-- Enviar opinion --}}
-            <div class="flex w-full justify-center mt-5">
-                <a href="{{ route('contact_us.index') }}#opinions_form"
-                    class="text-white text-lg font-medium bg-blue-700 py-3 px-6 rounded-lg">
-                    Envíanos tu opinión aquí
-                </a>
-            </div>
-
         </x-container>
     </section>
 
