@@ -151,7 +151,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <div class="mb-2">
+                        <div>
                             <x-label class="mb-1">
                                 Recibido el día:
                             </x-label>
@@ -172,16 +172,35 @@
                                 </span>
                             </x-label>
                         </div>
-                        <div class="text-left mt-4">
+
+                        <div class="py-4">
+                            <div class="bg-slate-200 w-full h-[1.5px]">
+                            </div>
+                        </div>
+
+                        <div class="text-left">
                             <div class="text-base">
-                                <div class="space-y-2">
-                                    <p><strong>Apellidos:</strong> {{ $inquiryInfo['lastname'] }}</p>
-                                    <p><strong>Nombres:</strong> {{ $inquiryInfo['name'] }}</p>
-                                    <p><strong>Institución:</strong> {{ $inquiryInfo['institution_name'] }}</p>
-                                    <p><strong>Ciudad / Región:</strong> {{ $inquiryInfo['location'] }}</p>
-                                    <p><strong>Teléfono de contacto:</strong> {{ $inquiryInfo['contact_number'] }}</p>
-                                    <p><strong>Capacitación:</strong> {{ $inquiryInfo['training'] }}</p>
-                                    <p><strong>Mensaje:</strong> {{ $inquiryInfo['message'] }}</p>
+                                <div class="space-y-4">
+                                    <p>
+                                        <strong><i class="fa-solid fa-circle-user"></i> Apellidos y Nombres:</strong> {{ $inquiryInfo['lastname'] }}, {{ $inquiryInfo['name'] }}
+                                    </p>
+                                    <p>
+                                        <strong><i class="fa-solid fa-school"></i> Institución:</strong> {{ $inquiryInfo['institution_name'] }}
+                                    </p>
+                                    <p>
+                                        <strong><i class="fa-solid fa-map-location-dot"></i> Ciudad / Región:</strong> {{ $inquiryInfo['location'] }}
+                                    </p>
+                                    <p>
+                                        <strong><i class="fa-solid fa-phone"></i> Número de contacto:</strong> {{ $inquiryInfo['contact_number'] }}
+                                    </p>
+                                    <p>
+                                        <strong><i class="fa-solid fa-person-chalkboard"></i> Capacitación:</strong> {{ $inquiryInfo['training'] }}
+                                    </p>
+                                    <div class="border bg-gray-100 rounded-md p-4">
+                                        <p>
+                                            <strong><i class="fa-solid fa-envelope"></i> Mensaje:</strong> {{ $inquiryInfo['message'] }}
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <div class="mt-4 pl-3 border-l-4 border-l-teal-500">
