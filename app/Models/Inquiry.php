@@ -21,8 +21,8 @@ class Inquiry extends Model
     ];
 
     //Relacion uno a muchos inversa
-    public function service(){
-        return $this->belongsTo(Service::class);
+    public function training(){
+        return $this->belongsTo(Training::class);
     }
 
 }

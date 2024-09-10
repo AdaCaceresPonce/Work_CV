@@ -11,15 +11,19 @@ class OurTrainingsPageController extends Controller
 {
     public function index(){
 
-        // $services = Training::orderBy('id', 'desc')->paginate(6);
-        // $contents = OurTrainingsPageContent::first();
+        $trainings = Training::orderBy('id', 'desc')->paginate(6);
+        $contents = OurTrainingsPageContent::first();
         // return view('web.our_trainings.our_trainings',compact('services', 'contents'));
 
-        return view('web.our_trainings.our_trainings');
+        return view('web.our_trainings.our_trainings', compact('contents', 'trainings'));
         
     }
 
     public function show_training(Training $training){
+
+        $training->load(['topics' => function ($query) {
+            $query->orderBy('position', 'asc'); // Ordenar por posición ascendente
+        }]);
 
         return view('web.our_trainings.training_details', compact('training'));
     }

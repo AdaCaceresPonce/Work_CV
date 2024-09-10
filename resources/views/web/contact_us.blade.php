@@ -8,7 +8,8 @@
     <x-page-cover :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" :id="'cover'" />
 
     {{-- Contactanos --}}
-    <x-contact-section service_selected="{{ $service }}" />
+    {{-- LLamar a la seccion de contacto y pasarle el slug de la capacitación seleccionada (si es que se pasó mediante la ruta) --}}
+    <x-contact-section training_selected="{{ $training }}" />
 
     <x-opinion-section />
 

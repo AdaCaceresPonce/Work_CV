@@ -1,4 +1,5 @@
-@props(['service_selected' => ''])
+{{-- Variable que contiene el slug de la capacitación seleccionada --}}
+@props(['training_selected' => ''])
 
 <section id="contact" class="">
     <x-container class="px-4 section__spacing">
@@ -19,8 +20,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
             <div class="w-full order-last lg:order-first">
-                {{-- Formulario --}}
-                @livewire('web.inquiries.save-inquiry', compact('service_selected'))
+
+                {{-- Cargar el Formulario y pasarle la variable de capacitación seleccionada--}}
+                @livewire('web.inquiries.save-inquiry', compact('training_selected'))
             </div>
 
             {{-- Info de contacto --}}
@@ -29,9 +31,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-3 mb-3">
 
                     {{-- Telefono --}}
-                    <div class="w-full p-[10px] sm:h-[83px] sm:px-[17px] bg-[#C8F8FF] rounded-full flex items-center">
+                    <div class="w-full p-[10px] sm:h-[83px] sm:px-[17px] bg-tertiary rounded-full flex items-center">
                         {{-- Icono --}}
-                        <div class="rounded-full bg-[#0075FF] size-[50px] flex items-center justify-center">
+                        <div class="rounded-full bg-tertiary-contrast-1 size-[50px] flex items-center justify-center">
                             <i class="fa-solid fa-phone text-xl text-white"></i>
                         </div>
 
@@ -44,28 +46,11 @@
                         </div>
                     </div>
 
-                    {{-- Horarios --}}
-                    <div
-                        class="w-full p-[10px] sm:h-[83px] sm:px-[17px] bg-[#C8F8FF] rounded-full flex items-center">
-                        {{-- Icono --}}
-                        <div class="rounded-full bg-[#0075FF] size-[50px] flex items-center justify-center">
-                            <i class="fa-regular fa-clock text-2xl text-white"></i>
-                        </div>
-
-                        {{-- Texto --}}
-                        <div class="ml-2 sm:ml-3 flex flex-1 flex-col">
-                            <span class="font-bold">Horarios de atención</span>
-                            <span class="font-medium text-xs leading-4 sm:text-sm text-[#535353]">
-                                {{ $clinic_information['schedule'] }}
-                            </span>
-                        </div>
-                    </div>
-
                     {{-- Email --}}
                     <div
-                        class="w-full p-[10px] sm:h-[83px] sm:px-[17px] bg-[#C8F8FF] rounded-full flex items-center">
+                        class="w-full p-[10px] sm:h-[83px] sm:px-[17px] bg-tertiary rounded-full flex items-center">
                         {{-- Icono --}}
-                        <div class="rounded-full bg-[#0075FF] size-[50px] flex items-center justify-center">
+                        <div class="rounded-full bg-tertiary-contrast-1 size-[50px] flex items-center justify-center">
                             <i class="fa-regular fa-envelope text-2xl text-white"></i>
                         </div>
 
@@ -78,25 +63,9 @@
                         </div>
                     </div>
 
-                    {{-- Direccion --}}
-                    <div class="w-full p-[10px] sm:h-[83px] sm:px-[17px] bg-[#C8F8FF] rounded-full flex items-center">
-                        {{-- Icono --}}
-                        <div class="rounded-full bg-[#0075FF] size-[50px] flex items-center justify-center">
-                            <i class="fa-solid fa-map-location-dot text-2xl text-white"></i>
-                        </div>
-
-                        {{-- Texto --}}
-                        <div class="ml-2 sm:ml-3 flex flex-1 flex-col">
-                            <span class="font-bold">Dirección</span>
-                            <span class="font-medium text-sm sm:text-base text-[#535353]">
-                                {{ $clinic_information['address'] }}
-                            </span>
-                        </div>
-                    </div>
-
                 </div>
                 {{-- Imagen --}}
-                <img class="size-full aspect-[2/1] grow object-cover object-center border-[3px] border-[#00CAF7] rounded-xl"
+                <img class="size-full aspect-[2/2] grow object-cover object-center border-[3px] border-tertiary-border rounded-xl"
                     src="{{ Storage::url($contact_section['contact_us_img']) }}" alt="">
             </div>
         </div>

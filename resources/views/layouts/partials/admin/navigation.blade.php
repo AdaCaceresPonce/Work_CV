@@ -17,7 +17,7 @@
                 <a href="{{ route('admin.dashboard') }}" class="flex ms-2 me-5">
                     <img src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" class="size-8 border border-white me-3 rounded-full" alt="FlowBite Logo" />
                     <span
-                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Panel Clínica</span>
+                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Panel</span>
                 </a>
 
                 <a href="{{ route('welcome.index') }}" target="_blank" title="Visitar web" class="bg-sky-500 p-1 px-2 text-white rounded-lg">

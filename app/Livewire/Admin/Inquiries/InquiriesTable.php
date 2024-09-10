@@ -39,7 +39,9 @@ class InquiriesTable extends Component
     public $inquiryInfo = [
         'name' => '',
         'lastname' => '',
-        'service' => '',
+        'institution_name' => '',
+        'location' => '',
+        'training' => '',
         'contact_number' => '',
         'message' => '',
         'state' => '',
@@ -59,11 +61,13 @@ class InquiriesTable extends Component
         $this->inquiryEditId = $inquiryId;
 
         //Buscamos la consulta con el ID recibido, pero cargando tambien las relaciones definidas en el modelo: 'form_category' para cargar la categoria asignada y 'element' que es la relacion polimorfica
-        $inquiry = Inquiry::with('service')->find($inquiryId);
+        $inquiry = Inquiry::with('training')->find($inquiryId);
 
         $this->inquiryInfo['name'] = $inquiry->name;
         $this->inquiryInfo['lastname'] = $inquiry->lastname;
-        $this->inquiryInfo['service'] = $inquiry->service ? $inquiry->service->name : 'Ninguno seleccionado';
+        $this->inquiryInfo['institution_name'] = $inquiry->institution_name;
+        $this->inquiryInfo['location'] = $inquiry->location;
+        $this->inquiryInfo['training'] = $inquiry->training ? $inquiry->training->name : 'Ninguno seleccionado';
         $this->inquiryInfo['contact_number'] = $inquiry->contact_number;
         $this->inquiryInfo['message'] = $inquiry->message;
         $this->inquiryInfo['state'] = $inquiry->state;
@@ -74,7 +78,7 @@ class InquiriesTable extends Component
     public function update()
     {
 
-        $inquiry = Inquiry::with('service')->find($this->inquiryEditId);
+        $inquiry = Inquiry::with('training')->find($this->inquiryEditId);
 
         $inquiry->update([
             'state' => $this->inquiryInfo['state'],
@@ -112,7 +116,7 @@ class InquiriesTable extends Component
     public function destroy()
     {
         // Lógica para eliminar la consulta
-        $inquiry = Inquiry::with('service')->find($this->inquiryEditId);
+        $inquiry = Inquiry::with('training')->find($this->inquiryEditId);
 
         $inquiry->delete();
 
@@ -136,7 +140,7 @@ class InquiriesTable extends Component
     public function render()
     {
         $inquiries = Inquiry::orderBy('id', 'desc')
-            ->with(['service'])
+            ->with(['training'])
             ->when($this->search, function ($query, $search) {
                 return $query->where('name', 'like', '%' . $search . '%')
                     ->orWhere('lastname', 'like', '%' . $search . '%')

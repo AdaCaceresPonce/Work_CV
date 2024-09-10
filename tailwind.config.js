@@ -29,10 +29,16 @@ export default {
                 },
 
                 secondary: {
-                    DEFAULT: '#b7fbd1',            // Secondary color
+                    DEFAULT: '#EDFFEA',            // Secondary color
                     'contrast-1': '#023117',
                     border: '#17d060'        // First contrast for secondary color
                 },
+
+                tertiary: {
+                    DEFAULT: '#E1E1B7',
+                    'contrast-1': '#468189',
+                    border: '#CFB53B',
+                }
             }
         },
     },

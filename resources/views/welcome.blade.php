@@ -14,14 +14,16 @@
             <div class="flex items-center flex-wrap">
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 p-4 lg:pr-12">
-                    <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight">
-                        {!! $contents['about_us_title'] ?? 'Sin título' !!}
 
-                    </span>
+                    <div>
+                        <span class="text-2xl sm:text-3xl lg:text-4xl leading-tight lg:leading-tight">
+                            {!! $contents['cover_title'] ?? 'Sin título' !!}
+                        </span>
+                    </div>
 
                     <div class="mt-4">
-                        <span>
-                            {!! $contents['about_us_description'] ?? 'Sin descripción' !!}
+                        <span class="text-base sm:text-base lg:text-lg">
+                            {!! $contents['cover_description'] ?? 'Sin descripción' !!}
                         </span>
                     </div>
 
@@ -40,7 +42,7 @@
                             <img class="rounded-full 
                                 size-[250px] sm:size-[340px] md:size-[390px] lg:size-[440px] 
                                 border-[3.5px] border-primary bg-gray-100 object-cover object-center "
-                                src="{{ Storage::url($contents['about_us_img']) }}" alt="">
+                                src="{{ Storage::url($contents['cover_img']) }}" alt="">
 
                             {{-- Bolitas del lado superior izquierdo --}}
                             <div
@@ -147,6 +149,7 @@
             </div>
         </x-container>
     </section>
+    
 
     {{-- Banner 1 --}}
     <section class="bg-primary">
@@ -159,16 +162,12 @@
                 </div>
 
                 <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-8">
-                    <span class="text-primary-contrast-1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, magnam. Dolorum, similique
-                        neque exercitationem quaerat voluptatum ut minus blanditiis consequatur molestiae eos
-                        repudiandae porro laboriosam nulla natus illo, cupiditate aut harum aspernatur doloribus ex rem.
-                        Delectus asperiores saepe, dolorum cumque exercitationem, neque nobis voluptatum ipsum incidunt
-                        accusamus est? Commodi tempore facilis unde tenetur corporis labore ut culpa, sunt deserunt
-                        quam?
+
+                    <span class="text-primary-contrast-1 text-base md:text-lg">
+                        {!! $contents['about_description'] ?? 'Sin descripción' !!}
                     </span>
 
-                    {{-- Enviar opinion --}}
+                    {{-- Ver más --}}
                     <div class="flex w-full justify-center">
                         <a href=""
                             class="bg-secondary border-2 border-secondary-border text-secondary-contrast-1 text-base font-medium py-3 px-6 rounded-lg">
@@ -183,133 +182,73 @@
 
 
     {{-- Capacitaciones --}}
-    <section id="services">
+    <section id="trainings">
         <x-container class="px-4 section__spacing flex-col">
             {{-- Titulo --}}
             <div class="mb-6 pb-4 text-center sm:px-15 lg:px-40">
                 <div>
                     <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight lg:leading-tight">
-                        {!! $contents['our_services_title'] !!}
+                        {!! $contents['our_trainings_title'] !!}
                     </span>
                 </div>
                 <div class="mt-3">
                     <span class="text-base sm:text-lg lg:text-xl">
-                        {!! $contents['our_services_description'] !!}
+                        {!! $contents['our_trainings_description'] !!}
                     </span>
                 </div>
             </div>
 
             {{-- Slider --}}
-            <livewire:web.sliders.slider-services lazy />
+            <livewire:web.sliders.slider-trainings lazy />
 
             {{-- Ver todos los servicios --}}
             <div class="flex w-full justify-center">
-                <a href="{{ route('our_services.index') }}"
-                    class="text-white text-lg font-medium bg-blue-700 py-3 px-6 rounded-lg">
-                    Ver todos los servicios
+                <a href="{{ route('our_trainings.index') }}"
+                    class="text-primary-contrast-1 text-lg font-medium bg-primary py-3 px-6 rounded-lg">
+                    Ver todas las capacitaciones
                 </a>
             </div>
+
         </x-container>
     </section>
 
-    {{-- Confianza --}}
+    {{-- Por que elegir nuestras capacitaciones --}}
     <section id="clinic_about">
         <x-container class="px-4 section__spacing">
-            <div class="flex items-center flex-col-reverse lg:flex-row gap-10">
+            <div class="flex items-center flex-col-reverse lg:flex-row gap-7">
 
                 <div class="w-full lg:w-1/2">
                     <img class="h-[450px] sm:h-[550px] lg:h-[670px] w-full object-cover object-center border-[4px] border-[#00CAF7] rounded-3xl"
-                        src="{{ Storage::url($contents['about_image']) }}" alt="">
+                        src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">
                 </div>
 
                 <div class="w-full lg:w-1/2 px-4 text-start">
 
-                    <span class="text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-tight font-bold">
-                        {{-- Una Clínica Dental en la que puedes <span class="text-[#0075FF]">confiar.</span> --}}
-                        {!! $contents['about_title'] ?? 'titulo acerca de' !!}
+                    <span class="text-xl sm:text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+
+                        {!! $contents['why_choose_our_trainings_title'] ?? 'titulo acerca de' !!}
+
                     </span>
 
-                    <div class="mt-7">
+                    <div class="mt-4 md:mt-7">
+
                         <span class="text-base sm:text-lg lg:text-lg">
-                            {!! $contents['about_description'] ?? 'descripcion acerca de nosotros' !!}
+                            {!! $contents['why_choose_our_trainings_description'] ?? 'descripcion acerca de nosotros' !!}
                         </span>
+
                     </div>
 
-                    <p class="text-base font-bold sm:text-lg lg:text-xl mt-8">
+                    {{-- <p class="text-base font-bold sm:text-lg lg:text-xl mt-8">
                         Te ofrecemos:
-                    </p>
-
-                    <ul class="mt-4 space-y-3">
-                        {{-- Dividir la cadena de texto en un array, con las 'comas' como delimitadores --}}
-                        @php
-                            $items = explode(',', $contents['about_we_offer_you'] ?? '');
-                        @endphp
-
-                        @foreach ($items as $item)
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-circle-check text-2xl text-[#0075FF] mr-2"></i>
-                                <span class="text-base sm:text-lg lg:text-xl font-bold">{{ $item }}</span>
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="mt-9 flex justify-start">
-                        <a href="{{ route('about_us.index') }}"
-                            class="text-white text-lg font-medium bg-blue-700 py-3 px-6 rounded-lg">
-                            Conócenos
-                        </a>
-                    </div>
+                    </p> --}}
 
                 </div>
             </div>
-        </x-container>
-    </section>
-
-    {{-- Opiniones --}}
-    <section id="testimonials">
-        <x-container class="px-4 section__spacing">
-            {{-- Titulo --}}
-            <div class="mb-3 px-4 text-center sm:px-15 lg:px-40">
-                <div>
-                    <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight lg:leading-tight">
-                        {!! $contents['testimonials_title'] !!}
-                    </span>
-                </div>
-                <div class="mt-3">
-                    <span class="text-base sm:text-lg lg:text-xl">
-                        {!! $contents['testimonials_description'] !!}
-                    </span>
-                </div>
-            </div>
-            {{-- Slider Opiniones --}}
-
-            <livewire:web.sliders.slider-opinions lazy />
-
-
-            {{-- Enviar opinion --}}
-            <div class="flex w-full justify-center mt-5">
-                <a href="{{ route('contact_us.index') }}#opinions_form"
-                    class="text-white text-lg font-medium bg-blue-700 py-3 px-6 rounded-lg">
-                    Envíanos tu opinión aquí
-                </a>
-            </div>
-
         </x-container>
     </section>
 
     {{-- Contacto --}}
     <x-contact-section />
-
-    <style>
-        /* Slider profesionales */
-        .professional__card {
-            height: calc((100% - 30px) / 2) !important;
-        }
-
-        .professional__photo {
-            height: 310px;
-            margin: 0 auto;
-        }
-    </style>
 
     @push('js')
         {{-- SweetAlert --}}
@@ -323,13 +262,6 @@
             });
         </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-            //Swiper Opiniones
-
-
-            //Swiper Profesionales
-        </script>
     @endpush
 
 </x-app-layout>

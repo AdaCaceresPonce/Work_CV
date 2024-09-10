@@ -2,28 +2,16 @@
     //Informacion que necesita el sidebar
     $links = [
         [
-            //Servicios
-            'icon' => 'fa-solid fa-tooth',
-            'name' => 'Servicios',
-            'route' => route('admin.services.index'),
-        ],
-        [
-            //Especialidades
-            'icon' => 'fa-solid fa-briefcase-medical',
-            'name' => 'Especialidades',
-            'route' => route('admin.specialties.index'),
-        ],
-        [
-            //Profesionales
-            'icon' => 'fa-solid fa-user-doctor',
-            'name' => 'Profesionales',
-            'route' => route('admin.professionals.index'),
+            //Capacitaciones
+            'icon' => 'fa-solid fa-person-chalkboard',
+            'name' => 'Capacitaciones',
+            'route' => route('admin.trainings.index'),
         ],
 
         [
-            //Información de la Clínica
+            //Información de contacto
             'icon' => 'fa-solid fa-house-chimney-medical',
-            'name' => 'Información de la Clínica',
+            'name' => 'Información de Contacto',
             'route' => route('admin.clinic_information.index'),
         ],
     ];
@@ -52,21 +40,9 @@
             ],
     
             [
-                'icon' => 'fa-solid fa-people-group',
-                'name' => 'Página Nosotros',
-                'route' => route('admin.about_us_page_content.index'),
-            ],
-    
-            [
-                'icon' => 'fa-solid fa-teeth',
-                'name' => 'Página Servicios',
-                'route' => route('admin.our_services_page_content.index'),
-            ],
-    
-            [
-                'icon' => 'fa-solid fa-stethoscope',
-                'name' => 'Página Profesionales',
-                'route' => route('admin.our_professionals_page_content.index'),
+                'icon' => 'fa-solid fa-chalkboard-user',
+                'name' => 'Página Capacitaciones',
+                'route' => route('admin.our_trainings_page_content.index'),
             ],
     
             [
@@ -110,7 +86,7 @@
                     class="size-14 border border-black me-3 rounded-full">
                 <div class="ml-2 flex-1">
                     <h2 class="text-xl font-semibold">
-                        Clínica Dental
+                        Presentación Personal
                     </h2>
                     <a href="{{ route('welcome.index') }}" target="_blank" class="text-base hover:text-blue-500">
                         Visitar Web <i class="ml-1 fa-solid fa-earth-americas"></i>

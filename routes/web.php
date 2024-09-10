@@ -19,7 +19,7 @@ Route::get('/nuestras_capacitaciones', [OurTrainingsPageController::class, 'inde
 Route::get('/nuestras_capacitaciones/{training}', [OurTrainingsPageController::class, 'show_training'])->name('our_trainings.show_training');
 
 
-Route::get('/contact_us/{service?}', [ContactUsController::class, 'index'])->name('contact_us.index');
+Route::get('/contact_us/{training?}', [ContactUsController::class, 'index'])->name('contact_us.index');
 
 // Route::get('/about-us', function () {
 //     return view('about_us.about_us');
