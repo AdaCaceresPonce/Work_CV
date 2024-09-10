@@ -10,6 +10,8 @@ class Training extends Model
     use HasFactory;
 
     protected $fillable = [
+        'cover_title',
+        'cover_img',
         'name',
         'slug',
         'description',
