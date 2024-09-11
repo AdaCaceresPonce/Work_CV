@@ -15,7 +15,7 @@
     @endpush
 
     {{-- Portada --}}
-    <x-page-cover :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" :id="'cover'" />
+    {{-- <x-page-cover :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" :id="'cover'" /> --}}
 
     {{-- Info adicional de la clínica --}}
     <section id="free_content_1" class="py-2 mt-0"> <!-- Reducir el padding vertical -->
@@ -23,8 +23,8 @@
             <div class="flex items-center flex-wrap-reverse">
                 {{-- Imagen --}}
                 <div class="w-full mt-2 lg:mt-0 lg:w-1/2 sm:px-1"> <!-- Reducir el margin-top y padding horizontal -->
-                    <img class="h-auto w-full max-h-[600px] object-cover object-center rounded-3xl"
-                        src="{{ Storage::url($contents['free_img']) }}" alt="">
+                    {{-- <img class="h-auto w-full max-h-[600px] object-cover object-center rounded-3xl"
+                        src="{{ Storage::url($contents['free_img']) }}" alt=""> --}}
                 </div>
 
                 {{-- Texto --}}
