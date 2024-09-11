@@ -43,19 +43,23 @@
             </div>
             {{-- Enlaces --}}
             <div class="flex-1 hidden lg:block">
+
                 <div class="flex justify-end space-x-8 h-full">
+
                     @foreach ($links as $link)
                         <a href="{{ $link['route'] }}"
                             class="text-lg text-primary-contrast-2 font-semibold hover:text-primary-contrast-3 {{ $link['active'] ? 'text-primary-contrast-3 underline underline-offset-[6px]' : '' }}">
                             {{ $link['name'] }}
                         </a>
                     @endforeach
+
                 </div>
+
             </div>
 
             {{-- Boton Intranet --}}
             <div class="hidden lg:block">
-                <a href="{{ route('admin.dashboard') }}" class="bg-secondary border-2 border-secondary-border text-base font-medium text-secondary-contrast-1 px-7 py-2.5 rounded-lg">
+                <a href="{{ route('admin.dashboard') }}" class="bg-secondary text-base font-medium text-secondary-contrast-1 px-7 py-2.5 rounded-md">
                     Intranet
                 </a>
             </div>

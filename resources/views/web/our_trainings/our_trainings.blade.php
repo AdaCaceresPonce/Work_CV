@@ -15,9 +15,10 @@
 
 
     {{-- Portada --}}
-    <x-page-cover :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" :id="'cover'" />
+    <x-page-cover :id="'cover'" :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" />
 
-    <section id="trainings" class="bg-tertiary">
+    {{-- Capacitaciones Profesionales --}}
+    <section id="our_trainings" class="bg-tertiary">
 
         <x-container class="px-4 section__spacing">
 
@@ -51,7 +52,7 @@
         </x-container>
     </section>
 
-
+    {{-- Lista de capacitaciones --}}
     <section id="trainings_list">
 
         <x-container class="px-4 section__spacing">
@@ -108,13 +109,5 @@
         </x-container>
 
     </section>
-
-
-    {{-- Info adicional de la clínica --}}
-    {{-- <section id="free_content_1" class="py-2 mt-0"> <!-- Reducir el padding vertical -->
-        <x-container class="px-1 section__spacing"> <!-- Reducir el padding horizontal -->
-
-        </x-container>
-    </section> --}}
 
 </x-app-layout>

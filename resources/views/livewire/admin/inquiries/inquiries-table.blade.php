@@ -182,23 +182,23 @@
                             <div class="text-base">
                                 <div class="space-y-4">
                                     <p>
-                                        <strong><i class="fa-solid fa-circle-user"></i> Apellidos y Nombres:</strong> {{ $inquiryInfo['lastname'] }}, {{ $inquiryInfo['name'] }}
+                                        <strong><i class="fa-solid fa-circle-user mr-2"></i>Apellidos y Nombres:</strong> {{ $inquiryInfo['lastname'] }}, {{ $inquiryInfo['name'] }}
                                     </p>
                                     <p>
-                                        <strong><i class="fa-solid fa-school"></i> Institución:</strong> {{ $inquiryInfo['institution_name'] }}
+                                        <strong><i class="fa-solid fa-school mr-2"></i>Institución:</strong> {{ $inquiryInfo['institution_name'] }}
                                     </p>
                                     <p>
-                                        <strong><i class="fa-solid fa-map-location-dot"></i> Ciudad / Región:</strong> {{ $inquiryInfo['location'] }}
+                                        <strong><i class="fa-solid fa-map-location-dot mr-2"></i>Ciudad / Región:</strong> {{ $inquiryInfo['location'] }}
                                     </p>
                                     <p>
-                                        <strong><i class="fa-solid fa-phone"></i> Número de contacto:</strong> {{ $inquiryInfo['contact_number'] }}
+                                        <strong><i class="fa-solid fa-phone mr-2"></i>Número de contacto:</strong> {{ $inquiryInfo['contact_number'] }}
                                     </p>
                                     <p>
-                                        <strong><i class="fa-solid fa-person-chalkboard"></i> Capacitación:</strong> {{ $inquiryInfo['training'] }}
+                                        <strong><i class="fa-solid fa-person-chalkboard mr-2"></i>Capacitación:</strong> {{ $inquiryInfo['training'] }}
                                     </p>
                                     <div class="border bg-gray-100 rounded-md p-4">
                                         <p>
-                                            <strong><i class="fa-solid fa-envelope"></i> Mensaje:</strong> {{ $inquiryInfo['message'] }}
+                                            <strong><i class="fa-solid fa-envelope mr-2"></i>Mensaje:</strong> {{ $inquiryInfo['message'] }}
                                         </p>
                                     </div>
                                 </div>

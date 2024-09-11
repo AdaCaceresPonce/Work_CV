@@ -29,29 +29,6 @@
                         Datos de la capacitación
                     </span>
                 </div>
-
-                {{-- Nombre --}}
-                <div>
-                    <x-label for="name" class="mb-1 font-black">
-                        Nombre
-                    </x-label>
-                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name" name="name"
-                        value="{{ old('name', $training->name) }}" />
-                    <x-input-error for="name" />
-                    <x-input-error for="slug" />
-                </div>
-
-                {{-- Descripción --}}
-                <div>
-                    <x-label for="description" class="mb-1 font-black">
-                        Descripción de la capacitación
-                    </x-label>
-                    <textarea name="description" id="description"
-                        class="w-full min-h-[100px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                        placeholder="Ingrese una descripción de la capacitación (Opcional)" name="">{{ old('description', $training->description) }}</textarea>
-                    <x-input-error for="description" />
-
-                </div>
                 
                 {{-- Imagenes --}}
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -110,6 +87,29 @@
                     </div>
                 </div>
 
+                {{-- Nombre --}}
+                <div>
+                    <x-label for="name" class="mb-1 font-black">
+                        Nombre
+                    </x-label>
+                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name" name="name"
+                        value="{{ old('name', $training->name) }}" />
+                    <x-input-error for="name" />
+                    <x-input-error for="slug" />
+                </div>
+
+                {{-- Descripción --}}
+                <div>
+                    <x-label for="description" class="mb-1 font-black">
+                        Descripción de la capacitación
+                    </x-label>
+                    <textarea name="description" id="description"
+                        class="w-full min-h-[150px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                        placeholder="Ingrese una descripción de la capacitación (Opcional)" name="">{{ old('description', $training->description) }}</textarea>
+                    <x-input-error for="description" />
+
+                </div>
+
                 {{-- <div>
                     <x-label class="mb-1 font-black">
                         Información adicional de la capacitación
@@ -119,14 +119,14 @@
                         placeholder="Puedes agregar información adicional del servicio (Opcional)" name="">{{ old('additional_info', $training->additional_info) }}</textarea>
                 </div> --}}
 
-                <div class="flex justify-end">
+                <div class="flex justify-end pt-4">
                     {{-- Eliminar --}}
                     <x-danger-button onclick="confirmDelete()">
                         Eliminar
                     </x-danger-button>
 
                     <x-button class="ml-2">
-                        Actualizar
+                        Actualizar datos
                     </x-button>
                 </div>
 

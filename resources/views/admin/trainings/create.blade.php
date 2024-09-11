@@ -26,28 +26,6 @@
                     Datos de la capacitación
                 </span>
             </div>
-
-            {{-- Nombre --}}
-            <div>
-                <x-label for="name" class="mb-1 font-black">
-                    Nombre
-                </x-label>
-                <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name" name="name"
-                    value="{{ old('name') }}" />
-                <x-input-error for="name" />
-                <x-input-error for="slug" />
-            </div>
-
-            <div>
-                <x-label for="description" class="mb-1 font-black">
-                    Descripción
-                </x-label>
-                <textarea name="description" id="description"
-                    class="w-full min-h-[100px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                    placeholder="Ingrese una descripción de la capacitación (Opcional)">{{ old('description') }}</textarea>
-                <x-input-error for="description" />
-
-            </div>
             
             {{-- Imagenes --}}
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -104,7 +82,29 @@
                 </div>
             </div>
 
-            <div class="flex justify-end">
+            {{-- Nombre --}}
+            <div>
+                <x-label for="name" class="mb-1 font-black">
+                    Nombre
+                </x-label>
+                <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name" name="name"
+                    value="{{ old('name') }}" />
+                <x-input-error for="name" />
+                <x-input-error for="slug" />
+            </div>
+
+            <div>
+                <x-label for="description" class="mb-1 font-black">
+                    Descripción
+                </x-label>
+                <textarea name="description" id="description"
+                    class="w-full min-h-[100px] border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                    placeholder="Ingrese una descripción de la capacitación (Opcional)">{{ old('description') }}</textarea>
+                <x-input-error for="description" />
+
+            </div>
+
+            <div class="flex justify-end pt-4">
                 <x-button>
                     Crear capacitación
                 </x-button>

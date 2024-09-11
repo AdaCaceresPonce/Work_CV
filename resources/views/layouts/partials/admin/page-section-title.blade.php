@@ -1,6 +1,6 @@
 @props(['section_title' => 'Sin título', 'route_name' => 'welcome.index', 'section_id' => '#'])
 
-<div class="flex items-center border-b-[3px] border-b-slate-400 pb-2 mb-1">
+<div class="flex items-center border-b-[2px] border-b-slate-400 pb-2 mb-1">
 
     <span class="text-2xl font-bold mr-3">
         {{ $section_title }}

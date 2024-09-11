@@ -1,29 +1,26 @@
 @php
     $page_sections = [
+
         [
             'name' => 'Sección de Portada',
             'id' => '#cover',
         ],
 
         [
-            'name' => 'Sección de Info Clinica',
-            'id' => '#info_clinic',
+            'name' => 'Sección sobre el propósito de la Página',
+            'id' => '#about',
         ],
 
         [
-            'name' => 'Sección de Servicios',
-            'id' => '#services',
+            'name' => 'Sección de listado de Capacitaciones',
+            'id' => '#our_trainings',
         ],
 
         [
-            'name' => 'Sección de Profesionales',
-            'id' => '#professionals',
+            'name' => 'Sección sobre por qué elegir las capacitaciones',
+            'id' => '#why_choose_our_trainings',
         ],
 
-        [
-            'name' => 'Sección de Opiniones',
-            'id' => '#opinions',
-        ],
     ];
 @endphp
 
@@ -47,7 +44,7 @@
             </p> --}}
 
             <p class="mb-2">
-                Para una rápida navegación estas son las secciones de ésta página:
+                Para una rápida navegación, estas son las secciones que se muestran en la página:
             </p>
 
             <ul class="list-disc list-inside">
@@ -141,93 +138,38 @@
 
                 </section>
 
-                {{-- Seccion de Info Clinica --}}
-                <section id="info_clinic">
+                {{-- Seccion sobre el propósito de la página --}}
+                <section id="about">
 
-                    <x-page-section-title :section_title="'Sección de Detalles de la Clínica'" :route_name="'welcome.index'" :section_id="'#clinic_about'" />
+                    <x-page-section-title :section_title="'Sección sobre el propósito de la Página'" :route_name="'welcome.index'" :section_id="'#about'" />
 
                     {{-- Columnas --}}
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
-                        <div class="space-y-4">
+                    <div class="grid grid-cols-1">
 
-                            <div>
-                                <x-label class="mb-1 mt-2 text-[15px] font-black">
-                                    Título
-                                </x-label>
-            
-                                <div class="rounded-lg @error('about_title') border-[2px] border-red-500 @enderror">
-                                    <textarea class="textarea" name="about_title">
-                                        @if (isset($contents['about_title']))
-                                        {{ old('about_title', $contents['about_title'] ) }}
-                                        @endif
-                                        </textarea>
-                                </div>
-                                
-                                <x-input-error class="mt-1" for="about_title" />
-
-                            </div>
-            
-                            <div>
-            
-                                <x-label class="mb-1 mt-2 text-[15px] font-black">
-                                    Descripcion
-                                </x-label>
-            
-                                <div class="rounded-lg @error('about_description') border-[2px] border-red-500 @enderror">
-                                    <textarea class="textarea" name="about_description">
-                                        @if (isset($contents['about_description']))
-                                        {{ old('about_description', $contents['about_description'] ) }}
-                                        @endif
-                                        </textarea>
-                                </div>
-                                
-                                <x-input-error class="mt-1" for="about_description" />
-
-                
-                            </div>
-                        </div>
-                        <div class="h-full flex flex-col">
-                            <div>
-                                <x-label class="mb-1 mt-2 text-[15px] font-black">
-                                    Lista de ofrecemos (Separa cada elemento de la lista usando una coma)
-                                </x-label>
-
-                                <x-input class="w-full" placeholder="Ingresa los elementos de la lista" name="about_we_offer_you"
-                                    value="{{ old('about_we_offer_you', $contents['about_we_offer_you']) }}" />
-                                
-                                <x-input-error class="mt-1" for="about_we_offer_you" />
-                                
-                            </div>
-
+                        <div>
                             <x-label class="mb-1 mt-2 text-[15px] font-black">
-                                Imagen
+                                Texto
                             </x-label>
-            
-                            <figure class="grow relative">
-                                <div class="absolute top-4 right-4">
-                                    <label
-                                        class="flex items-center px-2.5 py-1.5 lg:px-4 lg:py-2 rounded-lg btn-blue cursor-pointer text-sm lg:text-base">
-                                        <i class="fas fa-camera mr-2"></i>
-                                        Actualizar imagen
-                                        <input id="uploadImage2" name="about_image" type="file" class="hidden"
-                                            accept="image/*" onchange="previewImage(2);" />
-                                    </label>
-                                </div>
-                                <img id="uploadPreview2"
-                                    class="object-contain w-full h-full aspect-[3/2] border-[2px] bg-white border-blue-400 @error('about_image') border-red-500 @enderror rounded-xl"
-                                    src="{{ Storage::url( $contents['about_image']) }}" alt="">
-                            </figure>
-
-                            <x-input-error class="mt-1" for="about_image" />
+        
+                            <div class="rounded-lg @error('about_description') border-[2px] border-red-500 @enderror">
+                                <textarea class="textarea" name="about_description">
+                                    @if (isset($contents['about_description']))
+                                    {{ old('about_description', $contents['about_description'] ) }}
+                                    @endif
+                                    </textarea>
+                            </div>
+                            
+                            <x-input-error class="mt-1" for="about_description" />
 
                         </div>
-
+                        
                     </div>
                 </section>
                 
-                {{-- Seccion de Servicios --}}
-                <section id="services">
-                    <x-page-section-title :section_title="'Sección de Servicios'" :route_name="'welcome.index'" :section_id="'#services'" />
+                {{-- Seccion de lista de Capacitaciones --}}
+                <section id="our_trainings">
+
+                    <x-page-section-title :section_title="'Sección de Listado de capacitaciones'" :route_name="'welcome.index'" :section_id="'#our_trainings'" />
 
                     {{-- Columnas --}}
                     <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
@@ -237,15 +179,15 @@
                                 Título
                             </x-label>
 
-                            <div class="rounded-lg @error('our_services_title') border-[2px] border-red-500 @enderror">
-                                <textarea class="textarea" name="our_services_title">
-                                @if (isset($contents['our_services_title']))
-                                {{ old('our_services_title', $contents['our_services_title'] ) }}
+                            <div class="rounded-lg @error('our_trainings_title') border-[2px] border-red-500 @enderror">
+                                <textarea class="textarea" name="our_trainings_title">
+                                @if (isset($contents['our_trainings_title']))
+                                {{ old('our_trainings_title', $contents['our_trainings_title'] ) }}
                                 @endif
                                 </textarea>
                             </div>
 
-                            <x-input-error class="mt-1" for="our_services_title" />
+                            <x-input-error class="mt-1" for="our_trainings_title" />
 
 
                         </div>
@@ -256,15 +198,15 @@
                                 Descripción
                             </x-label>
 
-                            <div class="rounded-lg @error('our_services_description') border-[2px] border-red-500 @enderror">
-                                <textarea class="textarea" name="our_services_description">
-                                @if (isset($contents['our_services_description']))
-                                {{ old('our_services_description', $contents['our_services_description'] ) }}
+                            <div class="rounded-lg @error('our_trainings_description') border-[2px] border-red-500 @enderror">
+                                <textarea class="textarea" name="our_trainings_description">
+                                @if (isset($contents['our_trainings_description']))
+                                {{ old('our_trainings_description', $contents['our_trainings_description'] ) }}
                                 @endif
                                 </textarea>
                             </div>
 
-                            <x-input-error class="mt-1" for="our_services_description" />
+                            <x-input-error class="mt-1" for="our_trainings_description" />
 
                         </div>
 

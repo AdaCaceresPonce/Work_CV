@@ -9,22 +9,25 @@
     @endpush
 
     {{-- Cover --}}
-    <section id="clinic_about" class="">
+    <section id="cover" class="">
         <x-container class="px-4 section__spacing">
             <div class="flex items-center flex-wrap">
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 p-4 lg:pr-12">
 
-                    <div>
-                        <span class="text-2xl sm:text-3xl lg:text-4xl leading-tight lg:leading-tight">
-                            {!! $contents['cover_title'] ?? 'Sin título' !!}
-                        </span>
-                    </div>
+                    <div class="max-w-[500px] lg:max-w-full mx-auto text-center lg:text-start">
 
-                    <div class="mt-4">
-                        <span class="text-base sm:text-base lg:text-lg">
-                            {!! $contents['cover_description'] ?? 'Sin descripción' !!}
-                        </span>
+                        <div>
+                            <span class="text-3xl md:text-4xl leading-tight lg:leading-tight">
+                                {!! $contents['cover_title'] ?? 'Sin título' !!}
+                            </span>
+                        </div>
+    
+                        <div class="mt-4">
+                            <span class="text-base sm:text-base md:text-lg">
+                                {!! $contents['cover_description'] ?? 'Sin descripción' !!}
+                            </span>
+                        </div>
                     </div>
 
                 </div>
@@ -150,22 +153,26 @@
         </x-container>
     </section>
     
-
     {{-- Banner 1 --}}
-    <section class="bg-primary">
-        <x-container class="px-4 py-20 md:py-16">
+    <section id="about" class="bg-primary">
+        <x-container class="px-4 py-14 md:py-16">
 
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-4">
+            <div class="flex flex-col lg:flex-row px-4 gap-8 lg:gap-4">
 
+                {{-- Icono --}}
                 <div class="w-full lg:w-[25%] flex justify-center items-center text-center">
                     <i class="fa-solid fa-book text-[80px] text-primary-contrast-1"></i>
                 </div>
 
-                <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-8">
+                {{-- Texto --}}
+                <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-6">
 
                     <span class="text-primary-contrast-1 text-base md:text-lg">
                         {!! $contents['about_description'] ?? 'Sin descripción' !!}
                     </span>
+
+                    <div class="bg-tertiary-border w-[80%] h-[2px] md:h-[1.5px]">
+                    </div>
 
                     {{-- Ver más --}}
                     <div class="flex w-full justify-center">
@@ -180,12 +187,11 @@
         </x-container>
     </section>
 
-
     {{-- Capacitaciones --}}
-    <section id="trainings">
+    <section id="our_trainings">
         <x-container class="px-4 section__spacing flex-col">
             {{-- Titulo --}}
-            <div class="mb-6 pb-4 text-center sm:px-15 lg:px-40">
+            <div class="mb-6 text-center sm:px-15 lg:px-40">
                 <div>
                     <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight lg:leading-tight">
                         {!! $contents['our_trainings_title'] !!}
@@ -204,7 +210,8 @@
             {{-- Ver todos los servicios --}}
             <div class="flex w-full justify-center">
                 <a href="{{ route('our_trainings.index') }}"
-                    class="text-primary-contrast-1 text-lg font-medium bg-primary py-3 px-6 rounded-lg">
+                    class="text-primary-contrast-1 text-lg font-medium py-3 px-6 rounded-lg border-[2px] border-primary bg-primary
+                            hover:bg-primary-contrast-1 hover:text-primary transition duration-150">
                     Ver todas las capacitaciones
                 </a>
             </div>
@@ -213,7 +220,7 @@
     </section>
 
     {{-- Por que elegir nuestras capacitaciones --}}
-    <section id="clinic_about">
+    <section id="why_choose_our_trainings">
         <x-container class="px-4 section__spacing">
             <div class="flex items-center flex-col-reverse lg:flex-row gap-7">
 
@@ -224,7 +231,7 @@
 
                 <div class="w-full lg:w-1/2 px-4 text-start">
 
-                    <span class="text-xl sm:text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                    <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
 
                         {!! $contents['why_choose_our_trainings_title'] ?? 'titulo acerca de' !!}
 
