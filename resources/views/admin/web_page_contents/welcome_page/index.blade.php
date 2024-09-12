@@ -65,7 +65,7 @@
             @method('PUT')
             <div class="card-gray w-full space-y-14">
 
-                {{-- Seccion de portada --}}
+                {{-- Seccion de portada (tiene imagen) --}}
                 <section id="cover">
                     
                     <x-page-section-title :section_title="'Sección de Portada'" :route_name="'welcome.index'" :section_id="'#cover'" />
@@ -73,6 +73,7 @@
                     {{-- Columnas --}}
                     <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                         
+                        {{-- Texto --}}
                         <div class="space-y-4">
                             <div>
                                 <x-label class="mb-1 mt-2 text-[15px] font-black">
@@ -109,6 +110,7 @@
                             </div>
                         </div>
 
+                        {{-- Imagen --}}
                         <div class="h-full flex flex-col">
                             <div>
                                 <x-label class="mb-1 mt-2 text-[15px] font-black">
@@ -214,51 +216,81 @@
                     </div>
                 </section>
 
-                {{-- Seccion de Profesionales --}}
-                <section id="professionals">
+                {{-- Seccion sobre por què elegir las capacitaciones (tiene imagen) --}}
+                <section id="why_choose_our_trainings">
 
-                    <x-page-section-title :section_title="'Sección de Profesionales'" :route_name="'welcome.index'" :section_id="'#professionals'" />
+                    <x-page-section-title :section_title="'Sección sobre por qué elegir las capacitaciones'" :route_name="'contact_us.index'" :section_id="'#why_choose_our_trainings'" />
 
                     {{-- Columnas --}}
                     <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                         <div>
 
-                            <x-label class="mb-1 mt-2 text-[15px] font-black">
+                            <x-label for="why_choose_our_trainings_title" class="mb-1 mt-2 text-[15px] font-black">
                                 Título
                             </x-label>
 
-                            <div class="rounded-lg @error('our_professionals_title') border-[2px] border-red-500 @enderror">
-                                <textarea class="textarea" name="our_professionals_title">
-                                @if (isset($contents['our_professionals_title']))
-                                {{ old('our_professionals_title', $contents['our_professionals_title'] ) }}
+                            <div class="rounded-lg @error('why_choose_our_trainings_title') border-[2px] border-red-500 @enderror">
+                                <textarea id="why_choose_our_trainings_title" class="textarea" name="why_choose_our_trainings_title">
+                                @if (isset($contents['why_choose_our_trainings_title']))
+                                {{ old('why_choose_our_trainings_title', $contents['why_choose_our_trainings_title'] ) }}
                                 @endif
                                 </textarea>
                             </div>
 
-                            <x-input-error class="mt-1" for="our_professionals_title" />
+                            <x-input-error class="mt-1" for="why_choose_our_trainings_title" />
 
                         </div>
 
                         <div>
 
-                            <x-label class="mb-1 mt-2 text-[15px] font-black">
+                            <x-label for="why_choose_our_trainings_description" class="mb-1 mt-2 text-[15px] font-black">
                                 Descripción
                             </x-label>
 
-                            <div class="rounded-lg @error('our_professionals_description') border-[2px] border-red-500 @enderror">
-                                <textarea class="textarea" name="our_professionals_description">
-                                @if (isset($contents['our_professionals_description']))
-                                {{ old('our_professionals_description', $contents['our_professionals_description'] ) }}
+                            <div id="why_choose_our_trainings_description" class="rounded-lg @error('why_choose_our_trainings_description') border-[2px] border-red-500 @enderror">
+                                <textarea class="textarea" name="why_choose_our_trainings_description">
+                                @if (isset($contents['why_choose_our_trainings_description']))
+                                {{ old('why_choose_our_trainings_description', $contents['why_choose_our_trainings_description'] ) }}
                                 @endif
                                 </textarea>
                             </div>
 
-                            <x-input-error class="mt-1" for="our_professionals_description" />
+                            <x-input-error class="mt-1" for="why_choose_our_trainings_description" />
 
                         </div>
 
                     </div>
+
+                    <div class="mt-6 max-w-[650px] mx-auto">
+                        <div>
+                            <x-label class="mt-2 text-[15px] font-black">
+                                Imagen
+                            </x-label>
+                            <x-label class="mb-1">
+                                (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
+                            </x-label>
+                        </div>
+                        <figure class="relative">
+                            <div class="absolute top-4 right-4">
+                                <label
+                                    class="flex items-center px-2.5 py-1.5 lg:px-4 lg:py-2 rounded-lg btn-blue cursor-pointer text-sm lg:text-base">
+                                    <i class="fas fa-camera mr-2"></i>
+                                    Actualizar imagen
+                                    <input id="uploadImage2" name="why_choose_our_trainings_img" type="file" class="hidden"
+                                        accept="image/*" onchange="previewImage(2);" />
+                                </label>
+                            </div>
+                            <img id="uploadPreview2"
+                                class="object-contain w-full aspect-[3/2] border-[2px] bg-white border-blue-400 @error('why_choose_our_trainings_img') border-red-500 @enderror rounded-xl"
+                                src="{{ Storage::url( $contents['why_choose_our_trainings_img']) }}" alt="">
+                        </figure>
+
+                        <x-input-error class="mt-1" for="why_choose_our_trainings_img" />
+                        
+                    </div>
+
                 </section>
+
 
                 {{-- Seccion de Opiniones --}}
                 <section id="opinions">
@@ -326,11 +358,10 @@
     </style>
 
     @push('js')
+
         {{-- TinyMCE --}}
-        <script src="https://cdn.tiny.cloud/1/ptkarmvvxs48norvninijsbe8qx8zwy0ouzu9mp22f5kn99n/tinymce/6/tinymce.min.js"
-            referrerpolicy="origin"></script>
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/plugins/language/langs/es.js" referrerpolicy="origin">
-        </script>
+        @include('layouts.partials.admin.scripts.tinymce-scripts')
+
         <script>
 
             tinymce.init({
@@ -338,6 +369,7 @@
                 height: 220,
                 language: 'es',
                 menubar: false,
+                plugins: 'lists advlist',
                 toolbar: 'undo redo | formatselect | ' +
                     'bold | forecolor |' +
                     '| bullist numlist | ' +

@@ -65,7 +65,7 @@
                 <x-page-section-title :section_title="'Sección de portada'" :route_name="'contact_us.index'" :section_id="'#cover'" />
 
                 {{-- Columnas --}}
-                <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                     <div class="space-y-4">
 
                         <div>
@@ -118,7 +118,7 @@
                 <x-page-section-title :section_title="'Sección de Contacto'" :route_name="'contact_us.index'" :section_id="'#contact'" />
 
                 {{-- Columnas --}}
-                <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                     <div>
 
                         <x-label for="contact_us_title" class="mb-1 mt-2 text-[15px] font-black">
@@ -276,11 +276,10 @@
 </div>
 
     @push('js')
+    
         {{-- TinyMCE --}}
-        <script src="https://cdn.tiny.cloud/1/ptkarmvvxs48norvninijsbe8qx8zwy0ouzu9mp22f5kn99n/tinymce/6/tinymce.min.js"
-            referrerpolicy="origin"></script>
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/plugins/language/langs/es.js" referrerpolicy="origin">
-        </script>
+        @include('layouts.partials.admin.scripts.tinymce-scripts')
+
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 tinymce.init({

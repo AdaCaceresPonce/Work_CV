@@ -18,7 +18,7 @@
     <x-page-cover :id="'cover'" :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" />
 
     {{-- Capacitaciones Profesionales --}}
-    <section id="our_trainings" class="bg-tertiary">
+    <section id="trainings" class="bg-tertiary">
 
         <x-container class="px-4 section__spacing">
 

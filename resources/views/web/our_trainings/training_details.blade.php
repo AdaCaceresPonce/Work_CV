@@ -51,18 +51,24 @@
                     <div class="mx-auto max-w-[500px] lg:max-w-full">
 
                         <div class="space-y-4">
-    
+
                             <span class="text-xl lg:text-2xl leading-tight lg:leading-tight font-bold">
                                 En {{ $training->name }} verás los siguientes temas:
-        
+
                             </span>
-                            
-                            <div class="grid grid-cols-1 text-base md:text-lg">
-                                @foreach ($training->topics as $topic)
-                                    <div><span class="font-bold mr-2">{{ $topic->position }}.</span>{{ $topic->name }}</div>
-                                @endforeach
+
+                            <div class="text-base md:text-lg">
+
+                                <ol>
+                                    @foreach ($training->topics as $topic)
+                                        <li>
+                                            {{ $topic->name }}
+                                        </li>
+                                    @endforeach
+                                </ol>
+
                             </div>
-    
+
                         </div>
 
                     </div>

@@ -29,11 +29,11 @@ class WelcomePageContentSeeder extends Seeder
             'our_trainings_description'=>'<p>Descubre las capacitaciones que están a tu disposición.</p>',
 
             'why_choose_our_trainings_title'=>'<p><strong><span class="text-primary">¿Por qué elegir nuestras capacitaciones?</span></strong></p>',
-            'why_choose_our_trainings_description'=>'<ul class="list-disc">
-                <li><strong>Experiencia comprobada:</strong> Con años de experiencia en el campo educativo, he perfeccionado un enfoque de enseñanza que maximiza el aprendizaje y la aplicación práctica.</li>
-                <li><strong>Capacitaciones personalizadas:</strong> Cada capacitación esta diseñada para adaptarse a las necesidades y objetivos de las instituciones educativas, garantizando que se obtenga el máximo beneficio en cada sesión.</li>
-                <li><strong>Metodologías innovadoras:</strong> Uso de metodologías activas para asegurar el propósito de las capacitaciones. Desarrollo de talleres educativos.</li>
-            </ul>',
+            'why_choose_our_trainings_description'=>'<ol>
+<li><strong>Experiencia comprobada:</strong> Con a&ntilde;os de experiencia en el campo educativo, he perfeccionado un enfoque de ense&ntilde;anza que maximiza el aprendizaje y la aplicaci&oacute;n pr&aacute;ctica.</li>
+<li><strong>Capacitaciones personalizadas:</strong> Cada capacitaci&oacute;n esta dise&ntilde;ada para adaptarse a las necesidades y objetivos de las instituciones educativas, garantizando que se obtenga el m&aacute;ximo beneficio en cada sesi&oacute;n.</li>
+<li><strong>Metodolog&iacute;as innovadoras:</strong> Uso de metodolog&iacute;as activas para asegurar el prop&oacute;sito de las capacitaciones. Desarrollo de talleres educativos.</li>
+</ol>',
             'why_choose_our_trainings_img' => 'web_pages_images/welcome_page/' . $faker->image('public/storage/web_pages_images/welcome_page', 1200, 800, null, false),
             
             'testimonials_title'=>'<p><span class="text-primary"><strong>Lo que nuestros instruidos opinan</strong></span></p>',

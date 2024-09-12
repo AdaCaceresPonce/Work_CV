@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-        {{ isset($title) ? $title. ' - ' : '' }}{{ config('app.name', '') }}
+        {{ isset($title) ? $title . ' - ' : '' }}{{ config('app.name', '') }}
     </title>
 
     <!-- Fonts -->
@@ -24,6 +24,17 @@
 
     <!-- Styles -->
     @livewireStyles
+
+
+    <style>
+        /*Para que las listas puedan mostrarse correctamente*/
+        ul,
+        ol {
+            list-style: revert;
+            padding-left: 25px;
+        }
+    </style>
+
 </head>
 
 <body class="font-cabin antialiased lg:overflow-y-auto bg-white" x-data="{
@@ -64,7 +75,7 @@
 
     @stack('js')
 
-    
+
 
     {{-- Alerta para sesiones flash --}}
     @if (session('swal'))
@@ -72,7 +83,7 @@
             Swal.fire({!! json_encode(session('swal')) !!});
         </script>
     @endif
-    
+
 </body>
 
 </html>
