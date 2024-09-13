@@ -34,7 +34,7 @@ class Sidebar extends Component
             'active' => request()->routeIs('admin.dashboard'),
         ];
 
-        //Registros
+        //Gestión
         $this->links = [
             [
                 //Capacitaciones
@@ -42,6 +42,14 @@ class Sidebar extends Component
                 'name' => 'Capacitaciones',
                 'route' => route('admin.trainings.index'),
                 'active' => request()->routeIs('admin.trainings.*'),
+            ],
+
+            [
+                //Currículum
+                'icon' => 'fa-solid fa-file-invoice',
+                'name' => 'Tu currículum',
+                'route' => route('admin.professional_profile.index'),
+                'active' => request()->routeIs('admin.professional_profile.*'),
             ],
 
             [
@@ -70,7 +78,7 @@ class Sidebar extends Component
             'active' => request()->routeIs('admin.opinions.*'),
         ];
 
-        //Contenidos de Paginas
+        //Editor de Paginas
         $this->web_pages = [
             [
                 'icon' => 'fa-solid fa-ranking-star',
@@ -84,6 +92,13 @@ class Sidebar extends Component
                 'name' => 'Página Capacitaciones',
                 'route' => route('admin.our_trainings_page_content.index'),
                 'active' => request()->routeIs('admin.our_trainings_page_content.*'),
+            ],
+
+            [
+                'icon' => 'fa-solid fa-file-contract',
+                'name' => 'Página Currículum',
+                'route' => route('admin.professional_profile_page_content.index'),
+                'active' => request()->routeIs('admin.professional_profile_page_content.*'),
             ],
 
             [

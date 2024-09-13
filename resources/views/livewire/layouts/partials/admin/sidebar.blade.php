@@ -40,7 +40,7 @@
 
         <ul class="pt-4 pb-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
             <li>
-                <h2 class="text-gray-400 font-bold">REGISTROS</h2>
+                <h2 class="text-gray-400 font-bold">GESTIÓN</h2>
             </li>
             @foreach ($links as $link)
                 <li>
@@ -107,7 +107,7 @@
 
         <ul class="pt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
             <li>
-                <h2 class="text-gray-400 font-bold">CONTENIDOS DE PÁGINAS</h2>
+                <h2 class="text-gray-400 font-bold">EDITOR DE PÁGINAS</h2>
             </li>
             @foreach ($web_pages as $web_page)
                 <li>
