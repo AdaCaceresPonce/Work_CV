@@ -222,7 +222,7 @@
                     <x-page-section-title :section_title="'Sección sobre por qué elegir las capacitaciones'" :route_name="'contact_us.index'" :section_id="'#why_choose_our_trainings'" />
 
                     {{-- Columnas --}}
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
+                    <div class="grid grid-cols-1 gap-4">
                         <div>
 
                             <x-label for="why_choose_our_trainings_title" class="mb-1 mt-2 text-[15px] font-black">

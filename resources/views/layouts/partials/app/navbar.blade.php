@@ -7,8 +7,8 @@
         ],
         [
             'name' => 'Mi currículum',
-            'route' => route('about_us.index'),
-            'active' => request()->routeIs('about_us.index'),
+            'route' => route('professional_profile.index'),
+            'active' => request()->routeIs('professional_profile.index'),
         ],
         [
             'name' => 'Capacitaciones',

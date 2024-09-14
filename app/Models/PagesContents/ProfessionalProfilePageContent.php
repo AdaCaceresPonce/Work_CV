@@ -22,6 +22,7 @@ class ProfessionalProfilePageContent extends Model
         'academic_backgrounds_title',
 
         'my_skills_title',
+        'my_skills_img',
         
     ];
 

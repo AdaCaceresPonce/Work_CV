@@ -39,7 +39,7 @@ Route::resource('opinions', OpinionController::class);
 //Contenidos de las páginas
 Route::resource('welcome_page_content', WelcomePageContentController::class);
 Route::resource('our_trainings_page_content', OurTrainingsPageContentController::class)->names('our_trainings_page_content');
-Route::resource('professional_profile_page_content', ProfessionalProfilePageContentController::class)->names('professional_profile_page_content');
+Route::resource('curriculum_page_content', ProfessionalProfilePageContentController::class)->names('curriculum_page_content');
 Route::resource('contact_us_page_content', ContactUsPageContentController::class);
 
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\OurProfessionalsController;
 use App\Http\Controllers\Web\OurServicesController;
 use App\Http\Controllers\Web\OurTrainingsPageController;
+use App\Http\Controllers\Web\ProfessionalProfilePageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,8 +18,7 @@ Route::get('/our_services/{service}', [OurServicesController::class, 'show_servi
 //Capacitaciones
 Route::get('/nuestras_capacitaciones', [OurTrainingsPageController::class, 'index'])->name('our_trainings.index');
 Route::get('/nuestras_capacitaciones/{training}', [OurTrainingsPageController::class, 'show_training'])->name('our_trainings.show_training');
-
-
+Route::get('/mi_curriculum', [ProfessionalProfilePageController::class, 'index'])->name('professional_profile.index');
 Route::get('/contact_us/{training?}', [ContactUsController::class, 'index'])->name('contact_us.index');
 
 // Route::get('/about-us', function () {

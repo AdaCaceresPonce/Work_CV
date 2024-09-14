@@ -27,7 +27,7 @@ class ProfessionalProfilePageContentSeeder extends Seeder
             
             'academic_backgrounds_title'=>'<p><strong><span class="text-primary">Formación Académica</span></strong></p>',
 
-            'my_skills_title'=>'<p><strong><span class="text-primary">Mis Aptitudes</span></strong></p>',
+            'my_skills_title'=>'Mis Aptitudes',
             'my_skills_img' => 'web_pages_images/professional_profile_page/' . $faker->image('public/storage/web_pages_images/professional_profile_page', 1200, 800, null, false),
 
         ];

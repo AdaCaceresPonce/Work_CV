@@ -97,8 +97,8 @@ class Sidebar extends Component
             [
                 'icon' => 'fa-solid fa-file-contract',
                 'name' => 'Página Currículum',
-                'route' => route('admin.professional_profile_page_content.index'),
-                'active' => request()->routeIs('admin.professional_profile_page_content.*'),
+                'route' => route('admin.curriculum_page_content.index'),
+                'active' => request()->routeIs('admin.curriculum_page_content.*'),
             ],
 
             [

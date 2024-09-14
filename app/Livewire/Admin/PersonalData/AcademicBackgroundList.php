@@ -179,7 +179,7 @@ class AcademicBackgroundList extends Component
 
         $this->dispatch('swal', [
             'icon' => 'success',
-            'title' => '¡Empleo eliminado!',
+            'title' => '¡Grado académico eliminado!',
             'text' => 'El grado académico ha sido eliminado y los restantes han sido reordenados.',
         ]);
 
