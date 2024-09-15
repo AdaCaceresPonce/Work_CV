@@ -56,8 +56,8 @@ class Sidebar extends Component
                 //Información de Contacto
                 'icon' => 'fa-solid fa-house-chimney-medical',
                 'name' => 'Información de Contacto',
-                'route' => route('admin.clinic_information.index'),
-                'active' => request()->routeIs('admin.clinic_information.*'),
+                'route' => route('admin.contact_information.index'),
+                'active' => request()->routeIs('admin.contact_information.*'),
             ],
         ];
 

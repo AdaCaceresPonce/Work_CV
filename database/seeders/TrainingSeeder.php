@@ -9,6 +9,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Faker\Factory as Faker;
 
+use Illuminate\Support\Facades\File;
+
 class TrainingSeeder extends Seeder
 {
     /**
@@ -19,12 +21,20 @@ class TrainingSeeder extends Seeder
 
         $faker = Faker::create();
 
+        // Rutas de las imágenes originales en public y destino en storage
+        $sourceCardPath = public_path('web_images/trainings/card_images/');
+        $sourceCoverPath = public_path('web_images/trainings/cover_images/');
+
+        $cardImagesDestinationPath = storage_path('app/public/trainings/card_images/');
+        $coverImagesDestinationPath = storage_path('app/public/trainings/cover_images/');
+
+
         $trainings = [
 
             'Planificación curricular nivel secundaria' => [
                 'description' => null,
-                'card_img_path' => 'planificacion-curricular-card.jpg',
-                'cover_img_path' => 'planificacion-curricular-cover.jpg',
+                'card_img_path' => 'planificacion_curricular_card.jpg',
+                'cover_img_path' => 'planificacion_curricular_cover.jpg',
                 'additional_info' => null,
                 'topics' => [
                     'Perfil de Egreso de la Educación',
@@ -40,8 +50,8 @@ class TrainingSeeder extends Seeder
 
             'Enfoque por competencias' => [
                 'description' => null,
-                'card_img_path' => 'images/trainings/enfoque-competencias-card.jpg',
-                'cover_img_path' => 'images/trainings/enfoque-competencias-cover.jpg',
+                'card_img_path' => 'enfoque_competencias_card.jpg',
+                'cover_img_path' => 'enfoque_competencias_cover.jpg',
                 'additional_info' => null,
                 'topics' => [
                     'Conferencia Mundial: "Educación para Todos"',
@@ -54,8 +64,8 @@ class TrainingSeeder extends Seeder
 
             'Evaluación Formativa' => [
                 'description' => null,
-                'card_img_path' => 'images/trainings/evaluacion-formativa-card.jpg',
-                'cover_img_path' => 'images/trainings/evaluacion-formativa-cover.jpg',
+                'card_img_path' => 'evaluacion_formativa_card.jpg',
+                'cover_img_path' => 'evaluacion_formativa_cover.jpg',
                 'additional_info' => null,
                 'topics' => [
                     'Definición de evaluación formativa',
@@ -68,8 +78,8 @@ class TrainingSeeder extends Seeder
 
             'Evaluación diagnóstica' => [
                 'description' => null,
-                'card_img_path' => 'images/trainings/evaluacion-diagnostica-card.jpg',
-                'cover_img_path' => 'images/trainings/evaluacion-diagnostica-cover.jpg',
+                'card_img_path' => 'evaluacion_diagnostica_card.jpg',
+                'cover_img_path' => 'evaluacion_diagnostica_cover.jpg',
                 'additional_info' => null,
                 'topics' => [
                     'Importancia de la evaluación diagnóstica',
@@ -82,8 +92,8 @@ class TrainingSeeder extends Seeder
 
             'Rúbricas de Observación de Aula' => [
                 'description' => null,
-                'card_img_path' => 'images/trainings/evaluacion-diagnostica-card.jpg',
-                'cover_img_path' => 'images/trainings/evaluacion-diagnostica-cover.jpg',
+                'card_img_path' => 'rubricas_observacion_card.jpg',
+                'cover_img_path' => 'rubricas_observacion_cover.jpg',
                 'additional_info' => null,
                 'topics' => [
                     'Rúbricas de Observación de Aula',
@@ -99,13 +109,44 @@ class TrainingSeeder extends Seeder
 
         foreach ($trainings as $trainingName => $trainingData) {
 
+            // Copiar las imágenes o generar nuevas si no existen
+
+            //Rutas completas de las imagenes que están fuera de Storage
+            $cardImageSourcePath = $sourceCardPath . $trainingData['card_img_path'];
+            $coverImageSourcePath = $sourceCoverPath . $trainingData['cover_img_path'];
+
+            //Rutas destino completas en storage
+            $cardDestinationPath = $cardImagesDestinationPath . $trainingData['card_img_path'];
+            $coverDestinationPath = $coverImagesDestinationPath . $trainingData['cover_img_path'];
+
+            if (File::exists($cardImageSourcePath)) {
+                // Copiar la imagen de la tarjeta si existe en la carpeta pública
+                File::copy($cardImageSourcePath, $cardDestinationPath);
+                $cardImagePath = 'trainings/card_images/' . $trainingData['card_img_path'];
+            } else {
+                // Si no existe, generar una nueva imagen de tarjeta
+                $generatedCardImage = $faker->image($cardImagesDestinationPath, 640, 480, null, false);
+                $cardImagePath = 'trainings/card_images/' . $generatedCardImage;
+            }
+
+            if (File::exists($coverImageSourcePath)) {
+                // Copiar la imagen de la portada si existe en la carpeta pública
+                File::copy($coverImageSourcePath, $coverDestinationPath);
+                $coverImagePath = 'trainings/cover_images/' . $trainingData['cover_img_path'];
+            } else {
+                // Si no existe, generar una nueva imagen de portada
+                $generatedCoverImage = $faker->image($coverImagesDestinationPath, 1000, 350, null, false);
+                $coverImagePath = 'trainings/cover_images/' . $generatedCoverImage;
+            }
+
+
             // Crear el training
             $training = Training::create([
                 'name' => $trainingName,
                 'slug' => Str::slug($trainingName),
                 'description' => $trainingData['description'],
-                'card_img_path' => 'trainings/card_images/' . $faker->image('public/storage/trainings/card_images', 640, 480, null, false),
-                'cover_img_path' => 'trainings/cover_images/' . $faker->image('public/storage/trainings/cover_images', 1000, 350, null, false),
+                'card_img_path' => $cardImagePath,
+                'cover_img_path' => $coverImagePath,
                 'additional_info' => $trainingData['additional_info'],
             ]);
 

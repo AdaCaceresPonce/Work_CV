@@ -219,7 +219,7 @@
                 {{-- Seccion sobre por què elegir las capacitaciones (tiene imagen) --}}
                 <section id="why_choose_our_trainings">
 
-                    <x-page-section-title :section_title="'Sección sobre por qué elegir las capacitaciones'" :route_name="'contact_us.index'" :section_id="'#why_choose_our_trainings'" />
+                    <x-page-section-title :section_title="'Sección sobre por qué elegir las capacitaciones'" :route_name="'welcome.index'" :section_id="'#why_choose_our_trainings'" />
 
                     {{-- Columnas --}}
                     <div class="grid grid-cols-1 gap-4">
@@ -287,54 +287,6 @@
 
                         <x-input-error class="mt-1" for="why_choose_our_trainings_img" />
                         
-                    </div>
-
-                </section>
-
-
-                {{-- Seccion de Opiniones --}}
-                <section id="opinions">
-
-                    <x-page-section-title :section_title="'Sección de Opiniones'" :route_name="'welcome.index'" :section_id="'#testimonials'" />
-
-                    {{-- Columnas --}}
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
-                        <div>
-
-                            <x-label class="mb-1 mt-2 text-[15px] font-black">
-                                Título
-                            </x-label>
-
-                            <div class="rounded-lg @error('testimonials_title') border-[2px] border-red-500 @enderror">
-                                <textarea class="textarea" name="testimonials_title">
-                                @if (isset($contents['testimonials_title']))
-                                {{ old('testimonials_title', $contents['testimonials_title'] ) }}
-                                @endif
-                                </textarea>
-                            </div>
-
-                            <x-input-error class="mt-1" for="testimonials_title" />
-
-                        </div>
-
-                        <div>
-
-                            <x-label class="mb-1 mt-2 text-[15px] font-black">
-                                Descripción
-                            </x-label>
-
-                            <div class="rounded-lg @error('testimonials_description') border-[2px] border-red-500 @enderror">
-                                <textarea class="textarea" name="testimonials_description">
-                                @if (isset($contents['testimonials_description']))
-                                {{ old('testimonials_description', $contents['testimonials_description'] ) }}
-                                @endif
-                                </textarea>
-                            </div>
-                            
-                            <x-input-error class="mt-1" for="testimonials_description" />
-
-                        </div>
-
                     </div>
 
                 </section>

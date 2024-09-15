@@ -20,7 +20,7 @@
             //Información de contacto
             'icon' => 'fa-solid fa-house-chimney-medical',
             'name' => 'Información de Contacto',
-            'route' => route('admin.clinic_information.index'),
+            'route' => route('admin.contact_information.index'),
         ],
     ];
 

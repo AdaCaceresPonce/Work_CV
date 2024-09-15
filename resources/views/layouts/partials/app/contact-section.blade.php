@@ -41,7 +41,7 @@
                         <div class="ml-2 sm:ml-3 flex flex-1 flex-col">
                             <span class="font-bold">Números de contacto</span>
                             <span class="font-medium text-sm text-[#535353]">
-                                {{ $clinic_information['cellphone'] ?? '' }}{{ $clinic_information['cellphone'] && $clinic_information['phone'] ? ' - ' : '' }}{{ $clinic_information['phone'] ?? '' }}
+                                {{ $contact_information['cellphone'] ?? '' }}{{ $contact_information['cellphone'] && $contact_information['phone'] ? ' - ' : '' }}{{ $contact_information['phone'] ?? '' }}
                             </span>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         <div class="ml-2 sm:ml-3 flex flex-1 flex-col">
                             <span class="font-bold">Correo electrónico</span>
                             <span class="font-medium text-xs leading-4 sm:text-sm text-[#535353]">
-                                {{ $clinic_information['email'] }}
+                                {{ $contact_information['email'] }}
                             </span>
                         </div>
                     </div>

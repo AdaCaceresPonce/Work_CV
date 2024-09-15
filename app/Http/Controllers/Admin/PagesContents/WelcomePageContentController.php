@@ -72,8 +72,8 @@ class WelcomePageContentController extends Controller
             'why_choose_our_trainings_description' => 'required',
             'why_choose_our_trainings_img' => 'image|max:1024',
 
-            'testimonials_title' => 'required',
-            'testimonials_description' => 'required',
+            'testimonials_title' => 'nullable',
+            'testimonials_description' => 'nullable',
 
         ], [
 

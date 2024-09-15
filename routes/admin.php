@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\ClinicInformationController;
+use App\Http\Controllers\Admin\ContactInformationController;
 use App\Http\Controllers\Admin\ContactUsPageContentController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\OpinionController;
@@ -27,7 +27,7 @@ Route::resource('capacitaciones', TrainingController::class)->names('trainings')
     'capacitaciones' => 'training'
 ]);
 
-Route::resource('clinic_information', ClinicInformationController::class);
+Route::resource('contact_information', ContactInformationController::class);
 
 Route::get('/currículum', [ProfessionalProfileController::class, 'index'])->name('professional_profile.index');
 

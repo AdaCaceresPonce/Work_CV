@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\ContactInformation;
 use App\Models\Inquiry;
 use App\Models\Opinion;
 use App\Models\Service;
@@ -66,10 +65,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfessionalProfilePageContentSeeder::class);
         $this->call(ContactUsPageContentSeeder::class);
 
-        $this->call(ClinicInformationSeeder::class);
-
         //Cargar la información de contacto
-        // $this->call(ContactInformation::class);
+        $this->call(ContactInformationSeeder::class);
 
         Inquiry::factory(30)->create();
         Opinion::factory(30)->create();

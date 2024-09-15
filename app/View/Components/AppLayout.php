@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Models\ClinicInformation;
+use App\Models\ContactInformation;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
@@ -13,8 +13,8 @@ class AppLayout extends Component
      */
     public function render(): View
     {
-        $clinicInformation = ClinicInformation::first();
+        $contact_information = ContactInformation::first();
 
-        return view('layouts.app', compact('clinicInformation'));
+        return view('layouts.app', compact('contact_information'));
     }
 }

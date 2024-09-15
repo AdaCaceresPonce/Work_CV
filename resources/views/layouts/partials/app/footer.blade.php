@@ -3,7 +3,7 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
-                    {{-- <img src="{{ Storage::url($clinicInformation['footer_clinic_logo']) }}" class="size-8 border border-white rounded-full me-3" /> --}}
+                    {{-- <img src="{{ Storage::url($contact_information['footer_clinic_logo']) }}" class="size-8 border border-white rounded-full me-3" /> --}}
                     <span class="text-primary-contrast-1 self-center text-2xl font-semibold whitespace-nowrap">Presentación Personal</span>
                 </a>
             </div>
@@ -11,7 +11,7 @@
                 <div>
                     <h2 class="mb-6 text-base font-semibold uppercase text-white">Enlaces Rápidos
                     </h2>
-                    <ul class="text-gray-300 font-medium list-none">
+                    <ul class="text-gray-300 font-medium list-none pl-0">
                         <li class="mb-3">
                             <a href="{{ route('welcome.index') }}" class="hover:underline">Inicio</a>
                         </li>
@@ -27,28 +27,28 @@
                     </ul>
                 </div>
 
-                @if (isset($clinicInformation['facebook_link']) ||
-                        isset($clinicInformation['twitter_link']) ||
-                        isset($clinicInformation['instagram_link']))
+                @if (isset($contact_information['facebook_link']) ||
+                        isset($contact_information['twitter_link']) ||
+                        isset($contact_information['instagram_link']))
                     <div>
                         <h2 class="mb-6 text-base font-semibold uppercase text-white">Síguenos</h2>
-                        <ul class="text-gray-300 font-medium space-y-3 list-none">
-                            @isset($clinicInformation['facebook_link'])
+                        <ul class="text-gray-300 font-medium space-y-3 list-none pl-0">
+                            @isset($contact_information['facebook_link'])
                                 <li>
-                                    <a href="{{ $clinicInformation['facebook_link'] }}" target="_blank"
+                                    <a href="{{ $contact_information['facebook_link'] }}" target="_blank"
                                         class="hover:underline after:content-['_↗']"><i class="fa-brands fa-facebook me-2 "></i>Facebook</a>
                                 </li>
                             @endisset
 
-                            @isset($clinicInformation['twitter_link'])
+                            @isset($contact_information['twitter_link'])
                                 <li>
-                                    <a href="{{ $clinicInformation['twitter_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
+                                    <a href="{{ $contact_information['twitter_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
                                 </li>
                             @endisset
 
-                            @isset($clinicInformation['instagram_link'])
+                            @isset($contact_information['instagram_link'])
                                 <li>
-                                    <a href="{{ $clinicInformation['instagram_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-instagram me-2"></i>Instagram</a>
+                                    <a href="{{ $contact_information['instagram_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-instagram me-2"></i>Instagram</a>
                                 </li>
                             @endisset
 

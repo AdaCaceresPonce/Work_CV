@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\ClinicInformation;
+use App\Models\ContactInformation;
 use App\Models\ContactUsPageContent;
 use App\Models\Service;
 use Closure;
@@ -24,10 +25,10 @@ class ContactSection extends Component
      */
     public function render(): View|Closure|string
     {
-        $clinic_information = ClinicInformation::first();
+        $contact_information = ContactInformation::first();
 
         $contact_section = ContactUsPageContent::first();
 
-        return view('layouts.partials.app.contact-section', compact('clinic_information', 'contact_section'));
+        return view('layouts.partials.app.contact-section', compact('contact_information', 'contact_section'));
     }
 }

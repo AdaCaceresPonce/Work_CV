@@ -15,11 +15,11 @@ class ContactInformationSeeder extends Seeder
     {
         $info = [
             'phone' => null,
-            'cellphone' => '950 924 989',
+            'cellphone' => '950924989',
             'email' => 'patriciacm_199@hotmail.com',
             'facebook_link' => null,
             'twitter_link' => null,
-            'instagram_link' => null,
+            'instagram_link' => null
         ];
 
         ContactInformation::create($info);
