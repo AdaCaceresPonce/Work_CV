@@ -64,9 +64,9 @@ class ContactUsPageContentController extends Controller
             'contact_us_description' => 'required',
             'contact_us_img' => 'image|max:1024',
 
-            'opinions_title' => 'required',
-            'opinions_description' => 'required',
-            'opinions_img' => 'image|max:1024',
+            'opinions_title' => 'nullable',
+            'opinions_description' => 'nullable',
+            'opinions_img' => 'nullable|image|max:1024',
 
         ], [] , [
 
@@ -79,11 +79,10 @@ class ContactUsPageContentController extends Controller
 
             'opinions_title' => 'título de la sección de opiniones',
             'opinions_description' => 'descripción de la sección de opiniones',
-            'opinions_img' => 'image|max:1024',
 
         ]);
 
-        $images = ['cover_img', 'contact_us_img', 'opinions_img' ];
+        $images = ['cover_img', 'contact_us_img' ];
 
         $contactUsPageContent->update($request->except($images));
 

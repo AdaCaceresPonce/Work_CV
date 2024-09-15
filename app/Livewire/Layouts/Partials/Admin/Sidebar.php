@@ -70,13 +70,13 @@ class Sidebar extends Component
             'active' => request()->routeIs('admin.inquiries.*'),
         ];
 
-        $this->opinions_mailbox = [
-            //Buzón de opinioness
-            'icon' => 'fa-solid fa-comments',
-            'name' => 'Opiniones',
-            'route' => route('admin.opinions.index'),
-            'active' => request()->routeIs('admin.opinions.*'),
-        ];
+        // $this->opinions_mailbox = [
+        //     //Buzón de opinioness
+        //     'icon' => 'fa-solid fa-comments',
+        //     'name' => 'Opiniones',
+        //     'route' => route('admin.opinions.index'),
+        //     'active' => request()->routeIs('admin.opinions.*'),
+        // ];
 
         //Editor de Paginas
         $this->web_pages = [

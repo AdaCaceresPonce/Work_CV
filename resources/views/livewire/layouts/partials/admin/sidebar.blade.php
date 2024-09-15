@@ -84,7 +84,7 @@
             </li>
 
             {{-- Opiniones wire:poll.visible="refreshOpinionsCount"--}}
-            <li>
+            {{-- <li>
                 <a href="{{ $opinions_mailbox['route'] }}" 
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group {{ $opinions_mailbox['active'] ? ' bg-gray-200 dark:bg-gray-700' : '' }}">
                     <span class="inline-flex w-6 h-6 justify-center items-center">
@@ -102,7 +102,7 @@
                     @endif
 
                 </a>
-            </li>
+            </li> --}}
         </ul>
 
         <ul class="pt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">

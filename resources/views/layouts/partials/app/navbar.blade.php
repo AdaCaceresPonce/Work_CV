@@ -71,18 +71,18 @@
     <nav x-show="open" id="navigation-menu" class="bg-gray-700 bg-opacity-25 w-full absolute lg:hidden"
         style="display: none;">
 
-        <div x-on:click.away="open=false" class="bg-white h-full w-6/12 md:w-5/12 overflow-y-auto mt-[1.9px]">
-            <ul class="mt-2">
+        <div x-on:click.away="open=false" class="bg-secondary h-full w-6/12 md:w-5/12 overflow-y-auto mt-[1.9px]">
+            <ul class="mt-2 list-none pl-0">
                 @foreach ($links as $link)
                     <li class="py-3 px-4 sm:px-6">
                         <a href="{{ $link['route'] }}"
-                            class="text-base font-semibold hover:text-[#0069F4] {{ $link['active'] ? 'text-[#0069F4]' : '' }}">
+                            class="text-base font-semibold hover:text-primary {{ $link['active'] ? 'text-primary' : '' }}">
                             {{ $link['name'] }}
                         </a>
                     </li>
                 @endforeach
-                <li class="py-3 px-4 sm:px-6">
-                    <a href="{{ route('admin.dashboard') }}" class="text-base text-white px-7 py-2 bg-blue-600 rounded-xl">
+                <li class="py-3 flex px-4 sm:px-6">
+                    <a href="{{ route('admin.dashboard') }}" class="text-base text-primary-contrast-1 px-7 py-2 bg-primary rounded-lg">
                         Intranet
                     </a>
                 </li>

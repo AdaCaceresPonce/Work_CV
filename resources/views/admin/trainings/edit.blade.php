@@ -24,10 +24,12 @@
             {{-- Información principal de la capacitación --}}
             <div class="card-gray space-y-4">
 
-                <div>
+                <div class="flex gap-4 items-center">
                     <span class="font-semibold text-xl">
                         Datos de la capacitación
                     </span>
+
+                    <a href="{{ route('our_trainings.show_training', $training) }}" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-md">Ver en web</a>
                 </div>
                 
                 {{-- Imagenes --}}

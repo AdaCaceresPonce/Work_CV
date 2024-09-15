@@ -15,7 +15,7 @@
                     </svg>
                 </button>
                 <a href="{{ route('admin.dashboard') }}" class="flex ms-2 me-5">
-                    <img src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" class="size-8 border border-white me-3 rounded-full" alt="FlowBite Logo" />
+                    {{-- <img src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" class="size-8 border border-white me-3 rounded-full" alt="FlowBite Logo" /> --}}
                     <span
                         class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Panel</span>
                 </a>

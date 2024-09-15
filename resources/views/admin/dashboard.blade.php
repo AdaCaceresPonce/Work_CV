@@ -9,6 +9,14 @@
         ],
 
         [
+            //Currículum
+            'icon' => 'fa-solid fa-file-invoice',
+            'name' => 'Tu currículum',
+            'route' => route('admin.professional_profile.index'),
+
+        ],
+
+        [
             //Información de contacto
             'icon' => 'fa-solid fa-house-chimney-medical',
             'name' => 'Información de Contacto',
@@ -24,33 +32,39 @@
             'route' => route('admin.inquiries.index'),
         ],
 
-        [
-            //Buzón de opinioness
-            'icon' => 'fa-solid fa-comments',
-            'name' => 'Opiniones',
-            'route' => route('admin.opinions.index'),
-        ],
+        // [
+        //     //Buzón de opiniones
+        //     'icon' => 'fa-solid fa-comments',
+        //     'name' => 'Opiniones',
+        //     'route' => route('admin.opinions.index'),
+        // ],
     ];
 
     $web_pages = [
-            [
-                'icon' => 'fa-solid fa-ranking-star',
-                'name' => 'Página Inicio',
-                'route' => route('admin.welcome_page_content.index'),
-            ],
-    
-            [
-                'icon' => 'fa-solid fa-chalkboard-user',
-                'name' => 'Página Capacitaciones',
-                'route' => route('admin.our_trainings_page_content.index'),
-            ],
-    
-            [
-                'icon' => 'fa-solid fa-address-book',
-                'name' => 'Página Contacto',
-                'route' => route('admin.contact_us_page_content.index'),
-            ],
-        ];
+        [
+            'icon' => 'fa-solid fa-ranking-star',
+            'name' => 'Página Inicio',
+            'route' => route('admin.welcome_page_content.index'),
+        ],
+
+        [
+            'icon' => 'fa-solid fa-file-contract',
+            'name' => 'Página Currículum',
+            'route' => route('admin.curriculum_page_content.index'),
+        ],
+
+        [
+            'icon' => 'fa-solid fa-chalkboard-user',
+            'name' => 'Página Capacitaciones',
+            'route' => route('admin.our_trainings_page_content.index'),
+        ],
+
+        [
+            'icon' => 'fa-solid fa-address-book',
+            'name' => 'Página Contacto',
+            'route' => route('admin.contact_us_page_content.index'),
+        ],
+    ];
 @endphp
 
 <x-admin-layout :breadcrumbs="[
@@ -82,8 +96,8 @@
 
             {{-- Tarjeta 2 --}}
             <div class="bg-white rounded-lg shadow-lg p-6 flex items-center justify-center">
-                <img src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}"
-                    class="size-14 border border-black me-3 rounded-full">
+                {{-- <img src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}"
+                    class="size-14 border border-black me-3 rounded-full"> --}}
                 <div class="ml-2 flex-1">
                     <h2 class="text-xl font-semibold">
                         Presentación Personal
@@ -102,7 +116,7 @@
             <span class="font-semibold text-xl">¿Qué deseas hacer hoy?</span>
 
             <div>
-                <span class="font-medium">Puedes ver los registros de:</span>
+                <span class="font-medium">Puedes gestionar:</span>
                 <div class="mt-3 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
                     @foreach ($links as $link)
                         <a href="{{ $link['route'] }}"
@@ -141,7 +155,7 @@
             </div>
 
             <div>
-                <span class="font-medium">Puedes modificar los contenidos que se muestran en:</span>
+                <span class="font-medium">Puedes editar las páginas de:</span>
                 <div class="mt-3 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
                     @foreach ($web_pages as $web_page)
                         <a href="{{ $web_page['route'] }}"

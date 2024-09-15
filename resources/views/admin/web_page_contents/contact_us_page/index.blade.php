@@ -10,10 +10,10 @@
             'id' => '#contact_section',
         ],
 
-        [
-            'name' => 'Sección de Opiniones',
-            'id' => '#opinions_section',
-        ],
+        // [
+        //     'name' => 'Sección de Opiniones',
+        //     'id' => '#opinions_section',
+        // ],
 
     ];
 @endphp
@@ -187,80 +187,7 @@
 
             </section>
 
-            {{-- Seccion de Opiniones --}}
-            <section id="opinions_section">
-
-                <x-page-section-title :section_title="'Sección de Opiniones'" :route_name="'contact_us.index'" :section_id="'#opinions_form'" />
-
-                {{-- Columnas --}}
-                <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
-                    <div>
-
-                        <x-label for="opinions_title" class="mb-1 mt-2 text-[15px] font-black">
-                            Título
-                        </x-label>
-
-                        <div class="rounded-lg @error('opinions_title') border-[2px] border-red-500 @enderror">
-                            <textarea id="opinions_title" class="textarea" name="opinions_title">
-                            @if (isset($contents['opinions_title']))
-                            {{ old('opinions_title', $contents['opinions_title'] ) }}
-                            @endif
-                            </textarea>
-                        </div>
-
-                        <x-input-error class="mt-1" for="opinions_title" />
-
-                    </div>
-
-                    <div>
-
-                        <x-label for="opinions_description" class="mb-1 mt-2 text-[15px] font-black">
-                            Descripción
-                        </x-label>
-
-                        <div id="opinions_description" class="rounded-lg @error('opinions_description') border-[2px] border-red-500 @enderror">
-                            <textarea class="textarea" name="opinions_description">
-                            @if (isset($contents['opinions_description']))
-                            {{ old('opinions_description', $contents['opinions_description'] ) }}
-                            @endif
-                            </textarea>
-                        </div>
-
-                        <x-input-error class="mt-1" for="opinions_description" />
-
-                    </div>
-
-                </div>
-
-                <div class="mt-6 max-w-[650px] mx-auto">
-                    <div>
-                        <x-label class="mt-2 text-[15px] font-black">
-                            Imagen
-                        </x-label>
-                        <x-label class="mb-1">
-                            (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                        </x-label>
-                    </div>
-                    <figure class="relative">
-                        <div class="absolute top-4 right-4">
-                            <label
-                                class="flex items-center px-2.5 py-1.5 lg:px-4 lg:py-2 rounded-lg btn-blue cursor-pointer text-sm lg:text-base">
-                                <i class="fas fa-camera mr-2"></i>
-                                Actualizar imagen
-                                <input id="uploadImage3" name="opinions_img" type="file" class="hidden"
-                                    accept="image/*" onchange="previewImage(3);" />
-                            </label>
-                        </div>
-                        <img id="uploadPreview3"
-                            class="object-contain w-full aspect-[3/2] border-[2px] bg-white border-blue-400 @error('opinions_img') border-red-500 @enderror rounded-xl"
-                            src="{{ Storage::url( $contents['opinions_img']) }}" alt="">
-                    </figure>
-
-                    <x-input-error class="mt-1" for="opinions_img" />
-                    
-                </div>
-
-            </section>
+            
 
             {{-- Botón actualizar --}}
             <div class="flex justify-end">

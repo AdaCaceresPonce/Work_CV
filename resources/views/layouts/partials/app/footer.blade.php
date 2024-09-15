@@ -3,20 +3,20 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
-                    <img src="{{ Storage::url($clinicInformation['footer_clinic_logo']) }}" class="size-8 border border-white rounded-full me-3" />
+                    {{-- <img src="{{ Storage::url($clinicInformation['footer_clinic_logo']) }}" class="size-8 border border-white rounded-full me-3" /> --}}
                     <span class="text-primary-contrast-1 self-center text-2xl font-semibold whitespace-nowrap">Presentación Personal</span>
                 </a>
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
+            <div class="grid grid-cols-2 gap-8 sm:gap-20 sm:grid-cols-2">
                 <div>
                     <h2 class="mb-6 text-base font-semibold uppercase text-white">Enlaces Rápidos
                     </h2>
-                    <ul class="text-gray-300 font-medium">
+                    <ul class="text-gray-300 font-medium list-none">
                         <li class="mb-3">
                             <a href="{{ route('welcome.index') }}" class="hover:underline">Inicio</a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('about_us.index') }}" class="hover:underline">Mi currículum</a>
+                            <a href="{{ route('professional_profile.index') }}" class="hover:underline">Mi currículum</a>
                         </li>
                         <li class="mb-3">
                             <a href="{{ route('our_trainings.index') }}" class="hover:underline">Capacitaciones</a>
@@ -32,7 +32,7 @@
                         isset($clinicInformation['instagram_link']))
                     <div>
                         <h2 class="mb-6 text-base font-semibold uppercase text-white">Síguenos</h2>
-                        <ul class="text-gray-300 font-medium space-y-3">
+                        <ul class="text-gray-300 font-medium space-y-3 list-none">
                             @isset($clinicInformation['facebook_link'])
                                 <li>
                                     <a href="{{ $clinicInformation['facebook_link'] }}" target="_blank"
@@ -72,7 +72,7 @@
         <hr class="my-6 border-white sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-white sm:text-center">© 2024 <a href="{{ route('welcome.index') }}"
-                    class="hover:underline">Clínica Dental™</a>. Todos los derechos reservados. Elaborado por <a href="https://www.cuanticagroup.com/" class="hover:underline">Cuántica Group S.A.C.</a>
+                    class="hover:underline">Presentación Personal™</a>. Todos los derechos reservados. Elaborado por <a href="https://www.cuanticagroup.com/" class="hover:underline">Cuántica Group S.A.C.</a>
             </span>
             {{-- <div class="flex mt-4 sm:justify-center sm:mt-0">
                 <a href="#" class="text-white dark:hover:text-white">

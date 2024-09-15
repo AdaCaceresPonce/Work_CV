@@ -38,7 +38,7 @@
                         {{-- Circulo grande --}}
                         <div
                             class="flex items-center 
-                            size-[300px] bg-primary-contrast-2 sm:size-[400px]  md:size-[450px] lg:size-[500px] 
+                            size-[300px] bg-secondary sm:size-[400px]  md:size-[450px] lg:size-[500px] 
                             justify-center rounded-full border-[3.5px] border-primary relative">
 
                             {{-- Imagen circular con borde --}}
@@ -176,7 +176,7 @@
 
                     {{-- Ver más --}}
                     <div class="flex w-full justify-center">
-                        <a href=""
+                        <a href="{{ route('professional_profile.index') }}"
                             class="bg-secondary border-2 border-secondary-border text-secondary-contrast-1 text-base font-medium py-3 px-6 rounded-lg">
                             Conoce más sobre mí
                         </a>
@@ -222,10 +222,10 @@
     {{-- Por que elegir nuestras capacitaciones --}}
     <section id="why_choose_our_trainings">
         <x-container class="px-4 section__spacing">
-            <div class="flex items-center flex-col-reverse lg:flex-row gap-7">
+            <div class="flex items-center flex-col lg:flex-row gap-10 md:gap-7">
 
-                <div class="w-full lg:w-1/2">
-                    <img class="h-[450px] sm:h-[550px] lg:h-[670px] w-full object-cover object-center border-[4px] border-[#00CAF7] rounded-3xl"
+                <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10 order-last lg:order-first">
+                    <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-xl"
                         src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">
                 </div>
 

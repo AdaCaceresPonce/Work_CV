@@ -33,6 +33,23 @@
             list-style: revert;
             padding-left: 25px;
         }
+
+        /*Whassap Flotante*/
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
     </style>
 
 </head>
@@ -64,6 +81,12 @@
         <main>
             {{ $slot }}
         </main>
+
+        <!--Whatsapp Flotante-->
+        <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+            class="float flex items-center justify-center hover:" target="_blank">
+            <i class="fa fa-whatsapp"></i>
+        </a>
 
         @include('layouts.partials.app.footer')
 
