@@ -29,9 +29,6 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('trainings/card_images');
         Storage::deleteDirectory('trainings/cover_images');
 
-        Storage::deleteDirectory('clinic_information_images/navbar');
-        Storage::deleteDirectory('clinic_information_images/footer');
-
         Storage::deleteDirectory('web_pages_images/welcome_page');
         Storage::deleteDirectory('web_pages_images/our_trainings_page');
         Storage::deleteDirectory('web_pages_images/professional_profile_page');
@@ -40,9 +37,6 @@ class DatabaseSeeder extends Seeder
         //Crear carpetas
         Storage::makeDirectory('trainings/card_images');
         Storage::makeDirectory('trainings/cover_images');
-
-        Storage::makeDirectory('clinic_information_images/navbar');
-        Storage::makeDirectory('clinic_information_images/footer');
 
         Storage::makeDirectory('web_pages_images/welcome_page');
         Storage::makeDirectory('web_pages_images/our_trainings_page');
