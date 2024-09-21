@@ -6,8 +6,7 @@
             class="mx-auto relative bg-white  flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-md focus-within:border-gray-300"
             for="search-bar">
 
-            <input id="search-bar" placeholder="Buscar..."
-                class="px-4 py-2 w-full rounded-md flex-1 outline-none bg-white"
+            <input id="search-bar" placeholder="Buscar..." class="px-4 py-2 w-full rounded-md flex-1 outline-none bg-white"
                 wire:model.live.debounce.500ms="search">
 
             <button wire:click="resetSearch"
@@ -41,7 +40,8 @@
     </div>
 
     <div class="inline-flex w-full justify-start mb-4">
-        <a href="{{ route('our_trainings.index') }}" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-md">Ver página Capacitaciones</a>
+        <a href="{{ route('our_trainings.index') }}" target="_blank"
+            class="px-4 py-2 bg-blue-600 text-white rounded-md">Ver página Capacitaciones</a>
     </div>
 
 
@@ -55,8 +55,34 @@
                         <div
                             class="max-w-full bg-white border-[2px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
 
-                            <img class="object-cover w-full aspect-[4/3]"
-                                src="{{ Storage::url($training->card_img_path) }}" alt="" />
+                            <figure class="relative">
+
+                                {{-- Superposición para oscurecer la imagen --}}
+                                <div class="absolute inset-0 bg-black opacity-30"></div> {{-- Aumenta o disminuye el valor de opacity para oscurecer más o menos --}}
+
+                                <div class="absolute top-3 right-3">
+
+                                    @if ($training->topics->count())
+
+                                        {{-- Si hay topics, mostrar el contador con una etiqueta verde --}}
+                                        <x-badge type="simple" url="{{ route('admin.trainings.edit', $training) }}#topics">
+                                            {{ $training->topics->count() }} temas registrados
+                                        </x-badge>
+                                        
+                                    @else
+                                        {{-- Si no hay topics, mostrar una etiqueta roja --}}
+                                        <x-badge type="red" url="{{ route('admin.trainings.edit', $training) }}#topics">
+                                            No tiene temas registrados
+                                        </x-badge>
+
+                                    @endif
+
+                                </div>
+
+                                <img class="object-cover w-full aspect-[4/3]"
+                                    src="{{ Storage::url($training->card_img_path) }}" alt="" />
+
+                            </figure>
 
                             <div class="p-5 flex flex-col grow">
                                 <h5

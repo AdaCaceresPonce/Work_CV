@@ -15,6 +15,8 @@ class ContactInformation extends Model
         'phone',
         'cellphone',
         'email',
+        'whatsapp_number',
+        'whatsapp_message',
         'facebook_link',
         'twitter_link',
         'instagram_link',

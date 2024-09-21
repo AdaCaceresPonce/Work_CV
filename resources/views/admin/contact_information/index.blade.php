@@ -24,17 +24,32 @@
                 <div>
                     <div class="mb-4 grid cols-1 gap-4">
                         <div>
-                            <x-label class="mb-1 text-[15px] font-black">Teléfono</x-label>
+                            <x-label class="mb-1 text-[15px] font-black">Teléfono de contacto</x-label>
                             <x-input class="w-full" placeholder="Ingrese el teléfono de contacto" name="phone"
                                 value="{{ old('phone', $contact_information->phone) }}" />
                             <x-input-error for="phone" />
                         </div>
                         <div>
-                            <x-label class="mb-1 text-[15px] font-black">Celular</x-label>
-                            <x-input class="w-full" placeholder="Ingrese el celular de contacto" name="cellphone"
+                            <x-label class="mb-1 text-[15px] font-black">Celular de contacto</x-label>
+                            <x-input class="w-full" placeholder="Ej: +51987654321" name="cellphone"
                                 value="{{ old('cellphone', $contact_information->cellphone) }}" />
                             <x-input-error for="cellphone" />
                         </div>
+
+                        <div>
+                            <x-label class="mb-1 text-[15px] font-black">Número de Whatsapp</x-label>
+                            <x-input class="w-full" placeholder="Ej: +51987654321" name="whatsapp_number"
+                                value="{{ old('whatsapp_number', $contact_information->whatsapp_number) }}" />
+                            <x-input-error for="whatsapp_number" />
+                        </div>
+
+                        <div>
+                            <x-label class="mb-1 text-[15px] font-black">Mensaje por defecto a recibir en Whatsapp</x-label>
+                            <x-input class="w-full" placeholder="Ej: Hola, estoy interesado, quiero más información." name="whatsapp_message"
+                                value="{{ old('whatsapp_message', $contact_information->whatsapp_message) }}" />
+                            <x-input-error for="whatsapp_message" />
+                        </div>
+
                     </div>
 
                     <div class="mb-4">

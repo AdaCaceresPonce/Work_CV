@@ -15,7 +15,9 @@
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 p-4 lg:pr-12">
 
-                    <div class="max-w-[500px] lg:max-w-full mx-auto text-center lg:text-start">
+                    <div class="max-w-[500px] lg:max-w-full mx-auto text-center lg:text-start" 
+                    data-aos="fade-right"
+                    data-aos-duration="1500">
 
                         <div>
                             <span class="text-3xl md:text-4xl leading-tight lg:leading-tight">
@@ -33,7 +35,9 @@
                 </div>
                 {{-- Imagen --}}
                 <div class="w-full mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
-                    <div class="">
+                    <div class="" 
+                    data-aos="fade-left"
+                    data-aos-duration="1500">
 
                         {{-- Circulo grande --}}
                         <div
@@ -160,12 +164,16 @@
             <div class="flex flex-col lg:flex-row px-4 gap-8 lg:gap-4">
 
                 {{-- Icono --}}
-                <div class="w-full lg:w-[25%] flex justify-center items-center text-center">
+                <div class="w-full lg:w-[25%] flex justify-center items-center text-center"
+                data-aos="fade-right"
+                data-aos-duration="600">
                     <i class="fa-solid fa-book text-[80px] text-primary-contrast-1"></i>
                 </div>
 
                 {{-- Texto --}}
-                <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-6">
+                <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-6"
+                data-aos="fade-left"
+                data-aos-duration="600">
 
                     <span class="text-primary-contrast-1 text-base md:text-lg">
                         {!! $contents['about_description'] ?? 'Sin descripción' !!}
@@ -191,7 +199,9 @@
     <section id="our_trainings">
         <x-container class="px-4 section__spacing flex-col">
             {{-- Titulo --}}
-            <div class="mb-6 text-center sm:px-15 lg:px-40">
+            <div class="mb-6 md:mb-10 text-center sm:px-15 lg:px-40"
+                data-aos="fade-up"
+                data-aos-duration="500">
                 <div>
                     <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight lg:leading-tight">
                         {!! $contents['our_trainings_title'] !!}
@@ -224,12 +234,16 @@
         <x-container class="px-4 section__spacing">
             <div class="flex items-center flex-col lg:flex-row gap-10 md:gap-7">
 
-                <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10 order-last lg:order-first">
+                <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10 order-last lg:order-first"
+                    data-aos="fade-up"
+                    data-aos-duration="1000">
                     <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-xl"
                         src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">
                 </div>
 
-                <div class="w-full lg:w-1/2 px-4 text-start">
+                <div class="w-full lg:w-1/2 px-4 text-start"
+                    data-aos="fade-down"
+                    data-aos-duration="1000">
 
                     <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
 
@@ -237,7 +251,7 @@
 
                     </span>
 
-                    <div class="mt-4 md:mt-7">
+                    <div class="mt-4 md:mt-6">
 
                         <span class="text-base sm:text-lg lg:text-lg">
                             {!! $contents['why_choose_our_trainings_description'] ?? 'descripcion acerca de nosotros' !!}

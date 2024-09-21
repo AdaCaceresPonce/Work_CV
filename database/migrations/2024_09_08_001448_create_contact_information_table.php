@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('cellphone')->nullable();
             $table->string('email');
+            $table->string('whatsapp_number')->nullable();
+            $table->string('whatsapp_message')->nullable();
             $table->text('facebook_link')->nullable();
             $table->text('twitter_link')->nullable();
             $table->text('instagram_link')->nullable();

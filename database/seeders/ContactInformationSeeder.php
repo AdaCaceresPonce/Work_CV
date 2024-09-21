@@ -15,8 +15,10 @@ class ContactInformationSeeder extends Seeder
     {
         $info = [
             'phone' => null,
-            'cellphone' => '950924989',
+            'cellphone' => '+51950924989',
             'email' => 'patriciacm_199@hotmail.com',
+            'whatsapp_number' => '+51950924989',
+            'whatsapp_message' => 'Hola, estoy interesado en las capacitaciones, necesito más información.',
             'facebook_link' => null,
             'twitter_link' => null,
             'instagram_link' => null

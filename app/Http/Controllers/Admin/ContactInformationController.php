@@ -57,15 +57,22 @@ class ContactInformationController extends Controller
         // Validación de los datos del formulario
         $request->validate([
             'phone' => 'nullable|string|max:255',
-            'cellphone' => 'required|string|max:255',
+            'cellphone' => 'required|regex:/^\+51\d{9}$/',
             'email' => 'required|email|max:255',
+            'whatsapp_number' => 'nullable|regex:/^\+51\d{9}$/',
+            'whatsapp_message' => 'nullable|string|max:255',
             'facebook_link' => 'nullable|url',
             'twitter_link' => 'nullable|url',
             'instagram_link' => 'nullable|url',
-        ],[],[
+        ],[
+            'cellphone.regex' => 'El número de celular debe tener el formato: +51 seguido de 9 dígitos.',
+            'whatsapp_number.regex' => 'El número de Whatsapp debe tener el formato: +51 seguido de 9 dígitos.',
+        ],[
             'phone' => 'número de teléfono',
             'cellphone' => 'número de celular',
             'email' => 'correo electrónico',
+            'whatsapp_number' => 'número de Whatsapp',
+            'whatsapp_message' => 'mensaje por defecto para Whatsapp',
             'facebook_link' => 'enlace de facebook',
             'twitter_link' => 'enlace de twitter',
             'instagram_link' => 'enlace de instagram',

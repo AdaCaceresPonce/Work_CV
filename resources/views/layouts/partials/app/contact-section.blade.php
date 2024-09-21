@@ -4,7 +4,9 @@
 <section id="contact" class="">
     <x-container class="px-4 section__spacing">
         {{-- Titulo --}}
-        <div class="mb-10 px-4 text-center sm:px-15 lg:px-20">
+        <div class="mb-10 px-4 text-center sm:px-15 lg:px-20"
+        data-aos="fade-up"
+        data-aos-duration="500">
             <div>
                 <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight font-bold">
                     {!! $contact_section['contact_us_title'] !!}

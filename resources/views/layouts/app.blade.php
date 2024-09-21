@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     @stack('css')
 
     {{-- FontAwesome --}}
@@ -49,7 +52,6 @@
             box-shadow: 2px 2px 3px #999;
             z-index: 100;
         }
-
     </style>
 
 </head>
@@ -83,7 +85,7 @@
         </main>
 
         <!--Whatsapp Flotante-->
-        <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        <a href="https://wa.link/t808gl"
             class="float flex items-center justify-center hover:" target="_blank">
             <i class="fa fa-whatsapp"></i>
         </a>
@@ -98,7 +100,9 @@
 
     @stack('js')
 
-
+    <script>
+        AOS.init();
+    </script>
 
     {{-- Alerta para sesiones flash --}}
     @if (session('swal'))

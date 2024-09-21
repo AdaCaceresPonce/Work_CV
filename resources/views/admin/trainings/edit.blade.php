@@ -24,12 +24,20 @@
             {{-- Información principal de la capacitación --}}
             <div class="card-gray space-y-4">
 
-                <div class="flex gap-4 items-center">
-                    <span class="font-semibold text-xl">
-                        Datos de la capacitación
-                    </span>
-
-                    <a href="{{ route('our_trainings.show_training', $training) }}" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-md">Ver en web</a>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-3 bg-white rounded-lg shadow-sm gap-2 md:gap-0">
+                    
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-info-circle text-sky-500"></i>
+                        <span class="font-semibold text-xl md:text-2xl text-slate-800">
+                            Datos de la capacitación
+                        </span>
+                    </div>
+                
+                    <a href="{{ route('our_trainings.show_training', $training) }}" target="_blank" 
+                       class="px-3 py-1.5 md:px-4 md:py-2 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition ease-in-out duration-200">
+                        Ver en web <i class="fa-solid fa-circle-arrow-right ml-1"></i>
+                    </a>
+                    
                 </div>
                 
                 {{-- Imagenes --}}
@@ -137,7 +145,7 @@
         </form>
 
         {{-- Temas de la capacitación --}}
-        <div class="card mt-6 space-y-4">
+        <div class="card mt-6 space-y-4" id="topics">
 
             <div>
                 <span class="font-semibold text-xl">
