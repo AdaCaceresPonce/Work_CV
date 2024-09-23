@@ -74,7 +74,8 @@
 
                         @foreach ($trainings as $training)
 
-                            <article class="p-2 overflow-hidden rounded-xl">
+                            <article class="p-2 overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-easing="linear"
+                            data-aos-duration="500">
 
                                 <div
                                     class="w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden">

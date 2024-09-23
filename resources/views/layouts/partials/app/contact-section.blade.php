@@ -21,10 +21,11 @@
         {{-- Cuadro de contacto --}}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
-            <div class="w-full order-last lg:order-first">
+            <div class="w-full">
 
                 {{-- Cargar el Formulario y pasarle la variable de capacitación seleccionada--}}
                 @livewire('web.inquiries.save-inquiry', compact('training_selected'))
+
             </div>
 
             {{-- Info de contacto --}}

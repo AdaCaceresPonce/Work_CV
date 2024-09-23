@@ -8,7 +8,8 @@
         </div>
 
         <x-container class="px-4 py-44 lg:py-48 h-full flex align-middle items-center relative z-20">
-            <p class="text-white flex-1 text-center text-4xl font-bold tracking-normal">
+            <p class="text-white flex-1 text-center text-4xl font-bold tracking-normal" data-aos="fade-down"
+                data-aos-duration="1000">
                 {{ $training->name }}
             </p>
         </x-container>

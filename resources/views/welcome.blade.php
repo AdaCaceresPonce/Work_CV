@@ -235,7 +235,7 @@
             <div class="flex items-center flex-col lg:flex-row gap-10 md:gap-7">
 
                 <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10 order-last lg:order-first"
-                    data-aos="fade-up"
+                    data-aos="zoom-in-up"
                     data-aos-duration="1000">
                     <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-xl"
                         src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">

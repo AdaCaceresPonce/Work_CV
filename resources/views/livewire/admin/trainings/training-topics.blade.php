@@ -47,24 +47,31 @@
                 {{-- Alerta para cuando no haya temas registrados --}}
                 <div class="w-full px-2 py-4 md:px-4 md:py-8">
                     <div class="flex flex-col items-center text-center">
-
-                        <span class="text-xl md:text-2xl text-amber-700 font-bold">
-                            ¡Ups! Parece que esta capacitación no tiene temas registrados.
-                        </span>
-
+                
                         <div>
-
+                            <p class="text-2xl md:text-3xl text-amber-700 font-bold">
+                                ¡Ups!
+                            </p>
+                            <i class="fa-solid fa-face-frown-open mt-4 text-7xl text-amber-600"></i>
                         </div>
-
-                        <div class="flex flex-col gap-1 text-lg font-bold">
-                            <span>
-                                Registra un nuevo tema
+                
+                        <div class="mt-4">
+                            <p class="text-lg md:text-xl text-gray-700 font-semibold">
+                                Parece que esta capacitación no tiene temas registrados.
+                            </p>
+                        </div>
+                
+                        <div class="mt-5 flex flex-col gap-3 text-lg font-bold items-center">
+                            <span class="text-gray-600">
+                                Empieza registrando uno nuevo
                             </span>
-    
-                            <i class="fa-solid fa-arrow-down animate-bounce"></i>
+                            <i class="fa-solid fa-arrow-down text-3xl text-amber-600 animate-bounce"></i>
                         </div>
+                
                     </div>
                 </div>
+                
+                
 
             @endif
 

@@ -19,7 +19,7 @@
                 <span class="font-semibold text-xl">
                     Tu Historial Laboral
                 </span>
-                <p>(Arrástralos entre sí para cambiar el orden en el que se van a mostrar)</p>
+                <p class="mt-1 text-gray-600">Arrástralos entre sí para cambiar el orden en el que se van a mostrar</p>
             </div>
 
             <livewire:admin.personal-data.employment-history-list />
@@ -33,7 +33,7 @@
                 <span class="font-semibold text-xl">
                     Tus Grados Académicos
                 </span>
-                <p>(Arrástralos entre sí para cambiar el orden en el que se van a mostrar)</p>
+                <p class="mt-1 text-gray-600">Arrástralos entre sí para cambiar el orden en el que se van a mostrar</p>
             </div>
 
             <livewire:admin.personal-data.academic-background-list />
@@ -47,7 +47,7 @@
                 <span class="font-semibold text-xl">
                     Tus Aptitudes
                 </span>
-                <p>(Arrástralos entre sí para cambiar el orden en el que se van a mostrar)</p>
+                <p class="mt-1 text-gray-600">Arrástralos entre sí para cambiar el orden en el que se van a mostrar</p>
             </div>
 
             <livewire:admin.personal-data.skills-list />

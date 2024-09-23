@@ -33,26 +33,28 @@
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 px-1 lg:pl-2">
 
-                    <div class="space-y-2">
-                        <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
-                            {!! $contents['employment_history_title'] !!}
-                        </span>
-
-                        <div class="bg-primary h-1 w-[180px]"></div>
-                    </div>
-
-
-                    <div class="mt-8"> <!-- Reducir el margin-top -->
-
-                        <ul class="mt-4 space-y-3">
-
-                            @foreach ($employment_history as $employment)
-                                <li class="">
-                                    {{-- <i class="fa-solid fa-circle-check text-2xl text-[#006400] mr-2"></i> --}}
-                                    <span class="text-base sm:text-lg lg:text-xl">{{ $employment->job_title }}</span>
-                                </li>
-                            @endforeach
-                        </ul>
+                    <div class="max-w-[500px] lg:max-w-full mx-auto">
+                        <div class="space-y-2">
+                            <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                                {!! $contents['employment_history_title'] !!}
+                            </span>
+    
+                            <div class="bg-primary h-1 w-[180px]"></div>
+                        </div>
+    
+    
+                        <div class="mt-8"> <!-- Reducir el margin-top -->
+    
+                            <ul class="mt-4 space-y-3">
+    
+                                @foreach ($employment_history as $employment)
+                                    <li class="">
+                                        {{-- <i class="fa-solid fa-circle-check text-2xl text-[#006400] mr-2"></i> --}}
+                                        <span class="text-base sm:text-lg lg:text-xl">{{ $employment->job_title }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -97,28 +99,30 @@
             <div class="flex items-center flex-col lg:flex-row gap-6 md:gap-7">
 
                 {{-- Texto --}}
-                <div class="w-full lg:w-1/2 px-4 space-y-6 md:space-y-10">
+                <div class="w-full lg:w-1/2 px-1">
 
-                    <div class="relative">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 2" class="w-full">
-                            <path d="M 0 0 L 17 0 L 16 2 L 0 2 L 0 0" fill="#689F38" />
-                        </svg>
-                    
-                        <span class="absolute inset-0 flex items-center justify-start pl-10 text-white font-bold z-10
-                        text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
-                            {!! $contents['my_skills_title'] !!}
-                        </span>
+                    <div class="max-w-[500px] lg:max-w-full space-y-6 md:space-y-8 mx-auto">
+                        <div class="relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 2" class="w-full">
+                                <path d="M 0 0 L 17 0 L 16 2 L 0 2 L 0 0" fill="#689F38" />
+                            </svg>
+                        
+                            <span class="absolute inset-0 flex items-center justify-start pl-10 text-white font-bold z-10
+                            text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                                {!! $contents['my_skills_title'] !!}
+                            </span>
+                        </div>
+    
+                        <ul class="mt-2 md:mt-4 space-y-3"">
+    
+                            @foreach ($skills as $skill)
+                                <li class="flex items-center gap-2 py-1 md:py-2">
+                                    <img class="size-10 mr-1" src="{{ asset('img/elipse.png') }}" alt="">
+                                    <span class="text-base sm:text-lg lg:text-xl"> {{ $skill->name }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
-
-                    <ul class="mt-2 md:mt-4 space-y-3"">
-
-                        @foreach ($skills as $skill)
-                            <li class="flex items-center gap-2 py-1 md:py-2">
-                                <img class="size-10 mr-1" src="{{ asset('img/elipse.png') }}" alt="">
-                                <span class="text-base sm:text-lg lg:text-xl"> {{ $skill->name }}</span>
-                            </li>
-                        @endforeach
-                    </ul>
 
                 </div>
 
