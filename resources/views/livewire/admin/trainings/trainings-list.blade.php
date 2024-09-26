@@ -50,7 +50,7 @@
         @if ($trainings->count())
 
             <div>
-                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                     @foreach ($trainings as $training)
                         <div
                             class="max-w-full bg-white border-[2px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
@@ -72,7 +72,7 @@
                                     @else
                                         {{-- Si no hay topics, mostrar una etiqueta roja --}}
                                         <x-badge type="red" url="{{ route('admin.trainings.edit', $training) }}#topics">
-                                            No tiene temas registrados
+                                            Sin temas registrados
                                         </x-badge>
 
                                     @endif

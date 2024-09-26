@@ -30,7 +30,21 @@
                 slidesPerView: 3,
             },
         },
-    });">
+        
+    });
+    
+    let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                swiperCards.autoplay.start();
+            } else {
+                swiperCards.autoplay.stop();
+            }
+        });
+    });
+
+    observer.observe(document.querySelector('.card__container'));
+    ">
         <div class="card__content px-3 pb-8 rounded-xl">
             <div class="swiper-wrapper ">
                 @foreach ($trainings as $training)
@@ -39,7 +53,7 @@
                         <div class="card__image w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden">
                             
                             <img src="{{ Storage::url($training->card_img_path) }}" alt="image"
-                                class="card__img aspect-[4/3] object-cover object-center w-full brightness-75">
+                                class="card__img aspect-[4/3] object-cover object-center w-full brightness-75" loading="lazy">
                         </div>
     
                         <div class="card__data space-y-8 mt-4">

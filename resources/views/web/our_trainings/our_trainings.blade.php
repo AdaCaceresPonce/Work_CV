@@ -73,16 +73,18 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
 
                         @foreach ($trainings as $training)
-
                             <article class="p-2 overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-easing="linear"
-                            data-aos-duration="500">
+                                data-aos-duration="500">
 
-                                <div
-                                    class="w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden">
+                                <figure
+                                    class="w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden relative">
+
+                                    {{-- Superposición para oscurecer la imagen --}}
+                                    <div class="absolute inset-0 bg-black opacity-30"></div> {{-- Aumenta o disminuye el valor de opacity para oscurecer más o menos --}}
 
                                     <img src="{{ Storage::url($training->card_img_path) }}" alt="image"
-                                        class="card__img aspect-[4/3] object-cover object-center w-full brightness-75">
-                                </div>
+                                        class="card__img aspect-[4/3] object-cover object-center w-full" loading="lazy">
+                                </figure>
 
                                 <div class="space-y-8 mt-4">
                                     <h3 class="training__name text-base font-bold w-full">

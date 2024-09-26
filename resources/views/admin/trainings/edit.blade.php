@@ -11,11 +11,17 @@
         'name' => $training->name,
     ],
 ]">
-    
+
 
     <div class="mx-auto max-w-[1230px]">
 
-        <x-validation-errors class="mb-3 p-4 border-2 border-red-500 rounded-md"/>
+        <x-validation-errors class="mb-3 p-4 border-2 border-red-500 rounded-md" />
+
+        @if ($training->topics->isEmpty())
+            <div class="bg-red-100 text-red-600 border border-red-600 rounded-md p-4 mb-4">
+                <strong>Advertencia:</strong> Esta capacitación no se mostrará en la web hasta que se le agreguen temas.
+            </div>
+        @endif
 
         <form action="{{ route('admin.trainings.update', $training) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -24,22 +30,23 @@
             {{-- Información principal de la capacitación --}}
             <div class="card-gray space-y-4">
 
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-3 bg-white rounded-lg shadow-sm gap-2 md:gap-0">
-                    
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center p-3 bg-white rounded-lg shadow-sm gap-2 md:gap-0">
+
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-info-circle text-sky-500"></i>
                         <span class="font-semibold text-xl md:text-2xl text-slate-800">
                             Datos de la capacitación
                         </span>
                     </div>
-                
-                    <a href="{{ route('our_trainings.show_training', $training) }}" target="_blank" 
-                       class="px-3 py-1.5 md:px-4 md:py-2 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition ease-in-out duration-200">
+
+                    <a href="{{ route('our_trainings.show_training', $training) }}" target="_blank"
+                        class="px-3 py-1.5 md:px-4 md:py-2 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition ease-in-out duration-200">
                         Ver en web <i class="fa-solid fa-circle-arrow-right ml-1"></i>
                     </a>
-                    
+
                 </div>
-                
+
                 {{-- Imagenes --}}
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div class="col">
@@ -102,8 +109,8 @@
                     <x-label for="name" class="mb-1 font-black">
                         Nombre
                     </x-label>
-                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name" name="name"
-                        value="{{ old('name', $training->name) }}" />
+                    <x-input class="w-full" placeholder="Ingrese el nombre de la capacitación" id="name"
+                        name="name" value="{{ old('name', $training->name) }}" />
                     <x-input-error for="name" />
                     <x-input-error for="slug" />
                 </div>
@@ -149,16 +156,17 @@
 
             <div>
                 <span class="font-semibold text-xl">
-                    Temas incluidos en esta capacitación:
+                    Lista de temas
                 </span>
-                <p>(Arrástralos entre sí para cambiar el orden en el que se van a mostrar)</p>
+                <p class="mt-1 text-gray-600">Agrega, edita o elimina temas de esta capacitación.</p>
+
             </div>
 
             {{-- Listado de temas --}}
             <livewire:admin.trainings.training-topics :training="$training" />
-            
+
         </div>
-        
+
     </div>
 
 
@@ -194,9 +202,9 @@
                     if (result.isConfirmed) {
                         document.getElementById('delete-form').submit();
                     }
-                    
+
                 });
-                
+
             }
         </script>
     @endpush

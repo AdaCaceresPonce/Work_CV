@@ -2,76 +2,82 @@
     <div class="space-y-4">
 
         {{-- Listado de capacitaciones --}}
-        <div class="grid grid-cols-1 gap-3" id="topics_list">
+        <div>
 
             @if ($topics->count())
 
-                @foreach ($topics as $topic)
-                    <div class="bg-gray-100 border-2 rounded-md flex items-center" data-id="{{ $topic->id }}"
-                        wire:key="topic-{{ $topic->id }}">
+                <p class="text-gray-600">Puedes arrastrarlos entre sí para cambiar el orden en el que se van a mostrar</p>
+                <div class="mt-2 grid grid-cols-1 gap-3" id="topics_list">
 
-                        {{-- Cuadrito para mover entre la lista --}}
-                        <div class="handle bg-gray-300 h-full flex items-center text-xl cursor-grab">
-                            <span class="px-4">
-                                <i class="fa-solid fa-hand"></i> <i class="fa-solid fa-arrows-up-down"></i>
-                            </span>
+                    @foreach ($topics as $topic)
+                        <div class="bg-gray-100 border-2 rounded-md flex items-center" data-id="{{ $topic->id }}"
+                            wire:key="topic-{{ $topic->id }}">
+
+                            {{-- Cuadrito para mover entre la lista --}}
+                            <div class="handle bg-gray-300 h-full flex items-center text-xl cursor-grab">
+                                <span class="px-4">
+                                    <i class="fa-solid fa-hand"></i> <i class="fa-solid fa-arrows-up-down"></i>
+                                </span>
+                            </div>
+
+                            {{-- Nombre del tema --}}
+                            <div class="flex-1 p-4 hyphens-auto">
+                                <span class="font-bold">{{ $topic->position }}.</span> {{ $topic->name }}
+                            </div>
+
+                            {{-- Botones de acción --}}
+                            <div
+                                class="bg-gray-200 p-4 flex flex-col md:flex-row gap-2 items-center justify-center h-full">
+
+                                {{-- Botón editar --}}
+                                <button wire:click="show({{ $topic->id }})"
+                                    class="bg-yellow-500 text-white px-3 py-2 rounded-md">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+
+                                {{-- Botón eliminar --}}
+                                <button type="button" class="bg-red-500 text-white px-3 py-2 rounded-md"
+                                    onclick="confirmDeleteTopic({{ $topic->id }})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
                         </div>
+                    @endforeach
 
-                        {{-- Nombre del tema --}}
-                        <div class="flex-1 p-4 hyphens-auto">
-                            <span class="font-bold">{{ $topic->position }}.</span> {{ $topic->name }}
-                        </div>
-
-                        {{-- Botones de acción --}}
-                        <div class="bg-gray-200 p-4 flex flex-col md:flex-row gap-2 items-center justify-center h-full">
-
-                            {{-- Botón editar --}}
-                            <button wire:click="show({{ $topic->id }})"
-                                class="bg-yellow-500 text-white px-3 py-2 rounded-md">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-
-                            {{-- Botón eliminar --}}
-                            <button type="button" class="bg-red-500 text-white px-3 py-2 rounded-md"
-                                onclick="confirmDeleteTopic({{ $topic->id }})">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-
-                        </div>
-
-                    </div>
-                @endforeach
-
+                </div>
             @else
-            
                 {{-- Alerta para cuando no haya temas registrados --}}
                 <div class="w-full px-2 py-4 md:px-4 md:py-8">
                     <div class="flex flex-col items-center text-center">
-                
+
                         <div>
                             <p class="text-2xl md:text-3xl text-amber-700 font-bold">
                                 ¡Ups!
                             </p>
                             <i class="fa-solid fa-face-frown-open mt-4 text-7xl text-amber-600"></i>
                         </div>
-                
-                        <div class="mt-4">
-                            <p class="text-lg md:text-xl text-gray-700 font-semibold">
-                                Parece que esta capacitación no tiene temas registrados.
+
+                        <div class="mt-4 text-lg md:text-xl text-gray-700 font-semibold">
+                            <p>
+                                Esta capacitación no tiene temas registrados
+                            </p>
+                            <p class="mt-2">
+                                No se mostrará en la web hasta que le añadas temas
                             </p>
                         </div>
-                
+
                         <div class="mt-5 flex flex-col gap-3 text-lg font-bold items-center">
                             <span class="text-gray-600">
-                                Empieza registrando uno nuevo
+                                Añade el primer tema ahora
                             </span>
                             <i class="fa-solid fa-arrow-down text-3xl text-amber-600 animate-bounce"></i>
                         </div>
-                
+
                     </div>
                 </div>
-                
-                
+
 
             @endif
 
