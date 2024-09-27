@@ -154,13 +154,10 @@
         {{-- Temas de la capacitación --}}
         <div class="card mt-6 space-y-4" id="topics">
 
-            <div>
-                <span class="font-semibold text-xl">
-                    Lista de temas
-                </span>
-                <p class="mt-1 text-gray-600">Agrega, edita o elimina temas de esta capacitación.</p>
-
-            </div>
+            <x-admin.section-title>
+                <x-slot name="title">Lista de temas</x-slot>
+                <x-slot name="description">Agrega, edita o elimina temas de esta capacitación.</x-slot>
+            </x-admin.section-title>
 
             {{-- Listado de temas --}}
             <livewire:admin.trainings.training-topics :training="$training" />

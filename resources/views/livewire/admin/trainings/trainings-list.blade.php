@@ -45,7 +45,12 @@
     </div>
 
 
-    <div class="card">
+    <div class="card space-y-5">
+
+        <x-admin.section-title>
+            <x-slot name="title">Lista de capacitaciones</x-slot>
+            <x-slot name="description">Gestiona las capacitaciones que se muestran en tu sitio web.</x-slot>
+        </x-admin.section-title>
 
         @if ($trainings->count())
 

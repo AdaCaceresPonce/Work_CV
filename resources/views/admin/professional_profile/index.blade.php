@@ -15,12 +15,10 @@
         {{-- Historial Laboral --}}
         <div class="card space-y-4">
 
-            <div>
-                <span class="font-semibold text-xl">
-                    Tu Historial Laboral
-                </span>
-                <p class="mt-1 text-gray-600">Gestiona tu historial laboral según tus preferencias.</p>
-            </div>
+            <x-admin.section-title>
+                <x-slot name="title">Tu Historial Laboral</x-slot>
+                <x-slot name="description">Gestiona tu historial laboral según tus preferencias.</x-slot>
+            </x-admin.section-title>
 
             <livewire:admin.personal-data.employment-history-list />
 
@@ -29,12 +27,10 @@
         {{-- Grados Académicos --}}
         <div class="card space-y-4">
 
-            <div>
-                <span class="font-semibold text-xl">
-                    Tus Grados Académicos
-                </span>
-                <p class="mt-1 text-gray-600">Gestiona tus grados académicos según tus preferencias.</p>
-            </div>
+            <x-admin.section-title>
+                <x-slot name="title">Tus Grados Académicos</x-slot>
+                <x-slot name="description">Gestiona tus grados académicos según tus preferencias.</x-slot>
+            </x-admin.section-title>
 
             <livewire:admin.personal-data.academic-background-list />
 
@@ -43,12 +39,10 @@
         {{-- Aptitudes --}}
         <div class="card space-y-4">
 
-            <div>
-                <span class="font-semibold text-xl">
-                    Tus Aptitudes
-                </span>
-                <p class="mt-1 text-gray-600">Gestiona tus aptitudes según tus preferencias.</p>
-            </div>
+            <x-admin.section-title>
+                <x-slot name="title">Tus Aptitudes</x-slot>
+                <x-slot name="description">Gestiona tus aptitudes según tus preferencias.</x-slot>
+            </x-admin.section-title>
 
             <livewire:admin.personal-data.skills-list />
 
