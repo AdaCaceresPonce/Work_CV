@@ -69,7 +69,7 @@
 
                                     @if ($training->topics->count())
 
-                                        {{-- Si hay topics, mostrar el contador con una etiqueta verde --}}
+                                        {{-- Si hay topics, mostrar el contador con una etiqueta celeste --}}
                                         <x-badge type="simple" url="{{ route('admin.trainings.edit', $training) }}#topics">
                                             {{ $training->topics->count() }} temas registrados
                                         </x-badge>
