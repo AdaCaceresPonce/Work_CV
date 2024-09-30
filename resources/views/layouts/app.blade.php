@@ -42,8 +42,8 @@
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
@@ -64,7 +64,7 @@
     }">
     <x-banner />
 
-    <div class="min-h-screen bg-white">
+    <div class="min-h-screen bg-white ">
         {{-- @livewire('navigation-menu') --}}
 
 
@@ -80,7 +80,7 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="overflow-x-hidden">
             {{ $slot }}
         </main>
 
