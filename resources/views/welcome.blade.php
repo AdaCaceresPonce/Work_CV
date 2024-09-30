@@ -9,23 +9,21 @@
     @endpush
 
     {{-- Cover --}}
-    <section id="cover" class="">
+    <section id="cover">
         <x-container class="px-4 section__spacing">
             <div class="flex items-center flex-wrap">
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 p-4 lg:pr-12">
 
-                    <div class="max-w-[500px] lg:max-w-full mx-auto text-center lg:text-start" 
-                    data-aos="fade-right"
-                    data-aos-duration="1500">
+                    <div class="max-w-[500px] lg:max-w-full mx-auto text-center lg:text-start">
 
-                        <div>
+                        <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400" data-aos-duration="1000">
                             <span class="text-3xl md:text-4xl leading-tight lg:leading-tight">
                                 {!! $contents['cover_title'] ?? 'Sin título' !!}
                             </span>
                         </div>
-    
-                        <div class="mt-4">
+
+                        <div class="mt-6" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800" data-aos-duration="1000">
                             <span class="text-base sm:text-base md:text-lg">
                                 {!! $contents['cover_description'] ?? 'Sin descripción' !!}
                             </span>
@@ -33,11 +31,10 @@
                     </div>
 
                 </div>
+
                 {{-- Imagen --}}
                 <div class="w-full mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
-                    <div class="" 
-                    data-aos="fade-left"
-                    data-aos-duration="1500">
+                    <div class="" data-aos="zoom-in" data-aos-easing="ease" data-aos-delay="1300" data-aos-duration="1400">
 
                         {{-- Circulo grande --}}
                         <div
@@ -156,7 +153,7 @@
             </div>
         </x-container>
     </section>
-    
+
     {{-- Banner 1 --}}
     <section id="about" class="bg-primary">
         <x-container class="px-4 py-14 md:py-16">
@@ -164,16 +161,14 @@
             <div class="flex flex-col lg:flex-row px-4 gap-8 lg:gap-4">
 
                 {{-- Icono --}}
-                <div class="w-full lg:w-[25%] flex justify-center items-center text-center"
-                data-aos="fade-right"
-                data-aos-duration="600">
+                <div class="w-full lg:w-[25%] flex justify-center items-center text-center" data-aos="fade-right"
+                    data-aos-duration="600">
                     <i class="fa-solid fa-book text-[80px] text-primary-contrast-1"></i>
                 </div>
 
                 {{-- Texto --}}
                 <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-6"
-                data-aos="fade-left"
-                data-aos-duration="600">
+                    data-aos="fade-left" data-aos-duration="600">
 
                     <span class="text-primary-contrast-1 text-base md:text-lg">
                         {!! $contents['about_description'] ?? 'Sin descripción' !!}
@@ -198,17 +193,16 @@
     {{-- Capacitaciones --}}
     <section id="our_trainings">
         <x-container class="px-4 section__spacing flex-col">
+
             {{-- Titulo --}}
-            <div class="mb-6 md:mb-10 text-center sm:px-15 lg:px-40"
-                data-aos="fade-up"
-                data-aos-duration="500">
+            <div class="mb-6 md:mb-10 text-center sm:px-15 lg:px-40" data-aos="zoom-in" data-aos-duration="500">
                 <div>
-                    <span class="text-3xl sm:text-4xl lg:text-4xl leading-tight lg:leading-tight">
+                    <span class="web-section-title">
                         {!! $contents['our_trainings_title'] !!}
                     </span>
                 </div>
                 <div class="mt-3">
-                    <span class="text-base sm:text-lg lg:text-xl">
+                    <span class="web-section-description">
                         {!! $contents['our_trainings_description'] !!}
                     </span>
                 </div>
@@ -232,36 +226,32 @@
     {{-- Por que elegir nuestras capacitaciones --}}
     <section id="why_choose_our_trainings">
         <x-container class="px-4 section__spacing">
+
             <div class="flex items-center flex-col lg:flex-row gap-10 md:gap-7">
 
+                {{-- Imagen --}}
                 <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10 order-last lg:order-first"
-                    data-aos="zoom-in-up"
-                    data-aos-duration="1000">
+                    data-aos="zoom-in-up" data-aos-duration="1000">
                     <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-xl"
                         src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">
                 </div>
 
-                <div class="w-full lg:w-1/2 px-4 text-start"
-                    data-aos="fade-down"
-                    data-aos-duration="1000">
+                {{-- Cuadro con el texto --}}
+                <div class="w-full lg:w-1/2 px-4 text-start" data-aos="fade-down" data-aos-duration="1000">
 
-                    <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                    <span class="web-section-title">
 
-                        {!! $contents['why_choose_our_trainings_title'] ?? 'titulo acerca de' !!}
+                        {!! $contents['why_choose_our_trainings_title'] ?? 'titulo' !!}
 
                     </span>
 
-                    <div class="mt-4 md:mt-6">
+                    <div class="mt-6 md:mt-7">
 
                         <span class="text-base sm:text-lg lg:text-lg">
-                            {!! $contents['why_choose_our_trainings_description'] ?? 'descripcion acerca de nosotros' !!}
+                            {!! $contents['why_choose_our_trainings_description'] ?? 'descripcion' !!}
                         </span>
 
                     </div>
-
-                    {{-- <p class="text-base font-bold sm:text-lg lg:text-xl mt-8">
-                        Te ofrecemos:
-                    </p> --}}
 
                 </div>
             </div>
@@ -282,7 +272,6 @@
                 Swal.fire(data[0]);
             });
         </script>
-
     @endpush
 
 </x-app-layout>

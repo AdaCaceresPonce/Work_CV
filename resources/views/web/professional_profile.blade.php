@@ -10,10 +10,6 @@
         }
     </style>
 
-    @push('css')
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    @endpush
-
     {{-- Portada --}}
     <x-page-cover :id="'cover'" :image="Storage::url($contents['cover_img'])" :name="$contents['cover_title']" />
 
@@ -34,8 +30,9 @@
                 <div class="w-full lg:w-1/2 px-1 lg:pl-2">
 
                     <div class="max-w-[500px] lg:max-w-full mx-auto">
-                        <div class="space-y-2">
-                            <span class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                        <div class="space-y-4">
+                            
+                            <span class="web-section-title">
                                 {!! $contents['employment_history_title'] !!}
                             </span>
     
@@ -67,7 +64,7 @@
         <x-container class="px-4 section__spacing">
             <div class="text-center sm:px-4 lg:px-8"> <!-- Reducir margin-bottom y padding-bottom -->
 
-                <div class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                <div class="web-section-title">
                     <span class="block">{!! $contents['academic_backgrounds_title'] !!}</span>
                     <div class="flex justify-center mt-4 lg:mt-4">
                         <div class="w-20 h-1 bg-primary"></div>
@@ -107,8 +104,8 @@
                                 <path d="M 0 0 L 17 0 L 16 2 L 0 2 L 0 0" fill="#689F38" />
                             </svg>
                         
-                            <span class="absolute inset-0 flex items-center justify-start pl-10 text-white font-bold z-10
-                            text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold">
+                            <span class="absolute inset-0 flex items-center justify-start pl-10 text-white z-10
+                            web-section-title">
                                 {!! $contents['my_skills_title'] !!}
                             </span>
                         </div>

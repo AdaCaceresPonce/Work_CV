@@ -45,9 +45,9 @@
     </div>
 
 
-    <div class="card space-y-5">
+    <div class="card">
 
-        <x-admin.section-title>
+        <x-admin.section-title class="mb-6">
             <x-slot name="title">Lista de capacitaciones</x-slot>
             <x-slot name="description">Gestiona las capacitaciones que se muestran en tu sitio web.</x-slot>
         </x-admin.section-title>

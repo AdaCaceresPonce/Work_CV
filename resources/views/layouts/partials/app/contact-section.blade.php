@@ -4,16 +4,16 @@
 <section id="contact" class="">
     <x-container class="px-4 section__spacing">
         {{-- Titulo --}}
-        <div class="mb-10 px-4 text-center sm:px-15 lg:px-20"
-        data-aos="fade-up"
+        <div class="text-pretty mb-5 md:mb-10 px-4 text-center sm:px-15 lg:px-20"
+        data-aos="zoom-in"
         data-aos-duration="500">
             <div>
-                <span class="text-3xl lg:text-4xl leading-tight lg:leading-tight font-bold">
+                <span class="web-section-title">
                     {!! $contact_section['contact_us_title'] !!}
                 </span>
             </div>
             <div class="mt-4">
-                <span class="text-base sm:text-lg lg:text-xl font-bold">
+                <span class="web-section-description">
                     {!! $contact_section['contact_us_description'] !!}
                 </span>
             </div>
