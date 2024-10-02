@@ -71,20 +71,38 @@
                     </div>
                 </div>
 
-                <div class="mt-6 md:mt-10 border-2 border-[#e4e4e4] rounded-xl p-8 shadow-md">
+                {{-- <div class="mt-6 md:mt-10 mx-0 lg:mx-8 border-2 border-[#e4e4e4] rounded-xl p-8 shadow-md">
                     <!-- Borde verde delgado alrededor -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Cuadrados internos -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="grid-auto-rows: 1fr;"> <!-- Cuadrados internos -->
 
                         @foreach ($academic_backgrounds as $degree)
                             <div
-                                class="w-full h-48 bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center p-6">
+                                class="w-full h-full bg-[#E1E1B7] border-l-8 border-l-[#689f38] flex flex-col justify-center px-6 py-12">
                                 <h3 class="text-lg sm:text-xl font-bold mb-2">{{ $degree->degree_name }}</h3>
                                 <p class="text-base mt-2">{{ $degree->institution_name }}</p>
                             </div>
                         @endforeach
 
                     </div>
+                </div> --}}
+
+                <div class="mt-6 md:mt-10 mx-0 lg:mx-8 p-8 rounded-xl shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="grid-auto-rows: 1fr;">
+                        @foreach ($academic_backgrounds as $degree)
+                            <div
+                                class="w-full h-full bg-gradient-to-r from-[#f5f5d8] to-[#cfcf96] border-l-4 border-l-primary flex flex-col justify-center px-6 py-12 rounded-lg shadow-md">
+                                
+                                <!-- Título del grado académico -->
+                                <h3 class="text-xl sm:text-2xl font-bold text-[#333] mb-2">{{ $degree->degree_name }}</h3>
+                                
+                                <!-- Nombre de la institución -->
+                                <p class="text-lg text-[#555]">{{ $degree->institution_name }}</p>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
+                
+                
             </div>
         </x-container>
     </section>

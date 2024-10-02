@@ -79,7 +79,7 @@
 
     {{-- Menú lateral con animación --}}
     <nav x-show="open" id="navigation-menu" x-on:click.away="open=false"
-        class="bg-secondary h-full w-6/12 md:w-5/12 overflow-y-auto absolute lg:hidden mt-[1.9px] transform"
+        class="bg-secondary h-full w-6/12 md:w-4/12 overflow-y-auto absolute lg:hidden mt-[1.9px] transform"
         x-transition:enter="transition ease-out duration-300" x-transition:enter-start="-translate-x-full opacity-0"
         x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-full opacity-0"

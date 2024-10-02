@@ -41,9 +41,11 @@
 
     <div class="inline-flex w-full justify-start mb-4">
         <a href="{{ route('our_trainings.index') }}" target="_blank"
-            class="px-4 py-2 bg-blue-600 text-white rounded-md">Ver página Capacitaciones</a>
-    </div>
+            class="px-3 py-1.5 md:px-4 md:py-2 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition ease-in-out duration-200">
 
+            Ver página Capacitaciones <i class="fa-solid fa-circle-arrow-right ml-1"></i>
+        </a>
+    </div>
 
     <div class="card">
 
@@ -68,18 +70,17 @@
                                 <div class="absolute top-3 right-3">
 
                                     @if ($training->topics->count())
-
                                         {{-- Si hay topics, mostrar el contador con una etiqueta celeste --}}
-                                        <x-badge type="simple" url="{{ route('admin.trainings.edit', $training) }}#topics">
+                                        <x-badge type="simple"
+                                            url="{{ route('admin.trainings.edit', $training) }}#topics">
                                             {{ $training->topics->count() }} temas registrados
                                         </x-badge>
-                                        
                                     @else
                                         {{-- Si no hay topics, mostrar una etiqueta roja --}}
-                                        <x-badge type="red" url="{{ route('admin.trainings.edit', $training) }}#topics">
+                                        <x-badge type="red"
+                                            url="{{ route('admin.trainings.edit', $training) }}#topics">
                                             Sin temas registrados
                                         </x-badge>
-
                                     @endif
 
                                 </div>

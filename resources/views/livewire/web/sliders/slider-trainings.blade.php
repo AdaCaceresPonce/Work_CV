@@ -73,10 +73,10 @@
             </div>
         </div>
         {{-- Botones de navegacion --}}
-        <div class="swiper-button-prev">
+        <div class="swiper-button-prev text-primary">
             <i class="fa-solid fa-angle-left"></i>
         </div>
-        <div class="swiper-button-next">
+        <div class="swiper-button-next text-primary">
             <i class="fa-solid fa-angle-right"></i>
         </div>
     
@@ -112,7 +112,6 @@
                 width: initial;
                 height: initial;
                 font-size: 3rem;
-                color: #0ad3ff;
                 display: none;
             }
     
@@ -124,9 +123,10 @@
                 right: 0;
             }
     
-            .swiper-pagination-bullet {
-                background-color: #0ad3ff;
-            }
+            /* .swiper-pagination-bullet {
+
+                background-color: #689F38;
+            } */
     
             @media screen and (max-width: 320px) {
                 .card__data {
@@ -145,7 +145,7 @@
                 }
             }
     
-            @media screen and(min-width: 1120px) {
+            /* @media screen and (min-width: 1120px) {
                 .card__container {}
     
                 .swiper-button-next {
@@ -155,7 +155,7 @@
                 .swiper-button-prev {
                     left: -1rem;
                 }
-            }
+            } */
         </style>
     </div>
     

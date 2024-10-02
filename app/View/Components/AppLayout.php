@@ -15,6 +15,10 @@ class AppLayout extends Component
     {
         $contact_information = ContactInformation::first();
 
-        return view('layouts.app', compact('contact_information'));
+        // Verifica si hay un número de WhatsApp y elimina el signo '+'
+        $whatsappNumber = $contact_information->whatsapp_number ? ltrim($contact_information->whatsapp_number, '+') : null;
+        $whatsappMessage = $contact_information->whatsapp_message;
+
+        return view('layouts.app', compact('contact_information', 'whatsappNumber', 'whatsappMessage'));
     }
 }

@@ -38,12 +38,12 @@
         }
 
         /*Whassap Flotante*/
-        .float {
+        .whatsapp-button {
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
@@ -85,10 +85,16 @@
         </main>
 
         <!--Whatsapp Flotante-->
-        <a href="https://wa.link/t808gl"
-            class="float flex items-center justify-center hover:" target="_blank">
-            <i class="fa fa-whatsapp"></i>
-        </a>
+        @if (!is_null($whatsappNumber))
+            <a href="https://api.whatsapp.com/send?phone={{ $whatsappNumber }}{{ $whatsappMessage ? '&text=' . urlencode($whatsappMessage) : '' }}"
+                x-data="{ showButton: true }"
+                x-bind:class="showButton ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'"
+                @scroll.window="showButton = (document.querySelector('footer').getBoundingClientRect().top > window.innerHeight)"
+                class="whatsapp-button transition-all duration-300 ease-in-out flex items-center justify-center hover:"
+                target="_blank">
+                <i class="fa fa-whatsapp"></i>
+            </a>
+        @endif
 
         @include('layouts.partials.app.footer')
 

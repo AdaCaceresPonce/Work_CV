@@ -17,7 +17,7 @@
 
                     <div class="max-w-[500px] lg:max-w-full mx-auto text-center lg:text-start">
 
-                        <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400" data-aos-duration="1000">
+                        <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200" data-aos-duration="1000">
                             <span class="text-3xl md:text-4xl leading-tight lg:leading-tight">
                                 {!! $contents['cover_title'] ?? 'Sin título' !!}
                             </span>
@@ -34,7 +34,7 @@
 
                 {{-- Imagen --}}
                 <div class="w-full mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
-                    <div class="" data-aos="zoom-in" data-aos-easing="ease" data-aos-delay="1300" data-aos-duration="1400">
+                    <div class="" data-aos="zoom-in" data-aos-easing="ease" data-aos-delay="1400" data-aos-duration="1400">
 
                         {{-- Circulo grande --}}
                         <div

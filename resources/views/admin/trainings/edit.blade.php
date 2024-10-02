@@ -34,7 +34,7 @@
                     class="flex flex-col md:flex-row justify-between items-start md:items-center p-3 bg-white rounded-lg shadow-sm gap-2 md:gap-0">
 
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-info-circle text-sky-500"></i>
+                        {{-- <i class="fa-solid fa-info-circle text-sky-500"></i> --}}
                         <span class="font-semibold text-xl md:text-2xl text-slate-800">
                             Datos de la capacitación
                         </span>
@@ -48,7 +48,7 @@
                 </div>
 
                 {{-- Imagenes --}}
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8">
                     <div class="col">
                         <x-label class="font-black">
                             Imagen de la tarjeta
