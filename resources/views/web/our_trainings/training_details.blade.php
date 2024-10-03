@@ -8,10 +8,12 @@
         </div>
 
         <x-container class="px-4 py-44 lg:py-48 h-full flex align-middle items-center relative z-20">
-            <p class="text-white flex-1 text-center text-4xl font-bold tracking-normal" data-aos="fade-down"
-                data-aos-duration="1000">
+
+            <p class="text-white flex-1 text-center text-3xl lg:text-4xl text-pretty leading-normal font-bold tracking-normal" 
+                data-aos="fade-down" data-aos-easing="ease" data-aos-delay="200" data-aos-duration="1000">
                 {{ $training->name }}
             </p>
+
         </x-container>
 
     </section>
@@ -21,7 +23,8 @@
 
         <x-container class="px-4 py-12 lg:py-14">
 
-            <div class="text-2xl lg:text-3xl text-primary leading-tight lg:leading-tight font-bold text-center">
+            <div class="text-2xl lg:text-3xl text-primary leading-tight lg:leading-tight font-bold text-center"
+                data-aos="fade-up" data-aos-easing="ease" data-aos-delay="1000" data-aos-duration="1000">
                 <span class="block">Sobre esta capacitación</span>
                 <div class="flex justify-center mt-4 lg:mt-6">
                     <div class="w-10 h-1 bg-primary"></div>
@@ -47,13 +50,13 @@
             <div class="flex items-center flex-col lg:flex-row gap-7 md:gap-8">
 
                 {{-- Texto --}}
-                <div class="w-full lg:w-1/2 px-4">
+                <div class="w-full lg:w-1/2 px-2">
 
                     <div class="mx-auto max-w-[500px] lg:max-w-full">
 
                         <div class="space-y-4">
 
-                            <span class="text-xl lg:text-2xl leading-tight lg:leading-tight font-bold">
+                            <span class="text-xl lg:text-2xl text-center lg:text-start font-bold w-full block leading-relaxed">
                                 En {{ $training->name }} verás los siguientes temas:
 
                             </span>
@@ -113,12 +116,12 @@
         <x-container>
             <div class="mx-auto p-6">
                 <div>
-                    <div class="text-2xl lg:text-3xl leading-tight lg:leading-tight font-bold text-center text-primary">
+                    <div class="text-2xl lg:text-3xl leading-relaxed font-bold text-center text-primary">
                         <span class="">¿Buscas capacitarte o tienes alguna duda de esta capacitación?</span>
                     </div>
-                    <div class="flex justify-center mt-8">
+                    <div class="flex justify-center mt-6 lg:mt-8">
                         <a href="{{ route('contact_us.index', $training) }}#form"
-                            class="text-lg font-bold text-primary-contrast-1 py-3 px-6 rounded-lg border-[2px] border-primary bg-primary
+                            class="text-base lg:text-lg font-bold text-primary-contrast-1 py-3 px-6 rounded-lg border-[2px] border-primary bg-primary
                             hover:bg-primary-contrast-1 hover:text-primary transition duration-150">
                             Envía una consulta aquí
                         </a>

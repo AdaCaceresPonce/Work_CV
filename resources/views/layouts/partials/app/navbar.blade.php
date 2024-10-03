@@ -38,7 +38,7 @@
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
                     {{-- <img class="size-[52px] object-cover border-[3px] rounded-full"
                         src="{{ Storage::url($clinicInformation['navbar_clinic_logo']) }}" alt=""> --}}
-                    <h1 class="ml-2 text-xl md:text-2xl text-primary-contrast-1 font-semibold">Presentación Personal</h1>
+                    <h1 class="text-xl md:text-2xl text-primary-contrast-1 font-semibold">Presentación Personal</h1>
                 </a>
             </div>
 

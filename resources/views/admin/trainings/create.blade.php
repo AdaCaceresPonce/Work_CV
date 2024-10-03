@@ -28,7 +28,7 @@
             </div>
             
             {{-- Imagenes --}}
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
                 <div class="col lg:mb-0">
                     <x-label class="font-black">
                         Imagen de la tarjeta

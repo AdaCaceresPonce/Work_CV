@@ -59,11 +59,13 @@
         <x-container class="px-4 section__spacing">
             <div>
                 {{-- Titulo --}}
-                <div class="w-full space-y-3">
-                    <span class="text-xl lg:text-2xl leading-tight lg:leading-tight font-bold">
-                        {!! $contents['trainings_we_offer_title'] !!}
-                    </span>
-                    <div class="bg-primary h-0.5 w-full"></div>
+                <div class="w-full">
+                    <div class="px-2 w-full">
+                        <span class="text-center md:text-start text-xl lg:text-2xl leading-relaxed block w-full font-bold text-pretty">
+                            {!! $contents['trainings_we_offer_title'] !!}
+                        </span>
+                    </div>
+                    <div class="bg-primary mt-3 h-0.5 w-full"></div>
                 </div>
 
 

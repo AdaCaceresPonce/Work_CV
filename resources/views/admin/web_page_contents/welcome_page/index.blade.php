@@ -38,7 +38,7 @@
 
         <x-validation-errors class="mb-3 p-4 border-2 border-red-500 rounded-md"/>
 
-        <div class="text-xs md:text-base mb-3 p-4 border border-gray-800 border-l-4">
+        <div class="text-sm md:text-base mb-3 p-4 border border-gray-800 border-l-4">
             {{-- <p class="mb-3">
                 Aquí puedes modificar los contenidos que se muestran en la <strong>Página de Inicio</strong>, se recomienda considerar los colores representativos del sitio y cargar las imágenes de acuerdo a lo recomendado. Al final de esta página se encuentra el botón para guardar todos los cambios.
             </p> --}}

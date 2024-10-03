@@ -230,7 +230,7 @@
             <div class="flex items-center flex-col lg:flex-row gap-10 md:gap-7">
 
                 {{-- Imagen --}}
-                <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10 order-last lg:order-first"
+                <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-0 order-last lg:order-first"
                     data-aos="zoom-in-up" data-aos-duration="1000">
                     <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-xl"
                         src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">
@@ -239,7 +239,7 @@
                 {{-- Cuadro con el texto --}}
                 <div class="w-full lg:w-1/2 px-4 text-start" data-aos="fade-down" data-aos-duration="1000">
 
-                    <span class="web-section-title">
+                    <span class="text-2xl md:text-3xl font-bold leading-normal text-pretty">
 
                         {!! $contents['why_choose_our_trainings_title'] ?? 'titulo' !!}
 
