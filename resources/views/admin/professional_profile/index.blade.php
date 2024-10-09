@@ -48,6 +48,18 @@
 
         </div>
 
+        {{-- Producciones --}}
+        <div class="card space-y-4">
+
+            <x-admin.section-title>
+                <x-slot name="title">Tus Producciones</x-slot>
+                <x-slot name="description">Gestiona tus investigaciones, artículos o estudios realizados que deseas dar a conocer.</x-slot>
+            </x-admin.section-title>
+
+            <livewire:admin.personal-data.productions-list />
+
+        </div>
+
     </div>
 
 

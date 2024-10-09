@@ -25,6 +25,8 @@ return new class extends Migration
             $table->text('my_skills_title');
             $table->text('my_skills_img');
 
+            $table->text('my_productions_title');
+
             $table->timestamps();
         });
     }

@@ -17,6 +17,10 @@
     {{-- Select2 CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    {{-- AOS --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     @stack('css')
 
     <style>
@@ -77,7 +81,7 @@
 
             </div>
 
-            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+            <div class="p-4 overflow-x-hidden overflow-y-hidden border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
 
                 {{ $slot }}
 
@@ -99,6 +103,12 @@
 
     @stack('js')
 
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
 
     {{-- Alertas para livewire --}}
     <script>

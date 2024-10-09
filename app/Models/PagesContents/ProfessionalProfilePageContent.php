@@ -23,6 +23,8 @@ class ProfessionalProfilePageContent extends Model
 
         'my_skills_title',
         'my_skills_img',
+
+        'my_productions_title',
         
     ];
 

@@ -64,6 +64,8 @@ class ProfessionalProfilePageContentSeeder extends Seeder
             'my_skills_title' => 'Mis Aptitudes',
             'my_skills_img' => $imagesInDatabase['my_skills_img.png'],
 
+            'my_productions_title' => '<p><strong><span class="text-primary">Mis Producciones</span></strong></p>',
+
         ];
 
         ProfessionalProfilePageContent::create($content);

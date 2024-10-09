@@ -21,6 +21,11 @@
             'id' => '#skills',
         ],
 
+        [
+            'name' => 'Sección sobre las Producciones',
+            'id' => '#productions',
+        ],
+
     ];
 @endphp
 
@@ -256,6 +261,34 @@
 
                 </section>
 
+                {{-- Seccion sobre las Producciones --}}
+                <section id="productions">
+
+                    <x-page-section-title :section_title="'Sección sobre las Producciones'" :route_name="'professional_profile.index'" :section_id="'#productions'" />
+
+                    {{-- Columnas --}}
+                    <div class="grid grid-cols-1">
+                        <div>
+
+                            <x-label class="mb-1 mt-2 text-[15px] font-black">
+                                Título
+                            </x-label>
+
+                            <div class="rounded-lg @error('my_productions_title') border-[2px] border-red-500 @enderror">
+                                <textarea class="textarea" name="my_productions_title">
+                                @if (isset($contents['my_productions_title']))
+                                {{ old('my_productions_title', $contents['my_productions_title'] ) }}
+                                @endif
+                                </textarea>
+                            </div>
+
+                            <x-input-error class="mt-1" for="my_productions_title" />
+
+
+                        </div>
+
+                    </div>
+                </section>
 
                 {{-- Botón actualizar --}}
                 <div class="flex pt-6 justify-end">

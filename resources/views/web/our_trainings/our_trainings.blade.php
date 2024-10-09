@@ -75,8 +75,9 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
 
                         @foreach ($trainings as $training)
-                            <article class="p-2 overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-easing="ease"
-                                data-aos-duration="700" data-aos-delay="{{ 100 + ($loop->index * 100) }}">
+                            <article class="p-2 overflow-hidden rounded-xl" data-aos="fade-up" data-aos-easing="ease"
+                                data-aos-duration="700" data-aos-delay="{{ 100 + ($loop->index * 100) }}"
+                                data-aos-anchor-placement="top-bottom">
 
                                 <figure
                                     class="w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden relative">

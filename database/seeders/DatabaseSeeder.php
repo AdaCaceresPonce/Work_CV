@@ -53,17 +53,23 @@ class DatabaseSeeder extends Seeder
             $this->call(AcademicBackgroundSeeder::class);
             //Aptitudes
             $this->call(SkillSeeder::class);
+            //Producciones
+            $this->call(ProductionSeeder::class);
 
-        $this->call(WelcomePageContentSeeder::class);
-        $this->call(OurTrainingsPageContentSeeder::class);
-        $this->call(ProfessionalProfilePageContentSeeder::class);
-        $this->call(ContactUsPageContentSeeder::class);
-
-        //Cargar la información de contacto
+        //Información de contacto
         $this->call(ContactInformationSeeder::class);
 
-        Inquiry::factory(30)->create();
-        Opinion::factory(30)->create();
+        //Contenidos de páginas
+            $this->call(WelcomePageContentSeeder::class);
+            $this->call(OurTrainingsPageContentSeeder::class);
+            $this->call(ProfessionalProfilePageContentSeeder::class);
+            $this->call(ContactUsPageContentSeeder::class);
+
+        //Factories
+            //Consultas
+            Inquiry::factory(30)->create();
+            //Opiniones
+            Opinion::factory(30)->create();
 
     }
 }

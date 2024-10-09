@@ -59,8 +59,9 @@
             <div>
                 <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                     @foreach ($trainings as $training)
-                        <div
-                            class="max-w-full bg-white border-[2px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="max-w-full bg-white border-[2px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden"
+                            data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                            data-aos-delay="{{ 50 + $loop->index * 50 }}">
 
                             <figure class="relative">
 

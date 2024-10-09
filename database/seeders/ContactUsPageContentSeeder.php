@@ -54,7 +54,7 @@ class ContactUsPageContentSeeder extends Seeder
             'cover_title' => 'Contáctanos',
             'cover_img' => $imagesInDatabase['cover_img.jpg'],
     
-            'contact_us_title' => '<p><strong>Comunícate conmigo, estoy a tu servicio.</strong></p>',
+            'contact_us_title' => '<p><strong>Comunícate conmigo, estoy a tu servicio</strong></p>',
             'contact_us_description' => '<p><strong><span class="text-primary">Envía una consulta. Me pondré en contacto contigo lo más antes posible.</span></strong></p>',
             'contact_us_img'=> $imagesInDatabase['contact_us_img.jpg'],
 

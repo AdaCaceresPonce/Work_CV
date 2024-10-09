@@ -1,9 +1,9 @@
 .card {
-  @apply bg-white rounded-lg border border-gray-300 shadow-lg p-6;
+  @apply bg-white/80 rounded-lg border border-gray-400 shadow-lg p-6;
 }
 
 .card-gray {
-  @apply bg-gray-300/40 rounded-lg border border-gray-300 shadow-md p-6;
+  @apply bg-gray-200 rounded-lg border border-gray-400 shadow-lg p-6;
 }
 
 

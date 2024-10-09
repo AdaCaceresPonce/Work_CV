@@ -161,14 +161,14 @@
             <div class="flex flex-col lg:flex-row px-4 gap-8 lg:gap-4">
 
                 {{-- Icono --}}
-                <div class="w-full lg:w-[25%] flex justify-center items-center text-center" data-aos="fade-right"
-                    data-aos-duration="600">
+                <div class="w-full lg:w-[25%] flex justify-center items-center text-center" 
+                    data-aos="fade-right" data-aos-duration="600" data-aos-anchor-placement="top-bottom">
                     <i class="fa-solid fa-book text-[80px] text-primary-contrast-1"></i>
                 </div>
 
                 {{-- Texto --}}
                 <div class="w-full lg:w-[75%] flex flex-col justify-center text-center items-center gap-6"
-                    data-aos="fade-left" data-aos-duration="600">
+                    data-aos="fade-left" data-aos-duration="600" data-aos-anchor-placement="top-bottom">
 
                     <span class="text-primary-contrast-1 text-base md:text-lg">
                         {!! $contents['about_description'] ?? 'Sin descripción' !!}

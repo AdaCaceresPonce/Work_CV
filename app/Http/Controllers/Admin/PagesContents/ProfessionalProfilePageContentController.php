@@ -70,6 +70,9 @@ class ProfessionalProfilePageContentController extends Controller
             'my_skills_title' => 'required',
             'my_skills_img' => 'image|max:1024',
 
+            'my_productions_title' => 'required',
+
+
         ], [
 
             'cover_img.image' => 'El archivo para la portada debe ser una imagen.',
@@ -92,6 +95,8 @@ class ProfessionalProfilePageContentController extends Controller
 
             'my_skills_title' => 'título en las aptitudes',
             'my_skills_img' => 'imagen en las aptitudes',
+
+            'my_skills_title' => 'título en las producciones',
 
         ]);
 

@@ -13,7 +13,6 @@
             'icon' => 'fa-solid fa-file-invoice',
             'name' => 'Tu currículum',
             'route' => route('admin.professional_profile.index'),
-
         ],
 
         [
@@ -115,6 +114,7 @@
         <div class="card space-y-6">
             <span class="font-semibold text-xl">¿Qué deseas hacer hoy?</span>
 
+            {{-- Gestión --}}
             <div>
                 <span class="font-medium">Puedes gestionar:</span>
                 <div class="mt-3 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -134,6 +134,7 @@
                 </div>
             </div>
 
+            {{-- Buzón de mensajes --}}
             <div>
                 <span class="font-medium">No olvides revisar con frecuencia el buzón de mensajes de:</span>
                 <div class="mt-3 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -154,21 +155,26 @@
                 </div>
             </div>
 
+            {{-- Edicion de paginas --}}
             <div>
                 <span class="font-medium">Puedes editar las páginas de:</span>
                 <div class="mt-3 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
                     @foreach ($web_pages as $web_page)
-                        <a href="{{ $web_page['route'] }}"
-                            class="p-5 flex items-center font-medium bg-indigo-600 text-white shadow-md rounded-lg  transition duration-150 hover:scale-105">
+                        <div>
 
-                            <span class="inline-flex w-6 h-6 justify-center items-center">
-                                <i class="{{ $web_page['icon'] }}"></i>
-                            </span>
+                            <a href="{{ $web_page['route'] }}"
+                                class="p-5 flex items-center font-medium bg-indigo-600 text-white shadow-md rounded-lg transition duration-150 hover:scale-105">
 
-                            <span class="ms-3">
-                                {{ $web_page['name'] }}
-                            </span>
-                        </a>
+                                <span class="inline-flex w-6 h-6 justify-center items-center">
+                                    <i class="{{ $web_page['icon'] }}"></i>
+                                </span>
+
+                                <span class="ms-3">
+                                    {{ $web_page['name'] }}
+                                </span>
+                            </a>
+
+                        </div>
                     @endforeach
                 </div>
             </div>
