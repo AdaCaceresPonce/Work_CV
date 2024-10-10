@@ -180,31 +180,65 @@
 
                         <div class="text-left">
                             <div class="text-base">
-                                <div class="space-y-4">
-                                    <p>
-                                        <strong><i class="fa-solid fa-circle-user mr-2"></i>Apellidos y Nombres:</strong> {{ $inquiryInfo['lastname'] }}, {{ $inquiryInfo['name'] }}
-                                    </p>
-                                    <p>
-                                        <strong><i class="fa-solid fa-school mr-2"></i>Institución:</strong> {{ $inquiryInfo['institution_name'] }}
-                                    </p>
-                                    <p>
-                                        <strong><i class="fa-solid fa-map-location-dot mr-2"></i>Ciudad / Región:</strong> {{ $inquiryInfo['location'] }}
-                                    </p>
-                                    <p>
-                                        <strong><i class="fa-solid fa-phone mr-2"></i>Número de contacto:</strong> {{ $inquiryInfo['contact_number'] }}
-                                    </p>
-                                    <p>
-                                        <strong><i class="fa-solid fa-person-chalkboard mr-2"></i>Capacitación:</strong> {{ $inquiryInfo['training'] }}
-                                    </p>
-                                    <div class="border bg-gray-100 rounded-md p-4">
-                                        <p>
-                                            <strong><i class="fa-solid fa-envelope mr-2"></i>Mensaje:</strong> {{ $inquiryInfo['message'] }}
+                                <div class="space-y-5">
+                                    <!-- Apellidos y Nombres -->
+                                    <div>
+                                        <p class="mb-1 text-gray-800 font-bold flex items-center">
+                                            <i class="fa-solid fa-circle-user mr-2 text-blue-600"></i>
+                                            Apellidos y Nombres
                                         </p>
+                                        <p class="text-gray-700">{{ $inquiryInfo['lastname'] }}, {{ $inquiryInfo['name'] }}</p>
+                                    </div>
+                                    
+                                    <!-- Institución -->
+                                    <div>
+                                        <p class="mb-1 text-gray-800 font-bold flex items-center">
+                                            <i class="fa-solid fa-school mr-2 text-blue-500"></i>
+                                            Institución
+                                        </p>
+                                        <p class="text-gray-700">{{ $inquiryInfo['institution_name'] }}</p>
+                                    </div>
+                                    
+                                    <!-- Ciudad / Región -->
+                                    <div>
+                                        <p class="mb-1 text-gray-800 font-bold flex items-center">
+                                            <i class="fa-solid fa-map-location-dot mr-2 text-green-500"></i>
+                                            Ciudad / Región
+                                        </p>
+                                        <p class="text-gray-700">{{ $inquiryInfo['location'] }}</p>
+                                    </div>
+                                    
+                                    <!-- Número de contacto -->
+                                    <div>
+                                        <p class="mb-1 text-gray-800 font-bold flex items-center">
+                                            <i class="fa-solid fa-phone mr-2 text-indigo-500"></i>
+                                            Número de contacto
+                                        </p>
+                                        <p class="text-gray-700">{{ $inquiryInfo['contact_number'] }}</p>
+                                    </div>
+                                    
+                                    <!-- Capacitación -->
+                                    <div>
+                                        <p class="mb-1 text-gray-800 font-bold flex items-center">
+                                            <i class="fa-solid fa-person-chalkboard mr-2 text-orange-500"></i>
+                                            Capacitación
+                                        </p>
+                                        <p class="text-gray-700">{{ $inquiryInfo['training'] }}</p>
+                                    </div>
+                                
+                                    <!-- Mensaje -->
+                                    <div class="border bg-gray-100 rounded-md p-4 shadow-sm">
+                                        <p class="font-bold text-gray-800 flex items-center mb-1">
+                                            <i class="fa-solid fa-envelope mr-2 text-red-500"></i>
+                                            Mensaje
+                                        </p>
+                                        <p class="text-gray-600">{{ $inquiryInfo['message'] }}</p>
                                     </div>
                                 </div>
+                                
 
-                                <div class="mt-4 pl-3 border-l-4 border-l-teal-500">
-                                    <p class="mb-1 mt-2 flex items-center me-3">Cambia el estado de la consulta:</p>
+                                <div class="mt-6 pl-3 border-l-4 border-l-teal-500">
+                                    <p class="mb-1 mt-2 flex items-center me-3">Estado</p>
                                     <x-select wire:model="inquiryInfo.state" class="p-2 border rounded w-full">
                                         @foreach ($states as $state)
                                             <option value="{{ $state['name'] }}">{{ $state['name'] }}</option>
@@ -231,7 +265,7 @@
                 </x-dialog-modal>
             </form>
         @else
-            {{-- Alerta que se muestra cuando no hay familias registradas --}}
+            {{-- Alerta que se muestra cuando no se encontraron registros --}}
             <div class="flex items-center p-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
                 role="alert">
                 <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
