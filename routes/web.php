@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\Web\AboutUsController;
 use App\Http\Controllers\Web\ContactUsController;
-use App\Http\Controllers\Web\OurProfessionalsController;
-use App\Http\Controllers\Web\OurServicesController;
 use App\Http\Controllers\Web\OurTrainingsPageController;
 use App\Http\Controllers\Web\ProfessionalProfilePageController;
 use App\Http\Controllers\WelcomeController;
