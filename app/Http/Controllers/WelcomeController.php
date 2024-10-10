@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Professional;
-use App\Models\Service;
-use App\Models\WelcomePageContent;
+use App\Models\PagesContents\WelcomePageContent;
+
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller

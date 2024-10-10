@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\ContactUsPageContent;
-use App\Models\Service;
+use App\Models\PagesContents\ContactUsPageContent;
 use Illuminate\Http\Request;
 
 class ContactUsController extends Controller

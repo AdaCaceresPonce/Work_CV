@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use App\Models\ClinicInformation;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -22,8 +21,7 @@ class AdminLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        $clinicInformation = ClinicInformation::first();
         
-        return view('layouts.admin', compact('clinicInformation'));
+        return view('layouts.admin');
     }
 }

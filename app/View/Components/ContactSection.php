@@ -2,10 +2,8 @@
 
 namespace App\View\Components;
 
-use App\Models\ClinicInformation;
 use App\Models\ContactInformation;
-use App\Models\ContactUsPageContent;
-use App\Models\Service;
+use App\Models\PagesContents\ContactUsPageContent;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
