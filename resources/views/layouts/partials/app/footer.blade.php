@@ -1,60 +1,86 @@
 <footer class="bg-primary">
     <div class="mx-auto w-full max-w-screen-xl px-4 py-6 lg:px-8 lg:py-8">
         <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
+            <div class="mb-8 md:mb-0">
                 <a href="{{ route('welcome.index') }}" class="flex items-center">
                     {{-- <img src="{{ Storage::url($contact_information['footer_clinic_logo']) }}" class="size-8 border border-white rounded-full me-3" /> --}}
-                    <span class="text-primary-contrast-1 self-center text-2xl font-semibold whitespace-nowrap">Presentación Personal</span>
+                    <span
+                        class="text-primary-contrast-1 self-center text-2xl font-semibold whitespace-nowrap">Presentación
+                        Personal</span>
                 </a>
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:gap-20 sm:grid-cols-2">
+            <div class="grid grid-cols-2 gap-4 sm:gap-8 sm:grid-cols-2">
+
+                {{-- Enlaces --}}
                 <div>
-                    <h2 class="mb-6 text-base font-semibold uppercase text-white">Enlaces Rápidos
-                    </h2>
-                    <ul class="text-gray-300 font-medium list-none pl-0">
+                    <div class="mb-6">
+                        <h2 class="mb-4 text-base font-semibold uppercase text-white">Enlaces Rápidos
+                        </h2>
+                        <div class="h-[3px] w-1/2 bg-tertiary-border"></div>
+                    </div>
+
+                    <ul class="text-gray-200 font-medium list-none pl-0">
                         <li class="mb-3">
-                            <a href="{{ route('welcome.index') }}" class="hover:underline">Inicio</a>
+                            <a href="{{ route('welcome.index') }}" class="hover:underline hover:text-primary-contrast-1">Inicio</a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('professional_profile.index') }}" class="hover:underline">Mi currículum</a>
+                            <a href="{{ route('professional_profile.index') }}" class="hover:underline hover:text-primary-contrast-1">Mi
+                                currículum</a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('our_trainings.index') }}" class="hover:underline">Capacitaciones</a>
+                            <a href="{{ route('our_trainings.index') }}" class="hover:underline hover:text-primary-contrast-1">Capacitaciones</a>
                         </li>
                         <li>
-                            <a href="{{ route('contact_us.index') }}" class="hover:underline">Contacto</a>
+                            <a href="{{ route('contact_us.index') }}" class="hover:underline hover:text-primary-contrast-1">Contacto</a>
                         </li>
                     </ul>
                 </div>
 
-                @if (isset($contact_information['facebook_link']) ||
-                        isset($contact_information['twitter_link']) ||
-                        isset($contact_information['instagram_link']))
-                    <div>
-                        <h2 class="mb-6 text-base font-semibold uppercase text-white">Síguenos</h2>
-                        <ul class="text-gray-300 font-medium space-y-3 list-none pl-0">
-                            @isset($contact_information['facebook_link'])
-                                <li>
-                                    <a href="{{ $contact_information['facebook_link'] }}" target="_blank"
-                                        class="hover:underline after:content-['_↗']"><i class="fa-brands fa-facebook me-2 "></i>Facebook</a>
-                                </li>
-                            @endisset
-
-                            @isset($contact_information['twitter_link'])
-                                <li>
-                                    <a href="{{ $contact_information['twitter_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
-                                </li>
-                            @endisset
-
-                            @isset($contact_information['instagram_link'])
-                                <li>
-                                    <a href="{{ $contact_information['instagram_link'] }}" target="_blank" class="hover:underline after:content-['_↗']"><i class="fa-brands fa-instagram me-2"></i>Instagram</a>
-                                </li>
-                            @endisset
-
-                        </ul>
+                {{-- Contacto --}}
+                <div>
+                    <div class="mb-6">
+                        <h2 class="mb-4 text-base font-semibold uppercase text-white">Contáctanos
+                        </h2>
+                        <div class="h-[3px] w-1/2 bg-tertiary-border"></div>
                     </div>
-                @endif
+
+                    <div class="text-gray-200 font-medium">
+                        <!-- Números de teléfono -->
+                        <div class="mb-3">
+                            <i class="fa-solid fa-phone mr-2"></i>
+                            {{ $contact_information['cellphone'] ?? '' }}{{ $contact_information['cellphone'] && $contact_information['phone'] ? ' - ' : '' }}{{ $contact_information['phone'] ?? '' }}
+                        </div>
+                        
+                        <!-- Correo electrónico -->
+                        <div class="break-all">
+                            <i class="fa-solid fa-envelope mr-2"></i>
+                            {{ $contact_information['email'] }}
+                        </div>
+                    </div>
+                    
+
+                    <div class="space-x-3 mt-6 text-gray-200 text-2xl md:text-xl font-medium">
+
+                        @isset($contact_information['facebook_link'])
+                            <a href="{{ $contact_information['facebook_link'] }}" target="_blank" class="">
+                                <i class="fa-brands fa-facebook hover:scale-110 hover:text-primary-contrast-1 transition duration-200"></i>
+                            </a>
+                        @endisset
+
+                        @isset($contact_information['twitter_link'])
+                            <a href="{{ $contact_information['twitter_link'] }}" target="_blank" class="">
+                                <i class="fa-brands fa-twitter hover:scale-110 hover:text-primary-contrast-1 transition duration-200"></i>
+                            </a>
+                        @endisset
+
+                        @isset($contact_information['instagram_link'])
+                            <a href="{{ $contact_information['instagram_link'] }}" target="_blank" class="">
+                                <i class="fa-brands fa-instagram hover:scale-110 hover:text-primary-contrast-1 transition duration-200"></i>
+                            </a>
+                        @endisset
+
+                    </div>
+                </div>
 
                 {{-- <div>
                     <h2 class="mb-6 text-base font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
@@ -72,7 +98,8 @@
         <hr class="my-6 border-white sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-white sm:text-center">© 2024 <a href="{{ route('welcome.index') }}"
-                    class="hover:underline">Presentación Personal™</a>. Todos los derechos reservados. Elaborado por <a href="https://www.cuanticagroup.com/" class="hover:underline">Cuántica Group S.A.C.</a>
+                    class="hover:underline">Presentación Personal™</a>. Todos los derechos reservados. Elaborado por <a
+                    href="https://www.cuanticagroup.com/" class="hover:underline">Cuántica Group S.A.C.</a>
             </span>
             {{-- <div class="flex mt-4 sm:justify-center sm:mt-0">
                 <a href="#" class="text-white dark:hover:text-white">

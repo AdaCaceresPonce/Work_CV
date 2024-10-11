@@ -67,9 +67,9 @@ class DatabaseSeeder extends Seeder
 
         //Factories
             //Consultas
-            Inquiry::factory(30)->create();
+            Inquiry::factory(3)->create();
             //Opiniones
-            Opinion::factory(30)->create();
+            // Opinion::factory(30)->create();
 
     }
 }

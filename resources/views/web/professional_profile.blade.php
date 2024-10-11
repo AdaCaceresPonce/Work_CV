@@ -84,7 +84,7 @@
                                 </h3>
 
                                 <!-- Nombre de la institución -->
-                                <p class="text-lg text-[#555]">{{ $degree->institution_name }}</p>
+                                <p class="text-lg mt-2 text-[#555]">{{ $degree->institution_name }}</p>
                             </div>
                         @endforeach
                     </div>
