@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        Mis Capacitaciones
+        Capacitaciones
     </x-slot>
 
     <style>
@@ -90,8 +90,8 @@
                                 </figure>
 
                                 <div class="space-y-8 mt-4">
-                                    <h3 class="training__name text-base font-bold w-full">
-                                        {{ $training->name ?? 'Nombre del servicio' }}
+                                    <h3 class="training__name text-base line-clamp-2 font-bold w-full">
+                                        {{ $training->name ?? 'Nombre de la capacitación' }}
                                     </h3>
                                     <div class="flex justify-start">
                                         <a href="{{ route('our_trainings.show_training', $training) }}"

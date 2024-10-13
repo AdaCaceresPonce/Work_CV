@@ -117,7 +117,7 @@
 
                                 <x-label>
                                     Imagen
-                                    <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="1200x800px" />
+                                    <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="1000x1000px" />
                                 </x-label>
     
                             </div>

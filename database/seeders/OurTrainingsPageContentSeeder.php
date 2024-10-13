@@ -55,11 +55,11 @@ class OurTrainingsPageContentSeeder extends Seeder
             'cover_title' => 'Nuestras Capacitaciones',
             'cover_img' => $imagesInDatabase['cover_img.jpg'],
     
-            'our_trainings_title' => '<p><strong><span class="text-primary">Capacitaciones Profesionales</span></strong></p>',
+            'our_trainings_title' => '<p><strong><span style="color: rgb(104, 159, 56);">Capacitaciones Profesionales</span></strong></p>',
             'our_trainings_description'=>'<p>Hoy en día los docentes requieren desarrollar competencias profesionales de acuerdo a los lineamientos educativos vigentes, Las capacitaciones que ofrecemos están estructuradas en base a metodologías activas, con ejemplos prácticos, que buscan mejorar el desempeño docente. Estamos aquí para guiarlos en un viaje de aprendizaje y desarrollo profesional, ofreciendo un entorno de apoyo estratégico con el objetivo de fomentar el crecimiento continuo y la excelencia en el proceso enseñanza aprendizaje.</p>',
             'our_trainings_img' => $imagesInDatabase['our_trainings_img.jpg'],
             
-            'trainings_we_offer_title'=>'<p><strong><span class="text-primary">Conoce las capacitaciones que están a tu disposición</span></strong></p>',
+            'trainings_we_offer_title'=>'<p><strong><span style="color: rgb(104, 159, 56);">Conoce las capacitaciones que están a tu disposición</span></strong></p>',
 
         ];
 

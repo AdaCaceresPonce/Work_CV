@@ -56,15 +56,15 @@ class ProfessionalProfilePageContentSeeder extends Seeder
             'cover_title' => 'Mi currículum',
             'cover_img' => $imagesInDatabase['cover_img.jpg'],
 
-            'employment_history_title' => '<p><strong><span class="text-primary">Historial Laboral</span></strong></p>',
+            'employment_history_title' => '<p><strong><span style="color: rgb(104, 159, 56);">Historial Laboral</span></strong></p>',
             'employment_history_img' => $imagesInDatabase['employment_history_img.jpg'],
 
-            'academic_backgrounds_title' => '<p><strong><span class="text-primary">Formación Académica</span></strong></p>',
+            'academic_backgrounds_title' => '<p><strong><span style="color: rgb(104, 159, 56);">Formación Académica</span></strong></p>',
 
             'my_skills_title' => 'Mis Aptitudes',
             'my_skills_img' => $imagesInDatabase['my_skills_img1.webp'],
 
-            'my_productions_title' => '<p><strong><span class="text-primary">Mis Producciones</span></strong></p>',
+            'my_productions_title' => '<p><strong><span style="color: rgb(104, 159, 56);">Mis Producciones</span></strong></p>',
 
         ];
 

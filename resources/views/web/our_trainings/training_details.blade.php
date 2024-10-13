@@ -1,4 +1,8 @@
-<x-app-layout :title="$training->name">
+<x-app-layout>
+
+    <x-slot name="title">
+        {{ $training->name }}
+    </x-slot>
 
     {{-- Portada --}}
     <section class="w-full brightness-90 contrast-150 bg-cover bg-no-repeat bg-center relative"
@@ -9,10 +13,12 @@
 
         <x-container class="px-4 py-44 lg:py-48 h-full flex align-middle items-center relative z-20">
 
-            <p class="text-white flex-1 text-center text-3xl lg:text-4xl text-pretty leading-normal font-bold tracking-normal" 
-                data-aos="fade-down" data-aos-easing="ease" data-aos-delay="200" data-aos-duration="1000">
-                {{ $training->name }}
-            </p>
+            <div class="max-w-[800px] mx-auto">
+                <p class="text-white flex-1 text-center text-3xl lg:text-4xl text-pretty !leading-snug font-bold tracking-normal"
+                    data-aos="fade-down" data-aos-easing="ease" data-aos-delay="200" data-aos-duration="1000">
+                    {{ $training->name }}
+                </p>
+            </div>
 
         </x-container>
 
@@ -56,7 +62,8 @@
 
                         <div class="space-y-4">
 
-                            <span class="text-xl lg:text-2xl text-center lg:text-start font-bold w-full block leading-relaxed">
+                            <span
+                                class="text-xl lg:text-2xl text-center lg:text-start font-bold w-full block leading-relaxed">
                                 En {{ $training->name }} verás los siguientes temas:
 
                             </span>

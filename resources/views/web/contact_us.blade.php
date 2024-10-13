@@ -1,4 +1,9 @@
 <x-app-layout>
+
+    <x-slot name="title">
+        Contacto
+    </x-slot>
+
     <style>
         html {
             scroll-behavior: smooth;

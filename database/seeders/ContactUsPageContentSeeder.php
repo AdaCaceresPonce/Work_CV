@@ -55,11 +55,11 @@ class ContactUsPageContentSeeder extends Seeder
             'cover_img' => $imagesInDatabase['cover_img.jpg'],
     
             'contact_us_title' => '<p><strong>Comunícate conmigo, estoy a tu servicio</strong></p>',
-            'contact_us_description' => '<p><strong><span class="text-primary">Envía una consulta. Me pondré en contacto contigo lo más antes posible.</span></strong></p>',
+            'contact_us_description' => '<p><strong><span style="color: rgb(70, 129, 137);">Envía una consulta. Me pondré en contacto contigo lo más antes posible.</span></strong></p>',
             'contact_us_img'=> $imagesInDatabase['contact_us_img.jpg'],
 
             'opinions_title' => '<p><strong>¡Comparte tu opinión con nosotros!</strong></p>',
-            'opinions_description' => '<p><strong><span class="text-primary">Tu opinión es muy importante. Queremos saber cómo ha sido tu experiencia con nuestros servicios para poder ofrecerte la mejor atención.</span></strong></p>',
+            'opinions_description' => '<p><strong><span style="color: rgb(104, 159, 56);">Tu opinión es muy importante. Queremos saber cómo ha sido tu experiencia con nuestros servicios para poder ofrecerte la mejor atención.</span></strong></p>',
             'opinions_img'=> 'web_pages_images/contact_us_page/' . $faker->image('public/storage/web_pages_images/contact_us_page', 1200, 800, null, false),
             
         ];

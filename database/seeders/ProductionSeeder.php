@@ -23,54 +23,6 @@ class ProductionSeeder extends Seeder
                 'journal_name' => 'Journal for ReAttach Therapy and Developmental Diversities'
             ],
 
-            [
-                'title' => 'Investigacion de ejemplo',
-                'url' => 'https://jrtdd.com/index.php/journal/article/view/1776',
-                'publication_date' => '2023-08-12',
-                'abstract' => null,
-                'journal_name' => null
-            ],
-
-            [
-                'title' => 'Estudio de ejemplo',
-                'url' => 'https://jrtdd.com/index.php/journal/article/view/1776',
-                'publication_date' => '2023-08-24',
-                'abstract' => null,
-                'journal_name' => null
-            ],
-
-            [
-                'title' => 'Investigacion de ejemplo',
-                'url' => 'https://jrtdd.com/index.php/journal/article/view/1776',
-                'publication_date' => '2023-08-12',
-                'abstract' => null,
-                'journal_name' => null
-            ],
-
-            [
-                'title' => 'Estudio de ejemplo',
-                'url' => 'https://jrtdd.com/index.php/journal/article/view/1776',
-                'publication_date' => '2023-08-24',
-                'abstract' => null,
-                'journal_name' => null
-            ],
-
-            [
-                'title' => 'Investigacion de ejemplo',
-                'url' => 'https://jrtdd.com/index.php/journal/article/view/1776',
-                'publication_date' => '2023-08-12',
-                'abstract' => null,
-                'journal_name' => null
-            ],
-
-            [
-                'title' => 'Estudio de ejemplo',
-                'url' => 'https://jrtdd.com/index.php/journal/article/view/1776',
-                'publication_date' => '2023-08-24',
-                'abstract' => null,
-                'journal_name' => null
-            ],
-
         ];
 
         foreach ($productions as $production) {

@@ -77,7 +77,10 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="grid-auto-rows: 1fr;">
                         @foreach ($academic_backgrounds as $degree)
                             <div
-                                class="w-full h-full bg-gradient-to-r from-[#f5f5d8] to-[#cfcf96] border-l-4 border-l-primary flex flex-col justify-center px-8 py-12 rounded-lg shadow-md">
+                                class="w-full h-full bg-gradient-to-r from-[#f5f5d8] to-[#cfcf96] border-l-4 border-l-primary flex flex-col justify-center px-8 py-12 rounded-lg shadow-md"
+                                data-aos="zoom-in" data-aos-easing="ease"
+                                data-aos-duration="700" data-aos-delay="{{ 50 + ($loop->index * 50) }}"
+                                data-aos-anchor-placement="top-bottom">
 
                                 <!-- Título del grado académico -->
                                 <h3 class="text-xl sm:text-2xl font-bold text-[#333] mb-2">{{ $degree->degree_name }}

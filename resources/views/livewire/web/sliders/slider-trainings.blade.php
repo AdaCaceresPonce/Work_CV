@@ -57,8 +57,8 @@
                         </div>
     
                         <div class="card__data space-y-8 mt-4">
-                            <h3 class="training__name text-base font-bold w-full">
-                                {{ $training->name ?? 'Nombre del servicio' }}
+                            <h3 class="training__name line-clamp-1 text-base font-bold w-full" title="{{ $training->name ?? 'Nombre de la capacitación' }}">
+                                {{ $training->name ?? 'Nombre de la capacitación' }}
                             </h3>
                             <div class="flex justify-start">
                                 <a href="{{ route('our_trainings.show_training', $training) }}"
