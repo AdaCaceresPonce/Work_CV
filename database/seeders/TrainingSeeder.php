@@ -33,8 +33,8 @@ class TrainingSeeder extends Seeder
 
             'Planificación curricular nivel secundaria' => [
                 'description' => null,
-                'card_img_path' => 'planificacion_curricular_card.jpg',
-                'cover_img_path' => 'planificacion_curricular_cover.jpg',
+                'card_img_path' => 'planificacion_curricular_card.webp',
+                'cover_img_path' => 'planificacion_curricular_cover.webp',
                 'additional_info' => null,
                 'topics' => [
                     'Perfil de Egreso de la Educación',
@@ -50,8 +50,8 @@ class TrainingSeeder extends Seeder
 
             'Enfoque por competencias' => [
                 'description' => null,
-                'card_img_path' => 'enfoque_competencias_card.jpg',
-                'cover_img_path' => 'enfoque_competencias_cover.jpg',
+                'card_img_path' => 'enfoque_competencias_card.webp',
+                'cover_img_path' => 'enfoque_competencias_cover.webp',
                 'additional_info' => null,
                 'topics' => [
                     'Conferencia Mundial: "Educación para Todos"',
@@ -64,8 +64,8 @@ class TrainingSeeder extends Seeder
 
             'Evaluación Formativa' => [
                 'description' => null,
-                'card_img_path' => 'evaluacion_formativa_card.jpg',
-                'cover_img_path' => 'evaluacion_formativa_cover.jpg',
+                'card_img_path' => 'evaluacion_formativa_card.webp',
+                'cover_img_path' => 'evaluacion_formativa_cover.webp',
                 'additional_info' => null,
                 'topics' => [
                     'Definición de evaluación formativa',
@@ -78,8 +78,8 @@ class TrainingSeeder extends Seeder
 
             'Evaluación diagnóstica' => [
                 'description' => null,
-                'card_img_path' => 'evaluacion_diagnostica_card.jpg',
-                'cover_img_path' => 'evaluacion_diagnostica_cover.jpg',
+                'card_img_path' => 'evaluacion_diagnostica_card.webp',
+                'cover_img_path' => 'evaluacion_diagnostica_cover.webp',
                 'additional_info' => null,
                 'topics' => [
                     'Importancia de la evaluación diagnóstica',
@@ -92,8 +92,8 @@ class TrainingSeeder extends Seeder
 
             'Rúbricas de Observación de Aula' => [
                 'description' => null,
-                'card_img_path' => 'rubricas_observacion_card.jpg',
-                'cover_img_path' => 'rubricas_observacion_cover.jpg',
+                'card_img_path' => 'rubricas_observacion_card.webp',
+                'cover_img_path' => 'rubricas_observacion_cover.webp',
                 'additional_info' => null,
                 'topics' => [
                     'Rúbricas de Observación de Aula',

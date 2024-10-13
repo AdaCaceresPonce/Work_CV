@@ -83,7 +83,7 @@
                                     class="w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden relative">
 
                                     {{-- Superposición para oscurecer la imagen --}}
-                                    <div class="absolute inset-0 bg-black opacity-30"></div> {{-- Aumenta o disminuye el valor de opacity para oscurecer más o menos --}}
+                                    {{-- <div class="absolute inset-0 bg-black opacity-30"></div> --}}
 
                                     <img src="{{ Storage::url($training->card_img_path) }}" alt="image"
                                         class="card__img aspect-[4/3] object-cover object-center w-full" loading="lazy">

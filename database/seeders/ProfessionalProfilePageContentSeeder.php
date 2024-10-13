@@ -29,7 +29,7 @@ class ProfessionalProfilePageContentSeeder extends Seeder
         $imagesToCopy = [
             'cover_img.jpg',
             'employment_history_img.jpg',
-            'my_skills_img.png',
+            'my_skills_img1.webp',
         ];
 
         $imagesInDatabase = [];
@@ -62,7 +62,7 @@ class ProfessionalProfilePageContentSeeder extends Seeder
             'academic_backgrounds_title' => '<p><strong><span class="text-primary">Formación Académica</span></strong></p>',
 
             'my_skills_title' => 'Mis Aptitudes',
-            'my_skills_img' => $imagesInDatabase['my_skills_img.png'],
+            'my_skills_img' => $imagesInDatabase['my_skills_img1.webp'],
 
             'my_productions_title' => '<p><strong><span class="text-primary">Mis Producciones</span></strong></p>',
 

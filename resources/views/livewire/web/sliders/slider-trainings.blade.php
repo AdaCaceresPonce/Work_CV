@@ -53,7 +53,7 @@
                         <div class="card__image w-full border-[1px] flex justify-center items-center rounded-lg overflow-hidden">
                             
                             <img src="{{ Storage::url($training->card_img_path) }}" alt="image"
-                                class="card__img aspect-[4/3] object-cover object-center w-full brightness-75" loading="lazy">
+                                class="card__img aspect-[4/3] object-cover object-center w-full" loading="lazy">
                         </div>
     
                         <div class="card__data space-y-8 mt-4">
