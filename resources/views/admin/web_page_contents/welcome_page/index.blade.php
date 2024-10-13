@@ -112,11 +112,16 @@
 
                         {{-- Imagen --}}
                         <div class="h-full flex flex-col">
-                            <div>
-                                <x-label class="mb-1 mt-2 text-[15px] font-black">
+
+                            <div class="mb-1 mt-2">
+
+                                <x-label>
                                     Imagen
+                                    <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="1200x800px" />
                                 </x-label>
+    
                             </div>
+
                             <figure class="grow relative">
                                 <div class="absolute top-4 right-4">
                                     <label
@@ -262,14 +267,16 @@
                     </div>
 
                     <div class="mt-6 max-w-[650px] mx-auto">
-                        <div>
-                            <x-label class="mt-2 text-[15px] font-black">
+
+                        <div class="mb-1 mt-2">
+
+                            <x-label>
                                 Imagen
+                                <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="1200x800px" />
                             </x-label>
-                            <x-label class="mb-1">
-                                (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                            </x-label>
+
                         </div>
+
                         <figure class="relative">
                             <div class="absolute top-4 right-4">
                                 <label

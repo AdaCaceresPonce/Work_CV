@@ -182,7 +182,7 @@
                 {{-- Imagen --}}
                 <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-10">
 
-                    <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-top border-[4px] rounded-xl"
+                    <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover object-center border-[4px] rounded-xl"
                         src="{{ Storage::url($contents['my_skills_img']) }}" alt="">
                 </div>
             </div>

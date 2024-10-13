@@ -2,12 +2,11 @@
 
 namespace App\View\Components;
 
-use App\Models\PagesContents\ContactUsPageContent;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class OpinionSection extends Component
+class FormTooltip extends Component
 {
     /**
      * Create a new component instance.
@@ -22,9 +21,6 @@ class OpinionSection extends Component
      */
     public function render(): View|Closure|string
     {
-
-        $opinion_section = ContactUsPageContent::first();
-
-        return view('layouts.partials.app.opinion-section', compact('opinion_section'));
+        return view('layouts.partials.admin.form-tooltip');
     }
 }

@@ -50,14 +50,17 @@
                 {{-- Imagenes --}}
                 <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8">
                     <div class="col">
-                        <x-label class="font-black">
-                            Imagen de la tarjeta
-                        </x-label>
-                        <x-label class="mb-1">
-                            <span class="text-slate-700 font-light">
-                                (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                            </span>
-                        </x-label>
+
+                        <div class="mb-1">
+
+                            <x-label>
+                                Imagen de la tarjeta
+                                <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="1200x800px" />
+                            </x-label>
+
+                        </div>
+                        
+                        
                         <figure class="relative">
                             <div class="absolute top-4 right-4">
                                 <label
@@ -78,12 +81,16 @@
                     </div>
 
                     <div class="col">
-                        <x-label class="font-black">
-                            Imagen de portada
-                        </x-label>
-                        <x-label class="mb-1">
-                            (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                        </x-label>
+
+                        <div class="mb-1">
+
+                            <x-label>
+                                Imagen de portada
+                                <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="2400x1600px" />
+                            </x-label>
+
+                        </div>
+
                         <figure class="relative">
                             <div class="absolute top-4 right-4">
                                 <label

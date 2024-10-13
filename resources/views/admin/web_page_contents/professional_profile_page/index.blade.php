@@ -90,13 +90,14 @@
             
                         </div>
                         <div class="h-full">
-                            <div>
-                                <x-label class="mt-2 text-[15px] font-black">
+                            
+                            <div class="mb-1 mt-2">
+
+                                <x-label>
                                     Imagen
+                                    <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="2400x1600px" />
                                 </x-label>
-                                <x-label class="mb-1">
-                                    (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                                </x-label>
+    
                             </div>
 
                             <figure class="relative">
@@ -148,14 +149,16 @@
                         </div>
 
                         <div class="max-w-[650px] mx-auto">
-                            <div>
-                                <x-label class="mt-2 text-[15px] font-black">
+
+                            <div class="mb-1 mt-2">
+
+                                <x-label>
                                     Imagen
+                                    <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="1200x800px" />
                                 </x-label>
-                                <x-label class="mb-1">
-                                    (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                                </x-label>
+    
                             </div>
+
                             <figure class="relative">
                                 <div class="absolute top-4 right-4">
                                     <label
@@ -208,59 +211,6 @@
                     </div>
                 </section>
 
-                {{-- Seccion sobre las Aptitudes --}}
-                <section id="skills">
-
-                    <x-page-section-title :section_title="'Sección sobre las Aptitudes'" :route_name="'professional_profile.index'" :section_id="'#skills'" />
-
-                    {{-- Columnas --}}
-                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
-                        <div class="space-y-4">
-
-                            <div>
-                                <x-label for="my_skills_title" class="mb-1 mt-2 text-[15px] font-black">
-                                    Título
-                                </x-label>
-            
-                                <x-input class="w-full" id="my_skills_title" placeholder="Ingrese el título a mostrar en la portada" name="my_skills_title"
-                                    value="{{ old('my_skills_title', $contents['my_skills_title'] ) }}" />
-                                <x-input-error for="my_skills_title" />
-                            </div>
-            
-                        </div>
-                        <div class="h-full">
-                            <div>
-                                <x-label class="mt-2 text-[15px] font-black">
-                                    Imagen
-                                </x-label>
-                                <x-label class="mb-1">
-                                    (Formatos aceptados: JPG, JPEG, PNG, SVG. / Máx: 1mb)
-                                </x-label>
-                            </div>
-
-                            <figure class="relative">
-                                <div class="absolute top-4 right-4">
-                                    <label
-                                        class="flex items-center px-2.5 py-1.5 lg:px-4 lg:py-2 rounded-lg btn-blue cursor-pointer text-sm lg:text-base">
-                                        <i class="fas fa-camera mr-2"></i>
-                                        Actualizar imagen
-                                        <input id="uploadImage3" name="my_skills_img" type="file" class="hidden"
-                                            accept="image/*" onchange="previewImage(3);" />
-                                    </label>
-                                </div>
-                                <img id="uploadPreview3"
-                                    class="object-contain h-full w-full aspect-[3/2] border-[2px] bg-white border-blue-400 @error('my_skills_img') border-red-500 @enderror rounded-xl"
-                                    src="{{ Storage::url( $contents['my_skills_img']) }}" alt="">
-                            </figure>
-
-                            <x-input-error class="mt-1" for="my_skills_img" />
-
-                        </div>
-
-                    </div>
-
-                </section>
-
                 {{-- Seccion sobre las Producciones --}}
                 <section id="productions">
 
@@ -288,6 +238,60 @@
                         </div>
 
                     </div>
+                </section>
+
+                {{-- Seccion sobre las Aptitudes (tiene imagen)--}}
+                <section id="skills">
+
+                    <x-page-section-title :section_title="'Sección sobre las Aptitudes'" :route_name="'professional_profile.index'" :section_id="'#skills'" />
+
+                    {{-- Columnas --}}
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
+                        <div class="space-y-4">
+
+                            <div>
+                                <x-label for="my_skills_title" class="mb-1 mt-2 text-[15px] font-black">
+                                    Título
+                                </x-label>
+            
+                                <x-input class="w-full" id="my_skills_title" placeholder="Ingrese el título a mostrar en la portada" name="my_skills_title"
+                                    value="{{ old('my_skills_title', $contents['my_skills_title'] ) }}" />
+                                <x-input-error for="my_skills_title" />
+                            </div>
+            
+                        </div>
+                        <div class="h-full">
+
+                            <div class="mb-1 mt-2">
+
+                                <x-label>
+                                    Imagen
+                                    <x-form-tooltip formats="JPG, JPEG, PNG, SVG, WEBP" maxSize="1MB" dimensions="800x800px" />
+                                </x-label>
+    
+                            </div>
+
+                            <figure class="relative">
+                                <div class="absolute top-4 right-4">
+                                    <label
+                                        class="flex items-center px-2.5 py-1.5 lg:px-4 lg:py-2 rounded-lg btn-blue cursor-pointer text-sm lg:text-base">
+                                        <i class="fas fa-camera mr-2"></i>
+                                        Actualizar imagen
+                                        <input id="uploadImage3" name="my_skills_img" type="file" class="hidden"
+                                            accept="image/*" onchange="previewImage(3);" />
+                                    </label>
+                                </div>
+                                <img id="uploadPreview3"
+                                    class="object-contain h-full w-full aspect-[3/2] border-[2px] bg-white border-blue-400 @error('my_skills_img') border-red-500 @enderror rounded-xl"
+                                    src="{{ Storage::url( $contents['my_skills_img']) }}" alt="">
+                            </figure>
+
+                            <x-input-error class="mt-1" for="my_skills_img" />
+
+                        </div>
+
+                    </div>
+
                 </section>
 
                 {{-- Botón actualizar --}}
