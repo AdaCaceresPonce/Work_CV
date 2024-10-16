@@ -22,7 +22,7 @@
 
         <x-container class="px-4 section__spacing">
 
-            <div class="flex items-center flex-col lg:flex-row gap-6 md:gap-7">
+            <div class="flex items-center flex-col lg:flex-row gap-6 sm:gap-10 lg:gap-7">
 
                 {{-- Texto --}}
                 <div class="w-full lg:w-1/2 px-4">

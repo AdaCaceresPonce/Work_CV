@@ -227,17 +227,17 @@
     <section id="why_choose_our_trainings">
         <x-container class="px-4 section__spacing">
 
-            <div class="flex items-center flex-col lg:flex-row gap-10 md:gap-7">
+            <div class="flex items-center flex-col lg:flex-row gap-6 sm:gap-10 lg:gap-7">
 
                 {{-- Imagen --}}
                 <div class="w-full lg:w-1/2 flex justify-center px-0 sm:px-32 md:px-40 lg:px-8 xl:px-0 order-last lg:order-first"
-                    data-aos="zoom-in-up" data-aos-duration="1000">
+                    data-aos="fade-right" data-aos-duration="1200">
                     <img class="size-full aspect-[4/4] lg:max-h-[470px] lg:w-full object-cover md:object-top object-center border-[4px] border-tertiary-border rounded-xl"
                         src="{{ Storage::url($contents['why_choose_our_trainings_img']) }}" alt="">
                 </div>
 
                 {{-- Cuadro con el texto --}}
-                <div class="w-full lg:w-1/2 px-4 text-start" data-aos="fade-down" data-aos-duration="1000">
+                <div class="w-full lg:w-1/2 px-4 text-start" data-aos="fade-left" data-aos-duration="1200">
 
                     <span class="text-2xl md:text-3xl font-bold leading-normal text-pretty">
 

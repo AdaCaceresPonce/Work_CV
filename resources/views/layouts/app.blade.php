@@ -81,7 +81,7 @@
         @endif
 
         <!-- Page Content -->
-        <main class="overflow-x-hidden">
+        <main class="overflow-x-hidden overflow-y-hidden">
             {{ $slot }}
         </main>
 

@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <x-slot name="title">
-        Mi Curriculum
+        Mi Currículum
     </x-slot>
 
     <style>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach ($productions as $production)
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
                             <div class="p-4 flex-grow">
