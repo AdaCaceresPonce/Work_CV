@@ -116,7 +116,7 @@
                     @foreach ($productions as $production)
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
                             <div class="p-4 flex-grow">
-                                <a href="{{ $production->url }}" class="text-lg text-indigo-600 hover:underline font-medium">
+                                <a href="{{ $production->url }}" target="_blank" class="text-lg text-indigo-600 hover:underline font-medium">
                                     {{ $production->title }}
                                 </a>
                                 <span class="block text-sm text-gray-600 mt-1">
@@ -132,7 +132,7 @@
                                 @endif
                             </div>
                             <div class="bg-gray-100 p-4 text-right">
-                                <a href="{{ $production->url }}" class="text-indigo-600 hover:underline">Leer más</a>
+                                <a href="{{ $production->url }}" target="_blank" class="text-indigo-600 hover:underline">Leer más</a>
                             </div>
                         </div>
                     @endforeach

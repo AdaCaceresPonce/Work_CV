@@ -22,7 +22,13 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@mail.com',
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('14UGu95l+q.o'),
+        ]);
+
+        User::factory()->create([
+            'name' => 'Patricia Cárdenas Maurolagoitia',
+            'email' => 'patriciacm_199@hotmail.com',
+            'password' => bcrypt('X2eQ1OMb£*8~'),
         ]);
 
         //Eliminar carpetas
